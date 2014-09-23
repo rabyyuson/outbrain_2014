@@ -1,0 +1,30 @@
+/* Sections */
+.container.customer-terms .row.content {
+    background-color:#f4f4f4;
+    padding:3em 0 5em 0;
+}
+.page-template-page-templatescustomer-terms-php footer .row.interests {
+    background-color:#fff;
+}
+.container.customer-terms .row.content a {
+    color:#D37E2C;
+}
+.container.customer-terms .row.content a:hover {
+    text-decoration:underline;
+}
+.container.customer-terms .row.content .country-list {
+    float: right;
+    width: 731px;
+    margin: 70px 0 10px 0;
+}
+.container.customer-terms .row.content .loader {
+    float: right;
+    width: 731px;
+    margin-bottom:30px;
+    height: 100px;
+    background: url('http://www.outbrain.com/wp-content/uploads/2014/06/ajax-loader.gif') no-repeat center center;
+}
+.container.customer-terms .row.content .body-copy .terms {
+    float:left;
+    margin:40px 0 0 0;
+}
