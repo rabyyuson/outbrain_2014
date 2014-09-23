@@ -1,9 +1,0 @@
-/* Hero */
-.container.blog .row.hero {
-    /*background-image:url('../../../images/page-templates/about/company/hero.jpg');*/
-}
-/* Sections */
-.container.blog .row.content {
-    background-color:#f4f4f4;
-    padding:3em 0 5em 0;
-}
