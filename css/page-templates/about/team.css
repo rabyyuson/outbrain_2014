@@ -1,0 +1,93 @@
+/* Hero */
+.container.about .row.hero {
+    /*background-image:url('../../../images/page-templates/about/company/hero.jpg');*/
+}
+/* Sections */
+.container.team .row.people {
+    background-color:#f4f4f4;
+    padding:3em 0 5em 0;
+}
+.container.team .row.people .columns.twelve h2 {
+    font-size:2em;
+    font-weight:500;
+    line-height:1.15em;
+    width:100%;
+    text-transform:uppercase;
+    text-align:center;
+    margin:0 0 1.5em 0;
+}
+.container.team .row.people .columns.twelve p.description {
+    font-size:1.25em;
+    font-weight:300;
+    text-align:center;
+    color:#666;
+    margin:0 0 3em 0;
+    line-height:1.35em;
+}
+.container.team .row.people .columns.twelve .section {
+    float:left;
+    width:100%;
+    margin-bottom:60px;
+}
+.container.team .row.people .columns.twelve .section h3 {
+    float:left;
+    width:100%;
+    border-bottom:1px solid #b2b2b2;
+    color:#000;
+    padding-bottom:10px;
+    text-transform:uppercase;
+    font-size:1.25em;
+}
+.container.team .row.people .columns.twelve .section ul {
+    float:left;
+    width:100%;
+}
+.container.team .row.people .columns.twelve .section ul li {
+    float:left;
+    width:100%;
+    margin-top:50px;
+}
+.container.team .row.people .columns.twelve .section ul li img {
+    float:left;
+    width:30%;
+}
+.container.team .row.people .columns.twelve .section ul li .information {
+    float:right;
+    font-size:1.15em;
+    color:#666;
+    width:70%;
+    padding-left:60px;
+}
+.container.team .row.people .columns.twelve .section ul li .information .name,
+.container.team .row.people .columns.twelve .section ul li .information .title {
+    float:left;
+    width:100%;
+    margin-bottom:2.5px;
+    text-transform:uppercase;
+    color:#000;
+    font-weight:600;
+}
+.container.team .row.people .columns.twelve .section ul li .information .title {
+    font-size:0.9em;
+}
+.container.team .row.people .columns.twelve .section ul li .information .biography {
+    float:left;
+    width:100%;
+    margin-top:20px;
+    line-height:26px;
+}
+.container.team .row.people .columns.twelve .section ul li .information .social {
+    float:left;
+    width:100%;
+    margin-top:20px;
+}
+.container.team .row.people .columns.twelve .section ul li .information .social a {
+    color:#666;
+}
+.container.team .row.people .columns.twelve .section ul li .information .social a:hover {
+    text-decoration:underline;
+    color:#000;
+}
+.page-template-page-templatesteam-php footer .row.interests {
+    background-color:#fff;
+}

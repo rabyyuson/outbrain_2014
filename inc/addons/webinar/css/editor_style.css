@@ -1,0 +1,35 @@
+.webinar-inner {
+    float:left;
+    width:100%;
+}
+.webinar-inner .left {
+    float:left;
+    width:100%;
+    border-top:2px dashed #ddd;
+    border-bottom:2px dashed #ddd;
+}
+.webinar-inner .right {
+    float:right;
+    width:157px;
+    padding:0.5em;
+    min-height:170px;
+    border-left:2px dashed #ddd;
+}
+.webinar-inner .right ul {
+    float:left;
+    width:100%;
+    margin:0;
+    padding:0;
+    text-align:center;
+    list-style-type:none;
+}
+.webinar-inner .right ul li {
+    padding:1em 0;
+    border-bottom:2px dashed #ddd;
+}
+.webinar-inner .right ul li.name {
+    font-weight:bold;
+}
+.webinar-inner .right ul li.title {
+    border-bottom:none;
+}
