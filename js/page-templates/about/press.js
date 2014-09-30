@@ -20,38 +20,58 @@
                 data = {
                     counter : 1,
                     fetch : true
-                };
-
-            // Click event handler
-            // Load the articles through AJAX request and append it to the entries list
-            // Remove the more button if there are no more data to retrieve
-            more.on({
-                
-                click : function(){
+                }, posts = {};
+            
+            // Posts function
+            // Load the articles through AJAX request
+            posts.get_data = function( data ){
                     
-                    if( data.fetch ) {
-                        more.text( 'Loading Articles...' );
-                        $.ajax({
-                            url : document.URL + 'page/' + ( data.counter +=  1 ),
-                            type : 'GET',
-                            success : function( response ){
-                                var
-                                    entry = $( response ).contents().find( '.entry' );
-                                more.parent().before( entry );
-                                more.text( 'See More Articles' );
-                                if( entry.length > 0 ) {
-                                    data.fetch = true;
-                                } else {
-                                    data.fetch = false;
-                                    more.parent().remove();
-                                }
+                if( data.fetch ) {
+                    $.ajax({
+                        url : document.URL + 'page/' + ( data.counter +=  1 ),
+                        type : 'GET',
+                        success : function( response ){
+                            var
+                                entry = $( response ).contents().find( '.entry' );
+                            if( entry.length > 0 ) {
+                                data.fetch = true;
+                            } else {
+                                data.fetch = false;
                             }
-                        });
-                    }
-
+                            console.log(entry)
+                        }
+                    });
                 }
+
+            };
                 
-            });
+            // Window scroll event for the sub-navigation menu
+            $( window ).scroll( function() {
+
+                var 
+                    win = {
+                        scroll_top : $( window ).scrollTop(),
+                        height: $( window ).height()
+                    };
+                    
+                console.log(win.scroll_top)
+                console.log(win.height * 0.9)
+                    
+                $.data( this, 'scrollTimer', setTimeout(function() {
+
+                    // Show or hide the sub navigation panel
+                    if ( win.scroll_top > ( win.height * 0.9 ) ) {
+                        console.log('here')
+                        posts.get_data( data );
+                        
+                    } else {
+                        
+                          
+                    } 
+
+                }, 10 ) );
+                
+            } );
            
         }
        

@@ -24,7 +24,7 @@ get_header(); ?>
         // Reference the legal page template navigation menu
         include_once( TEMPLATEPATH . '/inc/templates/page-templates/legal/navigation.php' );
     ?>
-    <div class="row content">
+    <div class="row content navigation-clip">
         <div class="inner clearfix">
             <div class="columns twelve">
                 <article>

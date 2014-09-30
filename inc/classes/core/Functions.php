@@ -264,6 +264,7 @@ class Functions {
 
             wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'company-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/company.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/navigation.js', array(), null, TRUE );
                 
             
         /********************************************
@@ -272,8 +273,9 @@ class Functions {
             
         } elseif ( is_page_template( 'page-templates/team.php' ) ) {
 
-                wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
-                wp_enqueue_style( 'team-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/team.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'team-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/team.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/navigation.js', array(), null, TRUE );
                
                 
         /********************************************
@@ -282,9 +284,10 @@ class Functions {
                 
         } elseif ( is_page_template( 'page-templates/offices.php' ) ) {
 
-                wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
-                wp_enqueue_style( 'offices-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/offices.css', array(), FALSE, 'all' );
-                wp_enqueue_script( 'offices-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/offices.js', array(), null, TRUE );
+            wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'offices-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/offices.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/navigation.js', array(), null, TRUE );
+            wp_enqueue_script( 'offices-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/offices.js', array(), null, TRUE );
               
                 
         /********************************************
@@ -293,9 +296,10 @@ class Functions {
                 
         } elseif ( is_page_template( 'page-templates/press.php' ) ) {
 
-                wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
-                wp_enqueue_style( 'press-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/press.css', array(), FALSE, 'all' );
-                wp_enqueue_script( 'press-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/press.js', array(), null, TRUE );     
+            wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'press-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/press.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/navigation.js', array(), null, TRUE );
+            wp_enqueue_script( 'press-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/press.js', array(), null, TRUE );
         
             
         /********************************************
@@ -317,6 +321,7 @@ class Functions {
         } elseif ( is_page_template( 'page-templates/privacy-policy.php' ) ) {
 
             wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/legal/navigation.js', array(), null, TRUE );
             wp_enqueue_style( 'privacy-policy-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/privacy-policy.css', array(), FALSE, 'all' );
             
         
@@ -327,6 +332,7 @@ class Functions {
         } elseif ( is_page_template( 'page-templates/terms-of-use.php' ) ) {
 
             wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/legal/navigation.js', array(), null, TRUE );
             wp_enqueue_style( 'terms-of-use-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/terms-of-use.css', array(), FALSE, 'all' );
             
         
@@ -337,6 +343,7 @@ class Functions {
         } elseif ( is_page_template( 'page-templates/customer-terms.php' ) ) {
 
             wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/legal/navigation.js', array(), null, TRUE );
             wp_enqueue_style( 'customer-terms-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/customer-terms.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'customer-terms-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/legal/customer-terms.js', array(), null, TRUE );
          

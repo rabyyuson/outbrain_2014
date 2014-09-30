@@ -122,3 +122,71 @@
 .container.about .row.sub-navigation.first-level .columns.twelve .columns.two.press a {
     background-image:url('../../../images/page-templates/about/navigation/press.png');
 }
+
+/* Sub-Navigation Second Level */
+.container.about .row.sub-navigation.second-level {
+    display:none;
+    top:0;
+    position:fixed;
+    z-index:10;
+    background-color:#fff;
+    border-top:8px solid #f08431;
+    border-bottom:3px solid #ddd;
+    transition:top 0.1s ease-in-out;
+    background-color:#fff;
+}
+.container.about .row.sub-navigation.second-level.show {
+    display:block;
+}
+.container.about .row.sub-navigation.second-level.hide {
+    display:none;
+}
+.container.about .row.sub-navigation.second-level .columns.twelve {
+    position:relative;
+}
+.container.about .row.sub-navigation.second-level .columns.twelve .indicator {
+    width:0;
+    height:0;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-top:10px solid #f08431;
+    position:absolute;
+    top:0;
+    left:15.5%;
+    background:transparent;
+    transition:left 0.2s ease-in-out;
+}
+.container.about .row.sub-navigation.second-level .columns.twelve .indicator.page-company {
+    left:24%;
+}
+.container.about .row.sub-navigation.second-level .columns.twelve .indicator.page-team {
+    left:40.5%;
+}
+.container.about .row.sub-navigation.second-level .columns.twelve .indicator.page-offices {
+    left:57%;
+}
+.container.about .row.sub-navigation.second-level .columns.twelve .indicator.page-careers {
+    left:74%;
+}
+.container.about .row.sub-navigation.second-level .columns.twelve .indicator.page-press {
+    left:90.5%;
+}
+.container.about .row.sub-navigation.second-level .columns.twelve .columns {
+    text-align:center;
+    display:block;
+    margin:0 auto;
+}
+.container.about .row.sub-navigation.second-level .columns.twelve .columns img {
+    width:100px;
+}
+.container.about .row.sub-navigation.second-level .columns.twelve .columns a {
+    float:left;
+    width:100%;
+    padding:1.25em 0;
+    color:#000;
+    font-size:1.1em;
+    text-transform:uppercase;
+}
+.container.about .row.navigation-clip.padded {
+    padding-top:176px;
+}

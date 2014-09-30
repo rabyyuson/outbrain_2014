@@ -32,7 +32,7 @@
                 sub_nav_second_level = container.find( '.sub-navigation.second-level' ),
                 carousel = container.find( '.editor-tomorrow .carousel' ),
                 slider_video = container.find( '#a-clear-view-of-social-success' ),
-                rotating_content = container.find( '.rotating-content' )
+                rotating_content = container.find( '.rotating-content' );
             
             
             // Declare the content navigation for the sub nav links on click event

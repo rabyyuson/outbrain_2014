@@ -3,17 +3,14 @@
     /*background-image:url('../../../images/page-templates/about/company/hero.jpg');*/
 }
 /* Sections */
-.container.company .row.company {
+.container.company .row.section {
     background-color:#f4f4f4;
     padding:3em 0 5em 0;
 }
-.container.company .row.company.padded {
-    padding-top:176px;
-}
-.container.company .row.company .columns.twelve {
+.container.company .row.section .columns.twelve {
     position:relative;
 }
-.container.company .row.company .columns.twelve h2 {
+.container.company .row.section .columns.twelve h2 {
     font-size:2em;
     font-weight:500;
     line-height:1.15em;
@@ -22,7 +19,7 @@
     text-align:center;
     margin:0 0 1.5em 0;
 }
-.container.company .row.company .columns.twelve p.description {
+.container.company .row.section .columns.twelve p.description {
     font-size:1.25em;
     font-weight:300;
     text-align:center;
@@ -30,25 +27,58 @@
     margin:0 0 3em 0;
     line-height:1.35em;
 }
-.container.company .row.company .columns.twelve .left {
+.container.company .row.section .columns.twelve .left {
     position:absolute;
     right:70%;
     bottom:38%;
     width:250px;
 }
-.container.company .row.company .columns.twelve .left p.information {
+.container.company .row.section .columns.twelve .left p.information {
     font-size:1.1em;
     line-height:1.5em;
     font-weight:300;
     text-align:left;
     color:#666;
 }
-.container.company .row.company .columns.twelve img {
+.container.company .row.section .columns.twelve img {
     width:780px;
     float:right;
 }
-.container.company .row.company.lighthouse {
+.container.company .row.section.mission {
+    background-color:#fff;
+}
+.container.company .row.section.lighthouse {
     background-image:url('../../../images/page-templates/about/company/lighthouse.jpg');
     height:900px;
     background-size:cover;
+}
+.container.company .row.section.lighthouse .columns.twelve .quote {
+    float:left;
+    width:600px;
+    margin:60px 0 0 0;
+}
+.container.company .row.section.lighthouse .columns.twelve .quote .opening-quote-mark {
+    float:left;
+    width:100%;
+    font-weight:700;
+    font-size:140px;
+}
+.container.company .row.section.lighthouse .columns.twelve .quote .message {
+    float:left;
+    width:100%;
+    font-size:44px;
+    font-weight:600;
+    line-height:54px;
+    margin:10px 0 0 0;
+}
+.container.company .row.section.lighthouse .columns.twelve .quote .credentials {
+    float:left;
+    width:100%;
+    font-size:34px;
+    line-height:39px;
+    font-weight:600;
+    margin:40px 0 0 0;
+}
+.container.company .row.section.lighthouse .columns.twelve .quote .credentials .name {
+    text-transform:uppercase;
 }

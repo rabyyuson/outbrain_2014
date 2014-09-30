@@ -108,3 +108,65 @@
 .container.legal .row.sub-navigation.first-level .columns.twelve .columns.four a {
     background-image:url('../../../images/page-templates/legal/navigation/company.png');
 }
+
+/* Sub-Navigation Second Level */
+.container.legal .row.sub-navigation.second-level {
+    display:none;
+    top:0;
+    position:fixed;
+    z-index:10;
+    background-color:#fff;
+    border-top:8px solid #f08431;
+    border-bottom:3px solid #ddd;
+    transition:top 0.1s ease-in-out;
+    background-color:#fff;
+}
+.container.legal .row.sub-navigation.second-level.show {
+    display:block;
+}
+.container.legal .row.sub-navigation.second-level.hide {
+    display:none;
+}
+.container.legal .row.sub-navigation.second-level .columns.twelve {
+    position:relative;
+}
+.container.legal .row.sub-navigation.second-level .columns.twelve .indicator {
+    width:0;
+    height:0;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-top:10px solid #f08431;
+    position:absolute;
+    top:0;
+    left:15.5%;
+    background:transparent;
+    transition:left 0.2s ease-in-out;
+}
+.container.legal .row.sub-navigation.second-level .columns.twelve .indicator.page-privacy-713 {
+    left:36.5%;
+}
+.container.legal .row.sub-navigation.second-level .columns.twelve .indicator.page-tos {
+    left:61.5%;
+}
+.container.legal .row.sub-navigation.second-level .columns.twelve .indicator.page-customer-terms {
+    left:86%;
+}
+.container.legal .row.sub-navigation.second-level .columns.twelve .columns {
+    text-align:center;
+    display:block;
+    margin:0 auto;
+}
+.container.legal .row.sub-navigation.second-level .columns.twelve .columns img {
+    width:100px;
+}
+.container.legal .row.sub-navigation.second-level .columns.twelve .columns a {
+    float:left;
+    width:100%;
+    padding:1.25em 0;
+    color:#000;
+    font-size:1.1em;
+    text-transform:uppercase;
+}
+.container.legal .row.navigation-clip.padded {
+    padding-top:176px;
+}

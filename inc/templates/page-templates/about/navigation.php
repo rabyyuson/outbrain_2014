@@ -33,3 +33,30 @@
         </div>
     </div>
 </div>
+<div class="row sub-navigation second-level">
+    <div class="inner clearfix">
+        <div class="columns twelve">
+            <span class="indicator page-<?php echo ( $wp_query->query_vars['pagename'] ); ?>"></span>
+            <div class="columns two logo">
+                <a href="<?php echo get_home_url(); ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/global/logo.png" alt="Outbrain Logo" />
+                </a>
+            </div>
+            <div class="columns two company">
+                <a href="javascript:void(0)" class="nav-link">Company</a>
+            </div>
+            <div class="columns two leadership">
+                <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Team' ) ) ); ?>" class="nav-link">Leadership</a>
+            </div>
+            <div class="columns two offices">
+                <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Offices' ) ) ); ?>" class="nav-link">Offices</a>
+            </div>
+            <div class="columns two careers">
+                <a href="javascript:void(0)" class="nav-link" data-jump="fourth">Careers</a>
+            </div>
+            <div class="columns two press">
+                <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Press' ) ) ); ?>" class="nav-link">Press</a>
+            </div>
+        </div>
+    </div>
+</div>

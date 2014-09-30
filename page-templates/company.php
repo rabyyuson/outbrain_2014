@@ -10,7 +10,7 @@
  */
 
 get_header(); ?>
-<div class="container page-template about company" role="main">
+<div class="container about company" role="main">
     <div class="row hero">
         <div class="inner clearfix">
             <div class="columns twelve">
@@ -24,23 +24,23 @@ get_header(); ?>
         // Reference the about page template navigation menu
         include_once( TEMPLATEPATH . '/inc/templates/page-templates/about/navigation.php' );
     ?>
-    <div class="row company">
+    <div class="row section navigation-clip">
         <div class="inner clearfix">
             <div class="columns twelve">
-                <h2 class="title">Lorem Ipsum</h2>
+                <h2 class="title">We Are Discovery</h2>
                 <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit consequat lorem vitae efficitur. Vestibulum sit amet libero tempus, sollicitudin lectus ac, lobortis quam. Quisque in ornare felis. Quisque dapibus enim id interdum tincidunt. Vivamus pellentesque egestas luctus.
+                    Outbrain built and operates the world's largest content discovery platform, helping people to discover interesting, relevant, and trusted content wherever they are. Our technology delights readers, drives engagement, creates revenue and delivers consumer insight, reaching an audience of more than 550 million people around the globe each month.
                 </p>
                 <iframe src="//www.youtube.com/embed/kBTYzbT2VsQ" style="width:100%;height:550px;" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
-    <div class="row company" style="background-color:#fff;">
+    <div class="row section mission">
         <div class="inner clearfix">
             <div class="columns twelve">
-                <h2 class="title">Mission</h2>
+                <h2 class="title">Creators of the Category</h2>
                 <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit consequat lorem vitae efficitur. Vestibulum sit amet libero tempus, sollicitudin lectus ac, lobortis quam. Quisque in ornare felis. Quisque dapibus enim id interdum tincidunt. Vivamus pellentesque egestas luctus.
+                    Established in 2006, our founders' vision was to recreate the magic of a magazine, a place where each turn of the page provides an opportunity to delight audiences, generate meaningful revenue for publishers and be a place where brands could tell their stories beyond the boxes of online advertising. Today, our programming platform powers online content for many of the world's leading media properties, including CNN, FoxNews, ESPN, The Guardian and The Times of India.
                     <div style="float:left;width:100%;">
                         <a href="#" style="background-color:#2ca5c3;display:block;width:20%;text-align:center;margin:0 auto;color:#fff;font-weight:600;padding:0.5em 1.5em;font-size:1.15em;text-transform:capitalize;text-decoration:none;border-bottom:3px solid #bdbdbd;">Join Us!</a>
                     </div>
@@ -48,9 +48,19 @@ get_header(); ?>
             </div>
         </div>
     </div>
-    <div class="row company lighthouse">
+    <div class="row section lighthouse">
         <div class="inner clearfix">
             <div class="columns twelve">
+                <div class="quote">
+                    <div class="opening-quote-mark">"</div>
+                    <div class="message">
+                        Lipsum dolor sit amet, consectetur adipiscing elit. Mauris varius dictum massa. Vivamus nec massa rhoncus mauris laoreet lacinia. Lorem ipsum dolor sit amet.
+                    </div>
+                    <div class="credentials">
+                        <div class="name">Jane Smith</div>
+                        <div class="title">Director Lorem Ipsum, Outbrain</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

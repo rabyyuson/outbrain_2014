@@ -10,7 +10,7 @@
  */
 
 get_header(); ?>
-<div class="container page-template about press" role="main">
+<div class="container about press" role="main">
     <div class="row hero">
         <div class="inner clearfix">
             <div class="columns twelve">
@@ -24,12 +24,12 @@ get_header(); ?>
         // Reference the about page template navigation menu
         include_once( TEMPLATEPATH . '/inc/templates/page-templates/about/navigation.php' );
     ?>
-    <div class="row listing">
+    <div class="row listing navigation-clip">
         <div class="inner clearfix">
             <div class="columns twelve">
                 <h2 class="title">Press Lorem Ipsum</h2>
                 <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit consequat lorem vitae efficitur. Vestibulum sit amet libero tempus, sollicitudin lectus ac, lobortis quam. Quisque in ornare felis. Quisque dapibus enim id interdum tincidunt. Vivamus pellentesque egestas luctus.
+                    Here's a selection of what people have had to say about us. For press inquiries, here's the best way to <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact' ) ) ); ?>">contact us</a>.
                 </p>
                 <ul class="entries">
                 <?php
@@ -47,20 +47,22 @@ get_header(); ?>
                         if( function_exists( 'get_fields' ) ):
                             $content = get_fields( $v->ID );
                 ?>
-                            <a href="<?php echo $content['link']; ?>" target="_blank" class="entry">
-                                <img class="image" src="<?php echo $content['image']; ?>" />
-                                <div class="copy">
-                                    <div class="date">
-                                        <?php echo mysql2date( get_option('date_format'), $v->post_date ); ?>
+                            <li>
+                                <a href="<?php echo $content['link']; ?>" target="_blank" class="entry">
+                                    <img class="image" src="<?php echo $content['image']; ?>" />
+                                    <div class="copy">
+                                        <div class="date">
+                                            <?php echo mysql2date( get_option('date_format'), $v->post_date ); ?>
+                                        </div>
+                                        <div class="title">
+                                            <?php echo $v->post_title; ?>
+                                        </div>
+                                        <div class="body">
+                                            <?php echo strip_tags( $content['content'] ); ?>
+                                        </div>
                                     </div>
-                                    <div class="title">
-                                        <?php echo $v->post_title; ?>
-                                    </div>
-                                    <div class="body">
-                                        <?php echo strip_tags( $content['content'] ); ?>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </li>
                 <?php
                         else:
                             echo 'Please activate the Advanced Custom Fields plugin first!';

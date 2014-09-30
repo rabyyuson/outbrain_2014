@@ -49,13 +49,13 @@
 }
 .container.team .row.people .columns.twelve .section ul li img {
     float:left;
-    width:30%;
+    width:20%;
 }
 .container.team .row.people .columns.twelve .section ul li .information {
     float:right;
     font-size:1.15em;
     color:#666;
-    width:70%;
+    width:80%;
     padding-left:60px;
 }
 .container.team .row.people .columns.twelve .section ul li .information .name,
