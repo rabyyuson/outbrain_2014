@@ -289,6 +289,12 @@ input, select, textarea {
     float:left;
     margin:0 0 1.5em 0;
 }
+.container .registration .inner .intro-copy {
+    float:left;
+    width:100%;
+    font-size:18px;
+    margin:0.5em 0 0.75em 0;
+}
 .container .registration .inner form .field.submit input[type=submit] {
     width:100%;
     padding:0.5em 0;

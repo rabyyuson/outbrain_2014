@@ -12,7 +12,7 @@
 $accounts['data'] = get_the_terms( $post->ID, 'webinar-account' );
 
 // Check to see if there are multiple accounts associated with this webinar..
-( count( $accounts['data'] ) > 1 ? call_user_func(function(){ echo 'You use multiple accounts! Please only use one and then try again!'; return; }) : false );
+( count( $accounts['data'] ) > 1 ? call_user_func( function(){ echo 'You use multiple accounts! Please only use one and then try again!'; return; }) : false );
 
 // Loop through the accounts adata and look for the category id..
 foreach( $accounts['data'] as $k => $v ){ $accounts['term_id'] = $v->term_id; }
@@ -25,7 +25,7 @@ $post_meta = get_post_meta( $post->ID, 'post_webinar_metabox-' . $post->ID, true
 $post_meta = json_decode($post_meta);
 
 // Require files..
-require_once get_template_directory() . '/inc/webinar/classes/GoToWebinar.php';
+require_once get_template_directory() . '/inc/addons/webinar/classes/GoToWebinar.php';
 
 // Create a new GoToWebinar object and pass the user supplied information..
 $webinar = new \Outbrain\Classes\GoToWebinar( array(
@@ -46,7 +46,7 @@ $webinar = new \Outbrain\Classes\GoToWebinar( array(
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
     <meta NAME="robotos" CONTENT="noindex, nofollow">
     <title>Webinar: <?php echo $webinar->get_the_title(); ?></title>
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/inc/webinar/css/style.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/css/style.min.css" />
     <script src="http://use.typekit.net/xsa6cds.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
 </head>
@@ -150,17 +150,22 @@ $webinar = new \Outbrain\Classes\GoToWebinar( array(
                         </div>
                     </div>
                     <div class="content">
-                        <?php echo replace_private_links( wpautop( $post->post_content ) ); ?>
+                        <?php echo $post->post_content; ?>
                     </div>
                 <?php else: ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/inc/webinar/images/minion.jpg" />
+                <img src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/images/minion.jpg" />
                 <?php endif; ?>
             </div>
         </div>
         <div class="registration">
             <div class="inner">
-                <img class="logo" src="<?php echo get_template_directory_uri(); ?>/inc/webinar/images/outbrain-logo.png" />
-                <?php 
+                <img class="logo" src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/images/outbrain-logo.png" />
+                <?php if( $post_meta->webinar_summarytext_tinymce ): ?>
+                    <div class="intro-copy">
+                        <?php echo $post_meta->webinar_summarytext_tinymce; ?>
+                    </div>
+                <?php
+                    endif;
                     $validate = $webinar->validate_the_registration_form( $_POST );
                     if( $validate['status'] ): echo $validate['html']; else: echo $validate['html'];
                 ?>
@@ -172,8 +177,8 @@ $webinar = new \Outbrain\Classes\GoToWebinar( array(
         </div>
     </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/inc/webinar/library/moment/moment.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/inc/webinar/library/moment/moment-timezone.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/inc/webinar/js/script.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/library/moment/moment.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/library/moment/moment-timezone.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/js/script.min.js"></script>
 </body>
 </html>

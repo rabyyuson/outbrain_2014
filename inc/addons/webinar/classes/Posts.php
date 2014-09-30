@@ -75,7 +75,21 @@ function webinars_render_meta_box_content( $post ) {
         <div>
             <input type="text" name="submitBtnTxt" value="<?php echo ( $post_webinar_metabox->submitBtnTxt ? $post_webinar_metabox->submitBtnTxt : 'Register Me' ); ?>"  style="width:100% !important" />
         </div>
-        <p>3. Error Message</p>
+        <p>3. Summary Text</p>
+        <?php 
+            if( $post_webinar_metabox->webinar_summarytext_tinymce ){
+                $summarytext_content = $post_webinar_metabox->webinar_summarytext_tinymce;
+            }
+            wp_editor( $summarytext_content, 'webinar_summarytext_tinymce', array(
+                'wpautop' => true,
+                'media_buttons' => true,
+                'textarea_rows' => 10,
+                'tinymce' => true,
+                'quicktags' => true,
+                'drag_drop_upload' => true
+            ) );
+        ?>
+        <p>4. Error Message</p>
         <?php 
             if( $post_webinar_metabox->webinar_error_tinymce ){
                 $error_content = $post_webinar_metabox->webinar_error_tinymce;
@@ -92,7 +106,7 @@ function webinars_render_meta_box_content( $post ) {
                 'drag_drop_upload' => true
             ) );
         ?>
-        <p>4. Success Message</p>
+        <p>5. Success Message</p>
         <?php 
             if( $post_webinar_metabox->webinar_success_tinymce ){
                 $success_content = $post_webinar_metabox->webinar_success_tinymce;
@@ -157,6 +171,7 @@ function webinars_save_post( $post_id ) {
    $mydata = array(
        'webinarKey' => $_POST['webinarKey'],
        'submitBtnTxt' => $_POST['submitBtnTxt'],
+       'webinar_summarytext_tinymce' => stripslashes(str_replace($search,$replace,$_POST['webinar_summarytext_tinymce'])),
        'webinar_error_tinymce' => stripslashes(str_replace($search,$replace,$_POST['webinar_error_tinymce'])),
        'webinar_success_tinymce' => stripslashes(str_replace($search,$replace,$_POST['webinar_success_tinymce'])),
    );

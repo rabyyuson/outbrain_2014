@@ -315,7 +315,7 @@ class GoToWebinar {
 
                         // Find out if a field is an <INPUT> text field
                         if( ! isset( $v1['answers'] ) ){
-                            $html .= '<input ' . ( strtolower( $v1['field'] ) === 'email' ? 'type="email"' : 'type="text"' ) . ' id="' . $v1['field'] . '" name="' . $v1['field'] . '" value="' . $_post[ $v1['field'] ] . '" maxlength="' . $v1['maxSize'] . '" ' . ( $v1['required'] ? 'required' : null ) . ' /> ';
+                            $html .= '<input ' . ( strtolower( $v1['field'] ) === 'email' ? 'type="email"' : 'type="text"' ) . ' id="' . $v1['field'] . '" name="' . $v1['field'] . '" value="' . ( strtolower( $v1['field'] === 'email' && $_GET['email'] ? $_GET['email'] : $_post[ $v1['field'] ] ) ) . '" maxlength="' . $v1['maxSize'] . '" ' . ( $v1['required'] ? 'required' : null ) . ' /> ';
                         }
 
                         // Find out if a field is an <SELECT> options field

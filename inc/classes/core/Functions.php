@@ -28,6 +28,7 @@ class Functions {
      * @return null
      */
     public function after_setup_theme() {
+                
         
         /********************************************
          * Theme Support
@@ -41,14 +42,32 @@ class Functions {
          * Images
          ********************************************/
             
-        set_post_thumbnail_size( 50, 50, TRUE );
+        // Add Image Size
+        
         add_image_size( 'category-thumb', 300, 9999, TRUE );
+        
+        // Set Post Thumbnail Size
+        
+        set_post_thumbnail_size( 50, 50, TRUE );
             
             
         /********************************************
          * Actions
          ********************************************/
             
+        // Add action.
+
+        add_action( 'admin_head', array( Functions::get_class_full_name(), 'webinar_editor_style' ) );
+        add_action( 'admin_menu', array( Functions::get_class_full_name(), 'register_webinar_help_page' ) );
+        add_action( 'wp_enqueue_scripts', array( Functions::get_class_full_name(), 'wp_enqueue_scripts' ) );
+        add_action( 'widgets_init', array( Functions::get_class_full_name(), 'widgets_init' ) );
+        add_action( 'admin_menu', function(){
+            add_submenu_page( 'edit.php?post_type=webinars', 'Help', 'Help', 'edit_posts', 'webinar-help-page', function(){
+                include( TEMPLATEPATH . '/inc/addons/webinar/help/how-to-create-an-outbrainy-webinar.php');
+            } );
+        } );
+
+        
         // Remove action.
         
         remove_action( 'wp_head', 'wp_generator' );
@@ -58,6 +77,11 @@ class Functions {
          * Filters
          ********************************************/
 
+        // Add filter.
+        
+        add_filter( 'default_content', 'webinar_default_content', 10, 2 );
+        add_filter( 'the_content', array( Functions::get_class_full_name(), 'replace_public_links' ) );
+        
         // Remove filter.
         
         remove_filter('template_redirect', 'redirect_canonical');
@@ -405,21 +429,9 @@ class Functions {
      * @return boolean
      */
     public function is_blog () {
-        global  $post;
+        global $post;
         $posttype = get_post_type( $post );
-        return 
-            ( 
-                ( 
-                    ( is_archive() ) || 
-                    ( is_author() ) || 
-                    ( is_category() ) || 
-                    ( is_home() ) || 
-                    ( is_single() ) || 
-                    ( is_tag() )
-                ) 
-                && 
-                ( $posttype == 'post' )
-            ) ? true : false;
+        return ( ( ( is_archive() ) || ( is_author() ) || ( is_category() ) || ( is_home() ) || ( is_single() ) || ( is_tag() ) ) && ( $posttype == 'post' ) ) ? true : false;
     }
     
     /**
@@ -541,24 +553,57 @@ class Functions {
             'next_text' => __( 'Next Page &rsaquo;', 'yarongalai' ),
 	) );
 
-	if ( $links ) : ?>
-            <nav class="pagination" role="navigation">
-                <?php echo $links; ?>
-            </nav>
-        <?php
-        endif;
+	if ( $links ) {
+            $html = '<nav class="pagination" role="navigation">';
+                $html .= $links;
+            $html .= '</nav>';
+            echo $html;
+        }
+    }
+    
+    /**
+     * The default webinar editor content
+     * @param string $content
+     * @param object $post
+     * @return string
+     */
+    public function webinar_default_content( $content, $post ) {
+        
+        if( $post->post_type === 'webinars' ){
+            $content = '<div class="webinar-inner">';
+                $content .= '<div class="left">';
+                    $content .= '<div class="right">';
+                        $content .= '<ul>';
+                            $content .= '<li class="image">[ 155 x 155 IMG ]</li>';
+                            $content .= '<li class="name">[ Speaker Name ]</li>';
+                            $content .= '<li class="title">[ Title/Position ]</li>';
+                        $content .= '</ul>';
+                    $content .= '</div>';
+                    $content .= '<p>Enter the webinar\'s description information here...</p>';
+                    $content .= '<p>You can add some list here as well:</p>';
+                    $content .= '<ul>';
+                        $content .= '<li>Here\'s a sample item</li>';
+                        $content .= '<li>And here\'s another sample item</li>';
+                        $content .= '<li>And here\'s the last sample item</li>';
+                    $content .= '</ul>';
+                    $content .= '<p>Some more paragraph here...</p>';
+                $content .= '</div>';
+            $content .= '</div>';
+        }
+
+        return $content;
+    }
+    
+    /**
+     * Add the stylesheet for the webinar editor
+     * @global string $current_screen
+     */
+    public function webinar_editor_style() {
+        global $current_screen;
+        ( ( $current_screen->post_type === 'webinars' ) ? add_editor_style( 'inc/addons/webinar/css/editor_style.css' ) : false ); 
     }
     
 }
 
 // call the after theme setup method
 add_action( 'after_setup_theme', array( Functions::get_class_full_name(), 'after_setup_theme' ) );
-
-// call the script initializer method
-add_action( 'wp_enqueue_scripts', array( Functions::get_class_full_name(), 'wp_enqueue_scripts' ) );
-
-// call the widgets initialize method
-add_action( 'widgets_init', array( Functions::get_class_full_name(), 'widgets_init' ) );
-
-// Replace private links
-add_filter( 'the_content', array( Functions::get_class_full_name(), 'replace_public_links' ) );

@@ -31,44 +31,44 @@
 				<p>Log into <a href="https://global.gotowebinar.com/" target="_blank">GoToWebinar</a> and click the <b>Schedule a webinar</b> button.
 				<br/>Complete all fields (i.e. Title, Description, Start Date, Start Time, End Time, and Webinar Time Zone).
 				<br/>Click on the <b>Schedule</b> button.</p>
-                                <img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/webinar/help/images/schedule.jpg" />
+                                <img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/help/images/schedule.jpg" />
 			</li>
 			<li>
 				<p>Complete the remaining details of this webinar (e.g. add registration fields/questions, customize email, add polls/survey, etc.).. </p>
-				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/webinar/help/images/manage.jpg" />
+				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/help/images/manage.jpg" />
 			</li>
 			<li>
 				<a name="step3"></a>
 				<p>Focus your attention to the browser's address bar URL. Copy the webinar id (i.e. the number sequence located at the end of the address bar url) and store it somewhere (e.g. notepad). We will use this later when we start building the webinar from Wordpress.</p>
-				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/webinar/help/images/webinar_key.jpg" />
+				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/help/images/webinar_key.jpg" />
 			</li>
 			<li>
 				<p>Log into <a href="http://site-20000-prod-ladc1.ladc1.outbrain.com/wp-admin/" target="_blank">Wordpress</a> and click on the <b>Webinars</b> section.</p>
-				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/webinar/help/images/webinars.jpg" />
+				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/help/images/webinars.jpg" />
 			</li>
 			<li>
 				<a name="step5"></a>
 				<p>If you already have a GoToWebinar account, skip to <a href="#step6">step #6</a>, otherwise click on the <b>Setup Accounts</b> link.
 				<br/>
 				<b>Note:</b> You must have a valid GoToWebinar account set up in <a href="https://global.gotowebinar.com/" target="_blank">GoToWebinar's website</a> before setting up an account here. The details you enter here will only be used to connect to the GoToWebinar API.</p>
-				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/webinar/help/images/setupaccounts.jpg" />
+				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/help/images/setupaccounts.jpg" />
 				<p>
 					<ol type="a">
 						<li>
 							<p>Enter a <b>Name</b>, <b>Slug</b> <i>(the account name in lower case mode separated by dash)</i>, and <b>Description</b> of the GoToWebinar account.
 							Click on the <b>Add New Account</b> button.</p>
-							<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/webinar/help/images/gotowebinar-account.jpg" />
+							<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/help/images/gotowebinar-account.jpg" />
 						</li>
 						<li>
 							<p>Click on the newly created account name <b>link</b>.</p>
-							<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/webinar/help/images/created-account.jpg" />
+							<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/help/images/created-account.jpg" />
 						</li>
 						<li>
 							<p>Enter your <b>GoToWebinar Username</b> and <b>GoToWebinar Password</b>.
 							<br/>For the <b>GoToWebinar API Consumer Key</b>, copy and paste this value:  <span style="background-color:yellow">AckItiDoLAlqDAVvGQqNJFrwMdNJxP2b</span>.
 							<br/>Click on the <b>Update</b> button.
 							</p>
-							<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/webinar/help/images/edit-account.jpg" />
+							<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/help/images/edit-account.jpg" />
 						</li>
 					</ol>
 				</p>
@@ -76,7 +76,7 @@
 			<li>
 				<a name="step6"></a>
 				<p>Click on the <b>Add New</b> link.</p>
-				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/webinar/help/images/addnew.jpg" />
+				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/help/images/addnew.jpg" />
 			</li>
 			<li>
 				<p>
@@ -84,7 +84,7 @@
 				<br/>
 				Once complete, click on the <b>Publish/Update</b> button.
 				</p>
-				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/webinar/help/images/new-webinar.jpg" />
+				<img style="display:block;" src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/help/images/new-webinar.jpg" />
 				<p>
 					<ol>
 						<li><b>Title</b> - the webinar title</li>
