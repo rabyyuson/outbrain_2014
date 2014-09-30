@@ -16,29 +16,33 @@
         init : function(){
                        
             var 
-                more = $( '.container.press .row.listing .entries .more a' ),
+                entries = $( '.container.press .row.listing .entries' ),
                 data = {
                     counter : 1,
-                    fetch : true
+                    reach : 1,
+                    fetch : true,
+                    entries_height : function(){
+                        return entries.height();
+                    }
                 }, posts = {};
             
-            // Posts function
+            // Posts Get Data function
             // Load the articles through AJAX request
+            // Only perform the operation in this function if we have 
+            // succcessfully pulled information from the AJAX request.
             posts.get_data = function( data ){
                     
-                if( data.fetch ) {
+                if( ( data.reach === data.counter ) && data.fetch ) {
                     $.ajax({
                         url : document.URL + 'page/' + ( data.counter +=  1 ),
                         type : 'GET',
                         success : function( response ){
                             var
                                 entry = $( response ).contents().find( '.entry' );
-                            if( entry.length > 0 ) {
-                                data.fetch = true;
-                            } else {
-                                data.fetch = false;
-                            }
-                            console.log(entry)
+                            entries.append( entry );
+                            data.reach += 1;
+                            ( ( entry.length > 0 ) ? data.fetch = true : data.fetch = false );
+                            
                         }
                     });
                 }
@@ -49,25 +53,19 @@
             $( window ).scroll( function() {
 
                 var 
-                    win = {
-                        scroll_top : $( window ).scrollTop(),
-                        height: $( window ).height()
-                    };
-                    
-                console.log(win.scroll_top)
-                console.log(win.height * 0.9)
-                    
-                $.data( this, 'scrollTimer', setTimeout(function() {
+                    window_scroll_top = $( window ).scrollTop();
+                
+                // We use a different timeout data name for this press page since
+                // we cannot use "scrollTimer" value used in the global navigation.js file
+                clearTimeout( $.data( this, 'pressScrollTimer' ) );
+                
+                $.data( this, 'pressScrollTimer', setTimeout(function() {
 
                     // Show or hide the sub navigation panel
-                    if ( win.scroll_top > ( win.height * 0.9 ) ) {
-                        console.log('here')
-                        posts.get_data( data );
-                        
-                    } else {
-                        
-                          
-                    } 
+                    // If the height of the scrolled height is 70% of the total
+                    // entries height, then get the new entry elements and append
+                    // it to the entries container.
+                    ( window_scroll_top > ( ( data.entries_height() ) * 0.7 ) ? posts.get_data( data ) : false );
 
                 }, 10 ) );
                 

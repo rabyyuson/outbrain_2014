@@ -47,8 +47,8 @@ get_header(); ?>
                         if( function_exists( 'get_fields' ) ):
                             $content = get_fields( $v->ID );
                 ?>
-                            <li>
-                                <a href="<?php echo $content['link']; ?>" target="_blank" class="entry">
+                            <li class="entry">
+                                <a href="<?php echo $content['link']; ?>" target="_blank">
                                     <img class="image" src="<?php echo $content['image']; ?>" />
                                     <div class="copy">
                                         <div class="date">
@@ -69,9 +69,6 @@ get_header(); ?>
                         endif;
                     endforeach;
                 ?>
-                    <div class="more">
-                        <a href="javascript:void(0)">See More Articles</a>
-                    </div>
                 </ul>
             </div>
         </div>

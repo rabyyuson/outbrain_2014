@@ -29,6 +29,9 @@
     line-height:1.35em;
     border-bottom:1px solid rgba(0,0,0,0.15);
 }
+.container.press .row.listing .columns.twelve p.description a:hover {
+    text-decoration:underline;
+}
 .container.press .row.listing .entries {
     float:left;
     width:100%;
