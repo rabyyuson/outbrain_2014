@@ -18,9 +18,7 @@
             var 
                 entries = $( '.container.press .row.listing .entries' ),
                 data = {
-                    counter : 1,
-                    reach : 1,
-                    fetch : true,
+                    counter : 1, reach : 1, fetch : true,
                     entries_height : function(){
                         return entries.height();
                     }

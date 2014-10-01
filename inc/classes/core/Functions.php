@@ -63,7 +63,7 @@ class Functions {
         add_action( 'widgets_init', array( Functions::get_class_full_name(), 'widgets_init' ) );
         add_action( 'admin_menu', function(){
             add_submenu_page( 'edit.php?post_type=webinars', 'Help', 'Help', 'edit_posts', 'webinar-help-page', function(){
-                include( TEMPLATEPATH . '/inc/addons/webinar/help/how-to-create-an-outbrainy-webinar.php');
+                include( TEMPLATEPATH . '/inc/addons/webinar/help/how-to-create-an-outbrainy-webinar.php' );
             } );
         } );
 
@@ -467,6 +467,15 @@ class Functions {
         
         return $content;
         
+    }
+    
+    /**
+     * Expose the public link functionality
+     * @param string $content
+     * @return string
+     */
+    public static function get_replaced_public_links( $content ) {
+       return Functions::replace_public_links( $content );
     }
     
     /**

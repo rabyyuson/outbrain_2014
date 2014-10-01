@@ -150,7 +150,7 @@ $webinar = new \Outbrain\Classes\GoToWebinar( array(
                         </div>
                     </div>
                     <div class="content">
-                        <?php echo $post->post_content; ?>
+                        <?php echo \Outbrain\Classes\Core\Functions::get_replaced_public_links( wpautop( $post->post_content ) ); ?>
                     </div>
                 <?php else: ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/inc/addons/webinar/images/minion.jpg" />
