@@ -300,6 +300,7 @@ class Functions {
             wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'team-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/team.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/navigation.js', array(), null, TRUE );
+            wp_enqueue_script( 'team-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/team.js', array(), null, TRUE );
                
                 
         /********************************************
@@ -429,9 +430,11 @@ class Functions {
      * @return boolean
      */
     public function is_blog () {
+        
         global $post;
         $posttype = get_post_type( $post );
         return ( ( ( is_archive() ) || ( is_author() ) || ( is_category() ) || ( is_home() ) || ( is_single() ) || ( is_tag() ) ) && ( $posttype == 'post' ) ) ? true : false;
+        
     }
     
     /**
@@ -475,7 +478,9 @@ class Functions {
      * @return string
      */
     public static function get_replaced_public_links( $content ) {
+        
        return Functions::replace_public_links( $content );
+       
     }
     
     /**
@@ -485,14 +490,8 @@ class Functions {
     public static function get_kissmetrics_keys() {
        
        // Define the environments.
-       $km_stg = array(
-           'kissmetrics_key' => 'f66835a8bec819de96f432eadc55fc02fd810a57' ,
-           'script_source' => 'u2'
-       );
-       $km_prod = array(
-           'kissmetrics_key' => '789c08a013da3c28146d21b31603af344e16f6ef',
-           'script_source' => 'u'
-       );
+       $km_stg = array( 'kissmetrics_key' => 'f66835a8bec819de96f432eadc55fc02fd810a57', 'script_source' => 'u2' );
+       $km_prod = array( 'kissmetrics_key' => '789c08a013da3c28146d21b31603af344e16f6ef', 'script_source' => 'u' );
        
        // Define the mapping.
        $environments = array(
@@ -506,6 +505,7 @@ class Functions {
            'w.' => $km_prod,
            'site-20000' => $km_prod,
            'site-20001' => $km_prod,
+           
        );
        
        // Define the environment items array.
@@ -568,6 +568,7 @@ class Functions {
             $html .= '</nav>';
             echo $html;
         }
+        
     }
     
     /**
@@ -601,6 +602,7 @@ class Functions {
         }
 
         return $content;
+        
     }
     
     /**
@@ -608,8 +610,10 @@ class Functions {
      * @global string $current_screen
      */
     public function webinar_editor_style() {
+        
         global $current_screen;
         ( ( $current_screen->post_type === 'webinars' ) ? add_editor_style( 'inc/addons/webinar/css/editor_style.css' ) : false ); 
+        
     }
     
 }

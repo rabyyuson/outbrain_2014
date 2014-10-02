@@ -31,7 +31,7 @@ get_header(); ?>
                 <p class="description">
                     Outbrain built and operates the world's largest content discovery platform, helping people to discover interesting, relevant, and trusted content wherever they are. Our technology delights readers, drives engagement, creates revenue and delivers consumer insight, reaching an audience of more than 550 million people around the globe each month.
                 </p>
-                <iframe src="//www.youtube.com/embed/kBTYzbT2VsQ" style="width:100%;height:550px;" frameborder="0" allowfullscreen></iframe>
+                <iframe src="//player.vimeo.com/video/55541898" style="width:100%;height:550px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -54,11 +54,11 @@ get_header(); ?>
                 <div class="quote">
                     <div class="opening-quote-mark">"</div>
                     <div class="message">
-                        Lipsum dolor sit amet, consectetur adipiscing elit. Mauris varius dictum massa. Vivamus nec massa rhoncus mauris laoreet lacinia. Lorem ipsum dolor sit amet.
+                        Help people discover content that they can trust to be interesting, relevant and timely for them.
                     </div>
                     <div class="credentials">
-                        <div class="name">Jane Smith</div>
-                        <div class="title">Director Lorem Ipsum, Outbrain</div>
+                        <div class="name">Yaron Galai</div>
+                        <div class="title">Co-Founder & CEO, Outbrain</div>
                     </div>
                 </div>
             </div>
