@@ -43,7 +43,7 @@
                 </a>
             </div>
             <div class="columns two company">
-                <a href="javascript:void(0)" class="nav-link">Company</a>
+                <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Company' ) ) ); ?>" class="nav-link">Company</a>
             </div>
             <div class="columns two leadership">
                 <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Team' ) ) ); ?>" class="nav-link">Leadership</a>
