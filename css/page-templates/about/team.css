@@ -76,11 +76,30 @@
     margin-top:20px;
     line-height:26px;
     overflow:hidden;
+    transition:height 0.25s ease-in-out;
 }
-.container.team .row.people .columns.twelve .section ul li .information .read-more {
-    float:left;
-    width:100%;
-    border:1px dashed red;
+.container.team .row.people .columns.twelve .section ul li .information .biography.collapsed {
+    height:135px;
+}
+.container.team .row.people .columns.twelve .section ul li .information .read-more-container.show {
+    margin:0 0 0 0 !important;
+}
+.container.team .row.people .columns.twelve .section ul li .information .read-more-container {
+    float:right;
+    text-align:right;
+    padding:0 0 10px 10px;
+    background-color:#f4f4f4;
+    margin:-30px 0 0 0;
+}
+.container.team .row.people .columns.twelve .section ul li .information .read-more-container .ellipsis.hide {
+    display:none;
+}
+.container.team .row.people .columns.twelve .section ul li .information .read-more-container .read-more {
+    color:#f08431;
+    text-decoration:underline;
+}
+.container.team .row.people .columns.twelve .section ul li .information .read-more-container .read-more:hover {
+    color:#000;
 }
 .container.team .row.people .columns.twelve .section ul li .information .social {
     float:left;

@@ -84,8 +84,14 @@ body {
 html {
     background-color:#f1f2f3;
 }
+html.wf-loading {
+    visibility:hidden;
+}
+html.wf-active body {
+    font-family:"freight-sans-pro";
+}
 body {
-    font:100%/1.5em "freight-sans-pro",sans-serif;
+    font:100%/1.5em sans-serif;
 }
 
 /* Standardize and reset common style elements */
