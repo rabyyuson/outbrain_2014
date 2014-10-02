@@ -55,6 +55,7 @@
                             };
                         
                         // Click event handler for the "Read More" link
+                        // 
                         // If the link is clicked do the following actions:
                         // - Remove the 'collapsed' class from the biography node
                         // - Add the element's height on the biography node
@@ -62,6 +63,8 @@
                         // - Add a "show" class to the read_more_container node
                         // - Hide the ellipsis node
                         // - Change the text of the link to "Show Less"
+                        //
+                        // Else, reverse the process.
                         nodes.read_more.on( {
                             
                             click : function(){
