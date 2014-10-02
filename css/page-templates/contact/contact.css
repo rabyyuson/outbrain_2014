@@ -92,6 +92,11 @@
     float:left;
     width:100%;
     font-size:1.15em;
+    text-align:center;
+    text-transform:uppercase;
+    font-weight:700;
+    font-size:23px;
+    margin:20px 0 0 0;
 }
 .container.contact .row.content .columns.twelve .forms .form ul {
     float:left;

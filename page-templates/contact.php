@@ -30,7 +30,7 @@ get_header(); ?>
                         <option value="sales">Sales</option>
                         <option value="support">Support</option>
                         <option value="marketing">Marketing</option>
-                        <option value="other">Other</option>
+                        <option value="other">Someone Else</option>
                     </select>
                 </div>
                 <div class="forms">
