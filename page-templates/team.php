@@ -108,14 +108,37 @@ get_header(); ?>
                 </div>
                 <div class="section">
                     <h3>Board of Directors</h3>
-                    <ul>
+                    <ul class="board-of-directors">
                         <li>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/team/executive-team/yaron.jpg" />
                             <div class="information">
                                 <div class="name">Yaron Galai</div>
                                 <div class="title">Co-Founder & CEO</div>
                                 <div class="biography">
-                                    Yaron Galai is Co-Founder and Chief Executive Officer at Outbrain. Prior to founding Outbrain, Mr. Galai was Co-Founder, SVP of Quigo, Inc., a provider of performance-based marketing solutions for advertisers and premium publishers. He previously served as the CEO of the company for three years. Quigo was acquired by AOL in December 2007. Previously, Mr. Galai was Co-Founder & VP Business Development at Ad4ever, a developer of rich-media advertising technologies for the web which was later acquired by Atlas (a division of aQuantive).
+                                    Yaron Galai is Co-Founder and Chief Executive Officer at Outbrain. Prior to founding Outbrain, Mr. Galai was Co-Founder, SVP of Quigo, Inc., a provider of performance-based marketing solutions for advertisers and premium publishers. He previously served as the CEO of the company for three years. Quigo was acquired by AOL in December 2007. Previously, Mr. Galai was Co-Founder & VP Business Development at Ad4ever, a developer of rich-media advertising technologies for the web which was later acquired by Atlas (a division of aQuantive). Earlier, he was the Founder of NetWorks Web Design - an SEO and web design firm. At NetWorks he oversaw the production and search engine optimization of over 30 websites. Mr. Galai studied industrial design at the Holon Technological Institute, and is a Major (reserve) officer in the Israel Navy.
+                                </div>
+                                <div class="social">
+                                    <a href="javascript:void(0)">@yarongalai</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="information">
+                                <div class="name">Yaron Galai</div>
+                                <div class="title">Co-Founder & CEO</div>
+                                <div class="biography">
+                                    Yaron Galai is Co-Founder and Chief Executive Officer at Outbrain. Prior to founding Outbrain, Mr. Galai was Co-Founder, SVP of Quigo, Inc., a provider of performance-based marketing solutions for advertisers and premium publishers. He previously served as the CEO of the company for three years. Quigo was acquired by AOL in December 2007. Previously, Mr. Galai was Co-Founder & VP Business Development at Ad4ever, a developer of rich-media advertising technologies for the web which was later acquired by Atlas (a division of aQuantive). Earlier, he was the Founder of NetWorks Web Design - an SEO and web design firm. At NetWorks he oversaw the production and search engine optimization of over 30 websites. Mr. Galai studied industrial design at the Holon Technological Institute, and is a Major (reserve) officer in the Israel Navy.
+                                </div>
+                                <div class="social">
+                                    <a href="javascript:void(0)">@yarongalai</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="information">
+                                <div class="name">Yaron Galai</div>
+                                <div class="title">Co-Founder & CEO</div>
+                                <div class="biography">
+                                    Yaron Galai is Co-Founder and Chief Executive Officer at Outbrain. Prior to founding Outbrain, Mr. Galai was Co-Founder, SVP of Quigo, Inc., a provider of performance-based marketing solutions for advertisers and premium publishers. He previously served as the CEO of the company for three years. Quigo was acquired by AOL in December 2007. Previously, Mr. Galai was Co-Founder & VP Business Development at Ad4ever, a developer of rich-media advertising technologies for the web which was later acquired by Atlas (a division of aQuantive). Earlier, he was the Founder of NetWorks Web Design - an SEO and web design firm. At NetWorks he oversaw the production and search engine optimization of over 30 websites. Mr. Galai studied industrial design at the Holon Technological Institute, and is a Major (reserve) officer in the Israel Navy.
                                 </div>
                                 <div class="social">
                                     <a href="javascript:void(0)">@yarongalai</a>
