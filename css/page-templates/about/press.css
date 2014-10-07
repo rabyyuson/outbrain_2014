@@ -4,13 +4,13 @@
 }
 /* Entries Listing */
 .container.press .row.listing {
-    background-color:#f4f4f4;
+    background-color:#fff;
     padding:3em 0 5em 0;
 }
 .container.press .row.listing .columns.twelve {
     position:relative;
 }
-.container.press .row.listing .columns.twelve h2 {
+.container.press .row.listing .columns.twelve h3 {
     font-size:2em;
     font-weight:500;
     line-height:1.15em;
@@ -32,11 +32,11 @@
 .container.press .row.listing .columns.twelve p.description a:hover {
     text-decoration:underline;
 }
-.container.press .row.listing .entries {
+.container.press .row.listing .list .entries {
     float:left;
     width:100%;
 }
-.container.press .row.listing .entries .entry {
+.container.press .row.listing .list .entries .entry {
     float:left;
     width:100%;
     position:relative;
@@ -46,24 +46,24 @@
     border-bottom:1px solid rgba(0,0,0,0.15);
     transition:background-color 0.10s ease-in-out;
 }
-.container.press .row.listing .entries .entry:hover {
+.container.press .row.listing .list .entries .entry:hover {
     background-color:rgba(0,0,0,0.05);
 }
-.container.press .row.listing .entries .entry .date,
-.container.press .row.listing .entries .entry .title,
-.container.press .row.listing .entries .entry .body {
+.container.press .row.listing .list .entries .entry .date,
+.container.press .row.listing .list .entries .entry .title,
+.container.press .row.listing .list .entries .entry .body {
     transition:color 0.20s ease-in-out;
 }
-.container.press .row.listing .entries .entry:hover .date,
-.container.press .row.listing .entries .entry:hover .title,
-.container.press .row.listing .entries .entry:hover .body {
+.container.press .row.listing .list .entries .entry:hover .date,
+.container.press .row.listing .list .entries .entry:hover .title,
+.container.press .row.listing .list .entries .entry:hover .body {
     color:#000;
 }
-.container.press .row.listing .entries .entry .image {
+.container.press .row.listing .list .entries .entry .image {
     float:left;
     width:22%;
 }
-.container.press .row.listing .entries .entry .copy {
+.container.press .row.listing .list .entries .entry .copy {
     float:right;
     width:73%;
     padding-left:4.5%;
@@ -71,36 +71,36 @@
     color:#666;
     border-left:1px solid rgba(0,0,0,0.15);
 }
-.container.press .row.listing .entries .entry .copy .date {
+.container.press .row.listing .list .entries .entry .copy .date {
     float:left;
     width:100%;
     font-size:0.8em;
     text-transform:uppercase;
 }
-.container.press .row.listing .entries .entry .copy .title {
+.container.press .row.listing .list .entries .entry .copy .title {
     float:left;
     font-weight:600;
     width:100%;
     margin:5px 0 0 0;
 }
-.container.press .row.listing .entries .entry .copy .title a {
+.container.press .row.listing .list .entries .entry .copy .title a {
     font-size:1.05em;
 }
-.container.press .row.listing .entries .entry .copy .body {
+.container.press .row.listing .list .entries .entry .copy .body {
     float:left;
     width:100%;
     margin:10px 0 0 0;
     line-height:1.25em;
 }
-.container.press .row.listing .entries .entry .body p {
+.container.press .row.listing .list .entries .entry .body p {
     margin:0;
 }
-.container.press .row.listing .entries .more {
+.container.press .row.listing .list .entries .more {
     float:left;
     width:100%;
     margin:40px 0 0 0;
 }
-.container.press .row.listing .entries .more a {
+.container.press .row.listing .list .entries .more a {
     font-weight:600;
     font-size:1.25em;
     color:#fff;
@@ -115,10 +115,7 @@
     display:block;
     transition:background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 }
-.container.press .row.listing .entries .more a:hover {
+.container.press .row.listing .list .entries .more a:hover {
     background-color:#2ca5c3;
     color:#fff;
-}
-.page-template-page-templatespress-php footer .row.interests {
-    background-color:#fff;
 }

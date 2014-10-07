@@ -47,6 +47,9 @@
 .container.company .row.section.mission {
     background-color:#fff;
 }
+.container.company .row.section.mission .columns.twelve p.description {
+    margin-bottom:0;
+}
 .container.company .row.section.lighthouse {
     background-image:url('../../../images/page-templates/about/company/lighthouse.jpg');
     height:900px;

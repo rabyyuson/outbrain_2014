@@ -231,8 +231,8 @@ class Functions {
         
         } elseif( is_home() ) {
             
-//            wp_enqueue_style( 'blog-home-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
-//            wp_enqueue_style( 'blog-navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/navigation/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-header-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-home-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
 
             
         /********************************************

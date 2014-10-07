@@ -1,9 +1,38 @@
-/* Hero */
-.container.blog .row.hero {
-    /*background-image:url('../../../images/page-templates/about/company/hero.jpg');*/
+/* Content */
+.container.content .row .inner.clearfix {
+    border:1px dashed red;
 }
-/* Sections */
-.container.blog .row.content {
-    background-color:#f4f4f4;
-    padding:3em 0 5em 0;
+.container.content .row .inner.clearfix .columns.eight {
+    float:left;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .columns.eight article {
+    float:left;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .columns.eight article .title {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .columns.eight article .title a {
+    color:#000;
+    text-transform:uppercase;
+    font-size:36px;
+}
+.container.content .row .inner.clearfix .columns.eight article .meta {
+    float:left;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .columns.eight article .meta time {
+    float:left;
+    color:#a3a2a0;
+    border-right:2px solid #a3a2a0;
+    padding-right:10px;
+}
+.container.content .row .inner.clearfix .columns.eight article .meta .author {
+    float:left;
+}
+.container.content .row .inner.clearfix .columns.four {
+    float:right;
+    border:1px dashed red;
 }

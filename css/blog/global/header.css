@@ -1,0 +1,65 @@
+/* Global */
+.container .row .inner {
+    padding:0 5em !important;
+}
+
+/* Header */
+header.container .row {
+    border:1px dashed red;
+}
+header.container .row.head .inner.clearfix .columns.eight {
+    float:left;
+    border:1px dashed red;
+}
+header.container .row.head .inner.clearfix .columns.eight a img {
+    float:left;
+    border:1px dashed red;
+}
+header.container .row.head .inner.clearfix .columns.eight a .sub-title {
+    float:left;
+    border:1px dashed red;
+}
+header.container .row.head .inner.clearfix .columns.four {
+    float:right;
+    border:1px dashed red;
+}
+header.container .row.head .inner.clearfix .columns.four ul {
+    float:right;
+    border:1px dashed red;
+}
+header.container .row.head .inner.clearfix .columns.four ul li {
+    float:left;
+    border:1px dashed red;
+}
+header.container .row.sub-head .inner.clearfix .columns.seven h3 {
+    float:left;
+    border:1px dashed red;
+}
+header.container .row.sub-head .inner.clearfix .columns.seven ul {
+    float:left;
+    border:1px dashed red;
+}
+header.container .row.sub-head .inner.clearfix .columns.seven ul li {
+    float:left;
+    border:1px dashed red;
+}
+header.container .row.sub-head .inner.clearfix .columns.five {
+    float:right;
+    border:1px dashed red;
+}
+header.container .row.sub-head .inner.clearfix .columns.five ul {
+    float:right;
+    border:1px dashed red;
+}
+header.container .row.sub-head .inner.clearfix .columns.five ul li {
+    float:left;
+    border:1px dashed red;
+}
+header.container .row.breadcrumbs .inner.clearfix ul {
+    float:left;
+    border:1px dashed red;
+}
+header.container .row.breadcrumbs .inner.clearfix ul li {
+    float:left;
+    border:1px dashed red;
+}

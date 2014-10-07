@@ -9,15 +9,11 @@
  * -----------------------------------------------------------------------------
  */
 
-//get_header(); ?>
-<div class="container blog" role="main">
-    <?php
-        // Reference the about page template navigation menu
-        include_once( TEMPLATEPATH . '/inc/templates/blog/navigation.php' );
-    ?>
-    <div class="row content-wrapper">
+get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
+<div class="container content" role="main">
+    <div class="row">
         <div class="inner clearfix">
-            <div class="columns eight content">
+            <div class="columns eight">
                 <?php
                     // Loop through the posts and show them
                     if ( have_posts() ) :
@@ -33,7 +29,7 @@
                     endif;
                 ?>
             </div>
-            <div class="columns four sidebar">
+            <div class="columns four">
                 <?php
                     // Get the right content sidebar.
                     get_template_part( 'inc/templates/blog/sidebar-right' );
@@ -42,4 +38,6 @@
         </div>
     </div>
 </div>
-<?php // get_footer();
+<?php wp_footer(); ?>
+</body>
+</html>
