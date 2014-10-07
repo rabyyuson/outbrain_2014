@@ -41,9 +41,6 @@ get_header(); ?>
                 <h2 class="title">Creators of the Category</h2>
                 <p class="description">
                     Established in 2006, our founders' vision was to recreate the magic of a magazine, a place where each turn of the page provides an opportunity to delight audiences, generate meaningful revenue for publishers and be a place where brands could tell their stories beyond the boxes of online advertising. Today, our programming platform powers online content for many of the world's leading media properties, including CNN, FoxNews, ESPN, The Guardian and The Times of India.
-                    <div style="float:left;width:100%;">
-                        <a href="#" style="background-color:#2ca5c3;display:block;width:20%;text-align:center;margin:0 auto;color:#fff;font-weight:600;padding:0.5em 1.5em;font-size:1.15em;text-transform:capitalize;text-decoration:none;border-bottom:3px solid #bdbdbd;">Join Us!</a>
-                    </div>
                 </p>
             </div>
         </div>
