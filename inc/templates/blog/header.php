@@ -55,22 +55,18 @@
                 <div class="columns seven">
                     <h3>Featured Categories:</h3>
                     <ul>
-                        <li>
-                            <a href="javascript:void(0)">
-                                Category 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                Category 2
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                Category 3
-                            </a>
-                        </li>
-                    </ul>
+                    <?php
+                        $categories = get_categories();
+                        foreach( $categories as $k => $v ):
+                            $category_options = unserialize( get_option( 'category_meta_options_' . $v->term_id ) );
+                            if( (int)$category_options['feature_category'] === 1 ): ?>
+                                <li>
+                                    <a href="<?php echo get_category_link( $v->term_id ); ?>">
+                                        <?php echo $v->name; ?>
+                                    </a>
+                                </li>
+                    <?php   endif;
+                        endforeach;   ?>
                 </div>
                 <div class="columns five">
                     <ul>

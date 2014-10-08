@@ -43,12 +43,13 @@ class Functions {
          ********************************************/
             
         // Add Image Size
+        // Enforce Hard Crop mode
         
-        add_image_size( 'category-thumb', 300, 9999, TRUE );
+        add_image_size( 'featured-thumbnail', 340, 250, TRUE );
         
         // Set Post Thumbnail Size
         
-        set_post_thumbnail_size( 50, 50, TRUE );
+        set_post_thumbnail_size( 340, 250, TRUE );
             
             
         /********************************************
@@ -233,7 +234,7 @@ class Functions {
             
             wp_enqueue_style( 'blog-header-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'blog-home-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
-
+            wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
             
         /********************************************
          * Page

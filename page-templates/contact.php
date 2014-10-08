@@ -29,7 +29,7 @@ get_header(); ?>
                         <option>Choose one</option>
                         <option value="sales">Sales</option>
                         <option value="support">Support</option>
-                        <option value="marketing">Marketing</option>
+                        <?php /* ?><option value="marketing">Marketing</option><?php */ ?>
                         <option value="other">Someone Else</option>
                     </select>
                 </div>
@@ -40,9 +40,11 @@ get_header(); ?>
                     <div class="form support">
                         <?php gravity_form(13, false, false, false, null, true, 2); ?>
                     </div>
+                    <?php /* ?>
                     <div class="form marketing">
                         <?php gravity_form(12, false, false, false, null, true, 3); ?>
                     </div>
+                    <?php */ ?>
                     <div class="form other">
                         <?php gravity_form(14, false, false, false, null, true, 4); ?>
                     </div>

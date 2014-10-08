@@ -17,7 +17,8 @@
 .container.content .row .inner.clearfix .columns.eight article .title a {
     color:#000;
     text-transform:uppercase;
-    font-size:36px;
+    font-size:34px;
+    font-weight:600;
 }
 .container.content .row .inner.clearfix .columns.eight article .meta {
     float:left;
@@ -31,6 +32,53 @@
 }
 .container.content .row .inner.clearfix .columns.eight article .meta .author {
     float:left;
+}
+.container.content .row .inner.clearfix .columns.eight article .information {
+    float:left;
+    width:100%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .featured-image {
+    float:left;
+    border:1px dashed red;
+    width:340px;
+    height:250px;
+}
+.container.content .row .inner.clearfix .columns.eight article .information img {
+    display:block;
+    margin:0 auto;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content {
+    float:right;
+    width:50%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .excerpt {
+    float:left;
+    width:100%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .social {
+    float:left;
+    width:100%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .social .networks {
+    float:left;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .social .networks li {
+    float:left;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .social .count {
+    float:left;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .read-more {
+    float:left;
+    width:100%;
+    border:1px dashed red;
 }
 .container.content .row .inner.clearfix .columns.four {
     float:right;
