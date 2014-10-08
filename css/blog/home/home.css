@@ -80,6 +80,9 @@
     width:100%;
     border:1px dashed red;
 }
+.container.content .row .inner.clearfix .columns.eight .pagination {
+    height:0;
+}
 .container.content .row .inner.clearfix .columns.four {
     float:right;
     border:1px dashed red;

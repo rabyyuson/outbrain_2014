@@ -563,12 +563,15 @@ class Functions {
             'next_text' => __( 'Next Page &rsaquo;', 'yarongalai' ),
 	) );
 
+        $html = '';
+        
 	if ( $links ) {
             $html = '<nav class="pagination" role="navigation">';
                 $html .= $links;
             $html .= '</nav>';
-            echo $html;
         }
+        
+        return $html;
         
     }
     
