@@ -1,5 +1,10 @@
 /**
- * The homepage js.
+ * Homepage JS
+ *
+ * The homepage/frontpage js
+ * @url: www.outbrain.com
+ *
+ * -----------------------------------------------------------------------------
  */
 ;(function($){
    

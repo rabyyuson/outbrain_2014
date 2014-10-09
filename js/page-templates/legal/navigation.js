@@ -1,4 +1,3 @@
-
 /**
  * The Navigation Menu JS for the Legal  page
  * 
@@ -7,7 +6,6 @@
  * 
  * -----------------------------------------------------------------------------
  */
-
 ;(function($){
    
    // Localize the navigation menu object. 

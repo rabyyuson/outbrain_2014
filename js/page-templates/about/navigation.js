@@ -1,13 +1,11 @@
-
 /**
  * The Navigation Menu JS for the About page
- * 
+ *
  * The global navigation menu JS file for the About page.
  * @url: www.outbrain.com/about/{page}
- * 
+ *
  * -----------------------------------------------------------------------------
  */
-
 ;(function($){
    
    // Localize the navigation menu object. 

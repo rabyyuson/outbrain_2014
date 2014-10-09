@@ -1,5 +1,10 @@
 /**
- * The header js.
+ * Header (Blog) JS
+ *
+ * The global header js for the blog
+ * @url: www.outbrain.com/blog
+ *
+ * -----------------------------------------------------------------------------
  */
 ;(function($){
    

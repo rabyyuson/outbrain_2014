@@ -1,4 +1,3 @@
-
 /**
  * The Guidelines Page JS
  * 
@@ -7,7 +6,6 @@
  * 
  * -----------------------------------------------------------------------------
  */
-
 ;(function($){
    
    // Localize the frontpage object. 

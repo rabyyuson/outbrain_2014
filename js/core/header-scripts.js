@@ -1,3 +1,11 @@
+/**
+ * Global Header JS
+ *
+ * Global third-party javascript libraries
+ * @url: www.outbrain.com
+ *
+ * -----------------------------------------------------------------------------
+ */
 
 /********************************************
  * Google Tag Manager

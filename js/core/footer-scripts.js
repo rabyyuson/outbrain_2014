@@ -1,3 +1,11 @@
+/**
+ * Global Footer JS
+ *
+ * Global third-party javascript libraries
+ * @url: www.outbrain.com
+ *
+ * -----------------------------------------------------------------------------
+ */
 
 /********************************************
  * Facebook JS
