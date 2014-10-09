@@ -40,19 +40,43 @@
                 </div>
                 <nav class="columns four">
                     <ul>
-                        <li><a href="javascript:void(0)">[ F ]</a></li>
-                        <li><a href="javascript:void(0)">[ T ]</a></li>
-                        <li><a href="javascript:void(0)">[ G ]</a></li>
-                        <li><a href="javascript:void(0)">[ I ]</a></li>
-                        <li><a href="javascript:void(0)">[ Y ]</a></li>
-                        <li><a href="javascript:void(0)">[ P ]</a></li>
+                        <li>
+                            <a href="http://facebook.com/outbrain" target="_blank">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-facebook.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://twitter.com/outbrain" target="_blank">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-twitter.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/+outbrain" target="_blank">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-googleplus.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/outbrain" target="_blank">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-linkedin.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/user/ContentDiscovery" target="_blank">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-youtube.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.pinterest.com/outbrain/" target="_blank">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-pinterest.png" />
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </div>
         <div class="row sub-head">
             <div class="inner clearfix">
-                <div class="columns seven">
+                <div class="columns eight">
                     <h3>Featured Categories:</h3>
                     <ul>
                     <?php
@@ -68,14 +92,14 @@
                     <?php   endif;
                         endforeach;   ?>
                 </div>
-                <div class="columns five">
+                <div class="columns four">
                     <ul>
                         <li>
                             <a href="<?php echo get_home_url(); ?>">
                                 Outbrain Home
                             </a>
                         </li> 
-                        <li>
+                        <li class="active">
                             <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Amplify' ) ) ); ?>">
                                 Amplify
                             </a>
@@ -95,7 +119,7 @@
                                 Contact
                             </a>
                         </li>
-                        <li>
+                        <li class="last">
                             <a href="http://help.outbrain.com/" target="_blank">
                                 Help
                             </a>
@@ -110,6 +134,11 @@
                     <li>
                         <a href="javascript:void(0)">
                             Blog Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            Level 1 Crumb
                         </a>
                     </li>
                 </ul>

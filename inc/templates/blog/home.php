@@ -28,35 +28,50 @@
     </div>
     <div class="information">
         <div class="featured-image">
-            <?php echo ( has_post_thumbnail() ? get_the_post_thumbnail( null, 'featured-thumbnail', '' ) : false ); ?>
+            <?php echo ( has_post_thumbnail() ? '<a href="' . get_the_permalink() . '">'. get_the_post_thumbnail( null, 'featured-thumbnail', '' ) . '</a>' : false ); ?>
         </div>
         <div class="content">
             <div class="excerpt">
                 <?php
-                    if( (int)count( explode( ' ', get_the_excerpt() ) ) > 30 ){
-                        $content = explode( ' ', get_the_excerpt(), ( 30 ) );
-                        if( (int)strpos( $content[0], '&nbsp' ) === 0 ) {
-                            unset( $content[0] );
-                        }
-                        array_pop( $content );
-                        echo implode( ' ', $content ) . '...';
-                    } else {
-                        echo get_the_excerpt();
+                    // Get the excerpt and limit the string out to 200
+                    $excerpt = explode( ' ',get_the_excerpt() );
+                    if( (int)strpos( $excerpt[0], '&nbsp' ) === 0 ) {
+                        unset( $excerpt[0] );
                     }
+                    echo substr( implode( ' ', $excerpt ), 0, 220 ) . '...';
                 ?>
             </div>
             <div class="social">
-                <ul class="networks">
-                    <li><a href="javascript:void(0)">[ F ]</a></li>
-                    <li><a href="javascript:void(0)">[ T ]</a></li>
-                    <li><a href="javascript:void(0)">[ G ]</a></li>
-                    <li><a href="javascript:void(0)">[ I ]</a></li>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-facebook.png" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-twitter.png" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-googleplus.png" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" target="_blank">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-linkedin.png" />
+                        </a>
+                    </li>
                 </ul>
                 <div class="count">Shares</div>
             </div>
             <div class="read-more">
-                <a href="<?php echo get_the_permalink(); ?>">Read More</a>
+                <a href="<?php echo get_the_permalink(); ?>">Read More &raquo;</a>
             </div>
         </div>
+    </div>
+    <div class="close">
+        <div class="dash"></div>
     </div>
 </article>
