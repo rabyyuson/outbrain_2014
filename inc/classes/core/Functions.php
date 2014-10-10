@@ -234,9 +234,10 @@ class Functions {
             
             wp_enqueue_style( 'blog-header-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'blog-home-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'blog-sidebar-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
-            
+            wp_enqueue_style( 'blog-sidebar-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
+                        
         /********************************************
          * Page
          ********************************************/

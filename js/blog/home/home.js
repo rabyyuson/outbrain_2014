@@ -69,23 +69,19 @@
                 var 
                     window_scroll_top = $( window ).scrollTop();
                 
-                clearTimeout( $.data( this, 'scrollTimer' ) );
+                clearTimeout( $.data( this, 'scroll_timer' ) );
                 
-                $.data( this, 'scrollTimer', setTimeout(function() {
+                $.data( this, 'scroll_timer', setTimeout(function() {
                     
                     // Show or hide the sub navigation panel
                     // If the height of the scrolled height is 70% of the total
                     // entries height, then get the new entry elements and append
                     // it to the entries container.
-                    ( window_scroll_top > ( ( data.entries_height() ) - 1000 ) ? posts.get_data( data ) : false );
+                    ( window_scroll_top > ( ( data.entries_height() ) - 1100 ) ? posts.get_data( data ) : false );
 
                 }, 10 ) );
                 
             } );
-            
-            
-            
-            
                                   
         }
        

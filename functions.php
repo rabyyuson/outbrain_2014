@@ -19,7 +19,6 @@ if ( ! function_exists( 'main' ) ) {
     
         /* Require Classes */
         require_once ( get_template_directory() . '/inc/classes/core/Functions.php' );
-        require_once ( get_template_directory() . '/inc/classes/core/Posts.php' );
         require_once ( get_template_directory() . '/inc/classes/core/Categories.php' );
         require_once ( get_template_directory() . '/inc/addons/webinar/classes/Categories.php' );
         require_once ( get_template_directory() . '/inc/addons/webinar/classes/Posts.php' );

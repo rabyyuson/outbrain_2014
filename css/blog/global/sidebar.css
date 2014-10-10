@@ -1,12 +1,18 @@
 /* Sidebar */
 .container.content .row .inner.clearfix .columns.four {
     float:right;
-    border:1px dashed red;
+    position:relative;
+}
+.container.content .row .inner.clearfix .columns.four.sticky .container {
+    position:fixed;
+    width:291px;
+    margin:0 0 0 72.5px;
+    top:45px;
 }
 .container.content .row .inner.clearfix .columns.four .container {
     float:right;
     width:80%;
-    border:1px dashed red;
+    background-color:transparent;
 }
 .container.content .row .inner.clearfix .columns.four .container .subscription {
     float:left;
@@ -35,8 +41,13 @@
 .container.content .row .inner.clearfix .columns.four .container .subscription .gform_wrapper {
     float:left;
     width:100%;
+    max-width:100% !important;
     font-size:18px;
-    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .columns.four .container .subscription .gform_wrapper li {
+    float:left;
+    width:100%;
+    margin:0 0 1em 0;
 }
 .container.content .row .inner.clearfix .columns.four .container .subscription .gform_wrapper label {
     display:none;
@@ -46,10 +57,72 @@
     width:100%;
     padding:0.75em;
     border:none;
+    font-size:14px;
+    text-transform:uppercase;
 }
 .container.content .row .inner.clearfix .columns.four .container .subscription .gform_wrapper select {
     float:left;
     width:100%;
     padding:0.75em;
     border:none;
+    font-size:14px;
+    text-transform:uppercase;
+    color:#c3c1c1;
+}
+.container.content .row .inner.clearfix .columns.four .container .subscription .gform_wrapper select option {
+    color:#000;
+}
+.container.content .row .inner.clearfix .columns.four .container .subscription .gform_footer {
+    float:left;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+.container.content .row .inner.clearfix .columns.four .container .subscription .gform_footer input[type=submit] {
+    float:left;
+    width:100%;
+    padding:0.25em 0;
+    background-color:#f08229;
+    color:#fff;
+    text-transform:uppercase;
+    font-weight:600;
+    border:none;
+    font-size:23px;
+    text-align:center;
+    transition:background-color 0.1s ease-in-out;
+}
+.container.content .row .inner.clearfix .columns.four .container .subscription .gform_footer input[type=submit]:hover {
+    background-color:#FF8B00;
+}
+.container.content .row .inner.clearfix .columns.four .container .search {
+    float:left;
+    width:100%;
+    margin:1.25em 0 0 0;
+}
+.container.content .row .inner.clearfix .columns.four .container .search input[type=text] {
+    float:left;
+    width:100%;
+    padding:0.75em;
+    border:none;
+    font-size:14px;
+    text-transform:uppercase;
+    border:1px solid #aca9a9;
+}
+.container.content .row .inner.clearfix .columns.four .container .categories {
+    float:left;
+    width:100%;
+    margin:1.25em 0 0 0;
+}
+.container.content .row .inner.clearfix .columns.four .container .categories select {
+    float:left;
+    width:100%;
+    padding:0.75em;
+    border:none;
+    font-size:14px;
+    text-transform:uppercase;
+    color:#c3c1c1;
+    border:1px solid #aca9a9;
+}
+.container.content .row .inner.clearfix .columns.four .container .categories select option {
+    color:#000;
 }

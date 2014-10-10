@@ -16,6 +16,7 @@ get_header(); ?>
                 <div class="details">
                     <h1>Discover What's Next</h1>
                     <p>We bring great content to audiences wherever they are.</p>
+                    <a href="<?php echo get_home_url(); ?>/amplify/">Learn More</a>
                 </div>
             </div>
         </div>

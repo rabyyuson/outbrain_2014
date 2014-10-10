@@ -115,19 +115,21 @@ a {
 /* CSS3 field placeholder */
 
 ::-webkit-input-placeholder {
-    color:#000;
+    color:#c3c1c1;
     font-family:"freight-sans-pro",sans-serif;
 }
 :-moz-placeholder {
-    color:#000;
+    color:#c3c1c1;
+    opacity:1;
     font-family:"freight-sans-pro",sans-serif;
 }
 ::-moz-placeholder {
-    color:#000;
+    color:#c3c1c1;
+    opacity:1;
     font-family:"freight-sans-pro",sans-serif;
 }
 :-ms-input-placeholder {
-    color:#000;
+    color:#c3c1c1;
     font-family:"freight-sans-pro",sans-serif;
 }
 

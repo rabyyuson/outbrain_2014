@@ -41,7 +41,7 @@ class Posts {
                 __( 'Other Options', 'post_sidebar_metabox_textdomain' ),
                 array( Posts::get_class_full_name(), 'render_meta_box_content' ),
                 $post_type,
-                'side',
+                'normal',
                 'high'
             );
         }
@@ -64,9 +64,7 @@ class Posts {
         // create the tinymce editor
         ?>
         <style>
-            .space {
-                margin:0;
-            }
+            .space { margin:0; }
         </style>
         <div>
             
