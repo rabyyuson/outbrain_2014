@@ -238,6 +238,20 @@ class Functions {
             wp_enqueue_style( 'blog-sidebar-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
                         
+            
+        /********************************************
+         * Single Post Detail Page
+         ********************************************/
+        
+        } elseif( is_single() ) {
+            
+            wp_enqueue_style( 'blog-header-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-single-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/single/single.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-single-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/single/single.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-sidebar-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
+                        
+            
         /********************************************
          * Page
          ********************************************/

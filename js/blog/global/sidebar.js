@@ -38,11 +38,7 @@
                 
                 $.data( this, 'sidebar_scroll_timer', setTimeout(function() {
                     
-                    if( window_scroll_top > 105 ){
-                        sidebar_container.addClass( 'sticky' );
-                    } else {
-                        sidebar_container.removeClass( 'sticky' );
-                    }
+                    ( ( window_scroll_top > 105 ) ? sidebar_container.addClass( 'sticky' ) : sidebar_container.removeClass( 'sticky' ) );
 
                 }, 10 ) );
                 

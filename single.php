@@ -1,22 +1,19 @@
 <?php
 
 /**
- * Single Page
+ * Blog Single Post Detail Page
  *
- * The template for displaying single post.
+ * The template for displaying the blog post detail page.
+ * @url: www.outbrain.com/blog/{slug}
  *
  * -----------------------------------------------------------------------------
  */
 
-//get_header(); ?>
-<div class="container blog" role="main">
-    <?php
-        // Reference the about page template navigation menu
-        include_once( TEMPLATEPATH . '/inc/templates/blog/navigation.php' );
-    ?>
-    <div class="row content-wrapper">
+get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
+<div class="container content" role="main">
+    <div class="row">
         <div class="inner clearfix">
-            <div class="columns eight content">
+            <div class="columns eight">
                 <?php
                     // Loop through the posts and show them
                     if ( have_posts() ) :
@@ -24,13 +21,15 @@
                         while ( have_posts() ) : the_post();
                             get_template_part( 'inc/templates/blog/single', get_post_format() );
                         endwhile;
+                        // Get the pagination links
+                        echo \Outbrain\Classes\Core\Functions::get_pagination();
                     else :
                         // If no content, include the "No posts found" template.
                         get_template_part( 'inc/templates/blog/none', 'none' );
                     endif;
                 ?>
             </div>
-            <div class="columns four sidebar">
+            <div class="columns four">
                 <?php
                     // Get the right content sidebar.
                     get_template_part( 'inc/templates/blog/sidebar-right' );
@@ -39,4 +38,6 @@
         </div>
     </div>
 </div>
-<?php // get_footer();
+<?php wp_footer(); ?>
+</body>
+</html>

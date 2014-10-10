@@ -1,0 +1,119 @@
+/* Content */
+.container.content .row .inner.clearfix .columns.eight {
+    float:left;
+}
+.container.content .row .inner.clearfix .columns.eight article {
+    float:left;
+    margin:0 0 2.5em 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .title {
+    float:left;
+}
+.container.content .row .inner.clearfix .columns.eight article .title a {
+    float:left;
+    width:100%;
+    margin:0 0 0.25em 0;
+    color:#000;
+    text-transform:uppercase;
+    font-size:34px;
+    font-weight:600;
+    line-height:32px;
+}
+.container.content .row .inner.clearfix .columns.eight article .meta {
+    float:left;
+    width:100%;
+    margin:0 0 1em 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .meta time {
+    float:left;
+    color:#a3a2a0;
+    border-right:1px solid #d3d3d3;
+    padding:0 10px 0 0;
+    margin:0 10px 0 0;
+    font-size:14px;
+    text-transform:uppercase;
+}
+.container.content .row .inner.clearfix .columns.eight article .meta .author {
+    float:left;
+}
+.container.content .row .inner.clearfix .columns.eight article .meta .author a {
+    float:left;
+    font-size:14px;
+    color:#f08229;
+    text-transform:uppercase;
+}
+.container.content .row .inner.clearfix .columns.eight article .meta .author a:hover {
+    text-decoration:underline;
+}
+.container.content .row .inner.clearfix .columns.eight article .information {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .featured-image {
+    float:left;
+    width:340px;
+    height:250px;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .featured-image a {
+    float:left;
+}
+.container.content .row .inner.clearfix .columns.eight article .information img {
+    display:block;
+    margin:0 auto;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content {
+    float:right;
+    width:50%;
+    height:250px;
+    position:relative;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .excerpt {
+    float:left;
+    width:100%;
+    font-size:18px;
+    margin:-6px 0 0 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .social {
+    float:left;
+    width:100%;
+    position:absolute;
+    bottom:60px;
+    left:0;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .social ul,
+.container.content .row .inner.clearfix .columns.eight article .information .content .social ul li {
+    float:left;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .social ul li a {
+    float:left;
+    padding:0 0.15em;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .social ul li:first-child a {
+    padding-left:0;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .social .count {
+    float:left;
+    margin:2px 0 0 7px;
+    color:#a3a2a0;
+    font-size:14px;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .read-more {
+    float:left;
+    width:100%;
+    position:absolute;
+    bottom:5px;
+    left:0;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .read-more a {
+    color:#f18e50;
+    text-transform:uppercase;
+    padding:0.3em 1em;
+    font-weight:600;
+    background-color:#fff;
+    border:2px solid #000;
+    transition:background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .read-more a:hover {
+    background-color:#000;
+    color:#fff;
+}

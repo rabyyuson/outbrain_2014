@@ -33,7 +33,7 @@
         <div class="row head">
             <div class="inner clearfix">
                 <div class="columns eight">
-                    <a href="<?php echo get_home_url(); ?>">
+                    <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ); ?>">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/global/logo.png" alt="Outbrain Logo" />
                         <div class="sub-title">Content Marketing Hub</div>
                     </a>
