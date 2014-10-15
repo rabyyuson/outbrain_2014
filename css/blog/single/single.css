@@ -8,16 +8,14 @@
 }
 .container.content .row .inner.clearfix .columns.eight article .title {
     float:left;
-}
-.container.content .row .inner.clearfix .columns.eight article .title a {
-    float:left;
     width:100%;
     margin:0 0 0.25em 0;
     color:#000;
     text-transform:uppercase;
-    font-size:34px;
-    font-weight:600;
+    font-size:36px;
+    font-weight:500;
     line-height:32px;
+    font-family:bebas-neue;
 }
 .container.content .row .inner.clearfix .columns.eight article .meta {
     float:left;
@@ -45,75 +43,118 @@
 .container.content .row .inner.clearfix .columns.eight article .meta .author a:hover {
     text-decoration:underline;
 }
-.container.content .row .inner.clearfix .columns.eight article .information {
+.container.content .row .inner.clearfix .columns.eight article .content {
     float:left;
     width:100%;
+    border:1px dashed red;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .featured-image {
+.container.content .row .inner.clearfix .columns.eight article .content p {
+    font-size:18px;
+    line-height:28px;
+}
+.container.content .row .inner.clearfix .columns.eight article .content p:first-child {
+    margin:0;
+}
+.container.content .row .inner.clearfix .columns.eight article .content p:first-child img,
+.container.content .row .inner.clearfix .columns.eight article .content p:first-child a img {
     float:left;
-    width:340px;
-    height:250px;
+    width:100%;
+    margin:0 0 2em 0;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .featured-image a {
-    float:left;
+.container.content .row .inner.clearfix .columns.eight article .content h2 {
+    font-size:18px;
+    text-transform:uppercase;
+    font-weight:700;
 }
-.container.content .row .inner.clearfix .columns.eight article .information img {
-    display:block;
-    margin:0 auto;
+.container.content .row .inner.clearfix .columns.eight article .content h3 {
+    font-size:18px;
+    font-weight:700;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content {
-    float:right;
-    width:50%;
-    height:250px;
+.container.content .row .inner.clearfix .columns.eight article .content blockquote {
+    margin:0;
+    width:30%;
     position:relative;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .excerpt {
+.container.content .row .inner.clearfix .columns.eight article .content blockquote.left {
     float:left;
+    margin:1.5em 1em 1.5em 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .content blockquote.right {
+    float:right;
+    margin:1.5em 0 1.5em 1em;
+}
+.container.content .row .inner.clearfix .columns.eight article .content blockquote:before {
+    content:'"';
+    float:left;
+    width:100%;
+    font-size:82px;
+    font-weight:500;
+    margin-bottom:-13px;
+    font-family:bebas-neue;
+    text-transform:uppercase;    
+}
+.container.content .row .inner.clearfix .columns.eight article .content blockquote p {
+    font-size:24px;
+    font-weight:500;
+    line-height:26px;
+    font-family:bebas-neue;
+    text-transform:uppercase;
+}
+.container.content .row .inner.clearfix .columns.eight article .content .alignright {
+    float:right;
+    margin:1.5em 0 1.5em 1em;
+}
+.container.content .row .inner.clearfix .columns.eight article .content .alignleft {
+    float:left;
+    margin:1.5em 1em 1.5em 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .content ol,
+.container.content .row .inner.clearfix .columns.eight article .content ul {
     width:100%;
     font-size:18px;
-    margin:-6px 0 0 0;
+    margin:0 0 0 1.1em;
+    padding:0;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .social {
-    float:left;
+.container.content .row .inner.clearfix .columns.eight article .content ol li {
+    list-style-type:decimal;
+}
+.container.content .row .inner.clearfix .columns.eight article .content ul li {
+    list-style-type:disc;
+}
+.container.content .row .inner.clearfix .columns.eight article .content div {
+    font-size:18px;
+}
+.container.content .row .inner.clearfix .columns.eight article .content .text_rule_indent {
     width:100%;
-    position:absolute;
-    bottom:60px;
-    left:0;
+    border-left:9px solid #000;
+    padding-left:1.25em;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .social ul,
-.container.content .row .inner.clearfix .columns.eight article .information .content .social ul li {
-    float:left;
+.container.content .row .inner.clearfix .columns.eight article .content .tip_box {
+    border:3px solid #f08229;
+    background-color:#f5f5f5;
+    padding:1em;
+    text-align:center;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .social ul li a {
-    float:left;
-    padding:0 0.15em;
-}
-.container.content .row .inner.clearfix .columns.eight article .information .content .social ul li:first-child a {
-    padding-left:0;
-}
-.container.content .row .inner.clearfix .columns.eight article .information .content .social .count {
-    float:left;
-    margin:2px 0 0 7px;
-    color:#a3a2a0;
-    font-size:14px;
-}
-.container.content .row .inner.clearfix .columns.eight article .information .content .read-more {
-    float:left;
-    width:100%;
-    position:absolute;
-    bottom:5px;
-    left:0;
-}
-.container.content .row .inner.clearfix .columns.eight article .information .content .read-more a {
-    color:#f18e50;
-    text-transform:uppercase;
-    padding:0.3em 1em;
+.container.content .row .inner.clearfix .columns.eight article .content .tip_box h3 {
+    display:block;
+    margin:0 auto;
+    font-size:18px;
     font-weight:600;
-    background-color:#fff;
-    border:2px solid #000;
-    transition:background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    text-transform:uppercase;
+    width:50%;
+    padding-bottom:0.5em;
+    border-bottom:1px solid #bebebe;
+    margin-bottom:0.5em
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .read-more a:hover {
-    background-color:#000;
-    color:#fff;
+.container.content .row .inner.clearfix .columns.eight article .content .tip_box p {
+    width:100%;
+    margin-bottom:0;
+}
+.container.content .row .inner.clearfix .columns.eight article .content a {
+    color:#f08229;
+}
+.container.content .row .inner.clearfix .columns.eight article .footer-promotion {
+    float:left;
+    width:100%;
+    border:1px dashed red;
 }

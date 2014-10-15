@@ -23,34 +23,21 @@
                 <?php echo get_the_author(); ?>
             </a>
         </div>
-        <div class="social">
-            <div class="count">Shares</div>
-            <ul>
-                <li>
-                    <a href="javascript:void(0)" target="_blank">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-facebook.png" />
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" target="_blank">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-twitter.png" />
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" target="_blank">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-googleplus.png" />
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" target="_blank">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-linkedin.png" />
-                    </a>
-                </li>
-            </ul>
-        </div>
     </div>
     <div class="content">
         <?php the_content(); ?>
+    </div>
+    <div class="footer-promotion">
+        <div class="image">
+            <img src="<?php echo ( function_exists( 'get_field' ) ? get_field( 'footer_promotion_image', $post->ID ) : false ); ?>" />
+        </div>
+        <div class="information">
+            <h3 class="title"><?php echo ( function_exists( 'get_field' ) ? get_field( 'footer_promotion_title', $post->ID ) : false ); ?></h3>
+            <p class="description"><?php echo ( function_exists( 'get_field' ) ? get_field( 'footer_promotion_description', $post->ID ) : false ); ?></p>
+            <a class="button" href="<?php echo ( function_exists( 'get_field' ) ? get_field( 'footer_promotion_button_link_url', $post->ID ) : false ); ?>">
+                <?php echo ( function_exists( 'get_field' ) ? get_field( 'footer_promotion_button_text', $post->ID ) : false ); ?>
+            </a>
+        </div>
     </div>
     <div class="author">
         <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyeleven_author_bio_avatar_size', 68 ) ); ?>

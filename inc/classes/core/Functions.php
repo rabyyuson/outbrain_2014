@@ -58,16 +58,17 @@ class Functions {
             
         // Add action.
 
-        add_action( 'admin_head', array( Functions::get_class_full_name(), 'webinar_editor_style' ) );
+        add_action( 'admin_head', array( Functions::get_class_full_name(), 'editor_style' ) );
         add_action( 'admin_menu', array( Functions::get_class_full_name(), 'register_webinar_help_page' ) );
         add_action( 'wp_enqueue_scripts', array( Functions::get_class_full_name(), 'wp_enqueue_scripts' ) );
         add_action( 'widgets_init', array( Functions::get_class_full_name(), 'widgets_init' ) );
+        add_action( 'init', array( Functions::get_class_full_name(), 'tinymce_add_button' ) );
         add_action( 'admin_menu', function(){
             add_submenu_page( 'edit.php?post_type=webinars', 'Help', 'Help', 'edit_posts', 'webinar-help-page', function(){
                 include( TEMPLATEPATH . '/inc/addons/webinar/help/how-to-create-an-outbrainy-webinar.php' );
             } );
         } );
-
+        
         
         // Remove action.
         
@@ -81,6 +82,7 @@ class Functions {
         // Add filter.
         
         add_filter( 'default_content', 'webinar_default_content', 10, 2 );
+        add_filter( 'tiny_mce_before_init', array( Functions::get_class_full_name(), 'tinymce_kitchen_sink' ) );
         add_filter( 'the_content', array( Functions::get_class_full_name(), 'replace_public_links' ) );
         
         // Remove filter.
@@ -626,14 +628,51 @@ class Functions {
     }
     
     /**
-     * Add the stylesheet for the webinar editor
+     * Add the stylesheet for the post type
      * @global string $current_screen
      */
-    public function webinar_editor_style() {
+    public function editor_style() {
         
         global $current_screen;
-        ( ( $current_screen->post_type === 'webinars' ) ? add_editor_style( 'inc/addons/webinar/css/editor_style.css' ) : false ); 
+        switch ( $current_screen->post_type ) {
+            case 'webinars':
+                add_editor_style( 'inc/webinar/css/editor_style.css' );
+                break;
+            case 'post':
+                add_editor_style( 'css/core/blog-post-editor.css' );
+                break;
+            default:
+                break;
+        }
         
+    }
+    
+    /**
+     * Add additional buttons to the tinymce post editor
+     * @return array
+     */
+    public function tinymce_add_button() {
+        if ( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' ) && get_user_option( 'rich_editing' ) ) {
+            add_filter( 'mce_external_plugins', ( function( $plugin_array ) {
+                $plugin_array['indented_text_with_rule'] = Functions::replace_public_links( get_template_directory_uri() ) . '/js/core/blog-post-editor.js';
+                $plugin_array['tip_box'] = Functions::replace_public_links( get_template_directory_uri() ) . '/js/core/blog-post-editor.js';
+                return $plugin_array; 
+            } ) );
+            add_filter( 'mce_buttons', function( $buttons ) {
+                array_push( $buttons, 'indented_text_with_rule', 'tip_box' );
+                return $buttons;
+            } );
+        }
+    }
+    
+    /**
+     * Always show the blog post editor kitchen sink toolbar
+     * @param array $in
+     * @return boolean
+     */
+    public function tinymce_kitchen_sink( $in ) {
+        $in['wordpress_adv_hidden'] = FALSE;
+        return $in;
     }
     
 }

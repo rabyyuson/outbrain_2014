@@ -1,0 +1,40 @@
+.text_rule_indent {
+    width:100%;
+    border-left:9px solid #000;
+    padding-left:1.25em;
+}
+blockquote {
+    margin:0;
+    width:30%;
+    float:left;
+}
+blockquote:before {
+    content:'"';
+    font-weight:bold;
+    text-transform:uppercase;    
+}
+blockquote p {
+    font-weight:bold;
+    text-transform:uppercase;
+}
+.tip_box {
+    border:3px solid #f08229;
+    background-color:#f5f5f5;
+    padding:1em;
+    text-align:center;
+}
+.tip_box h3 {
+    display:block;
+    margin:0 auto;
+    font-size:18px;
+    font-weight:600;
+    text-transform:uppercase;
+    width:50%;
+    padding-bottom:0.5em;
+    border-bottom:1px solid #bebebe;
+    margin-bottom:0.5em
+}
+.tip_box p {
+    width:100%;
+    margin-bottom:0;
+}

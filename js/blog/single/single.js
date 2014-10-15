@@ -14,11 +14,13 @@
         init : function(){
            
             var
-                container = $( '.container.content .columns.four .container' ),
+                article_container = $( '.container.content .columns.eight' ),
+                content = article_container.find( 'article .content' ),
+                sidebar_container = $( '.sidebar_container.content .columns.four .sidebar_container' ),
                 subscription = {
-                    container : container.find( '.subscription' ),
-                    form : container.find( '.subscription form' ),
-                    list : container.find( '.subscription ul li' )
+                    sidebar_container : sidebar_container.find( '.subscription' ),
+                    form : sidebar_container.find( '.subscription form' ),
+                    list : sidebar_container.find( '.subscription ul li' )
                 };
         
             // Get the subscription form fields and search through the post_options
@@ -29,6 +31,13 @@
                         $(this).addClass( 'show' );
                     }
                 }
+            } );
+                      
+            content.find( 'blockquote' ).each( function(){
+                var 
+                    child = $(this).children( 'p' ), float_position;
+                float_position = child.attr('style').split( ' ' );
+                $(this).attr( 'class', float_position[1].replace( ';', '' ) );
             } );
                                   
         }

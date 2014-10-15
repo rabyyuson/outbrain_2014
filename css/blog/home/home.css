@@ -15,9 +15,11 @@
     margin:0 0 0.25em 0;
     color:#000;
     text-transform:uppercase;
-    font-size:34px;
-    font-weight:600;
+    font-size:36px;
+    font-weight:500;
     line-height:32px;
+    font-family:bebas-neue;
+    transition:color 0.1s ease-in-out;
 }
 .container.content .row .inner.clearfix .columns.eight article .meta {
     float:left;
