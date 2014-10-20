@@ -18,7 +18,7 @@
     font-size:36px;
     font-weight:500;
     line-height:32px;
-    font-family:bebas-neue;
+    font-family:bebas-neue,sans-serif;
     transition:color 0.1s ease-in-out;
 }
 .container.content .row .inner.clearfix .columns.eight article .meta {
@@ -131,5 +131,19 @@
     background-color:#dfdfdf;
 }
 .container.content .row .inner.clearfix .columns.eight .pagination {
-    height:0;
+    text-indent:-9999px;
+}
+.container.content .row .inner.clearfix .columns.eight .loading {
+    position:fixed;
+    bottom:-100px;
+    border-radius:7px;
+    left:50%;
+    color:#fff;
+    padding:10px 40px 10px 20px;
+    opacity:1;
+    background:#000 url('../../../images/blog/home/ajax-loader.gif') no-repeat 86px 15px;
+    transition:bottom 0.25s ease-in-out;
+}
+.container.content .row .inner.clearfix .columns.eight .loading.show {
+    bottom:30px;
 }

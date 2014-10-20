@@ -23,7 +23,8 @@
                     entries_height : function(){
                         return listing.height();
                     }
-                }, posts = {};
+                }, posts = {},
+                loading = listing.find( '.loading' );
             
             // Loop through the individual information block
             // Use the "read more" url to get the social share count
@@ -47,15 +48,29 @@
             posts.get_data = function( data ){
                     
                 if( ( data.reach === data.counter ) && data.fetch ) {
+                    
+                    // Show the loading marker
+                    loading.addClass( 'show' );
+                    
+                    // Get the posts
                     $.ajax({
                         url : document.URL + 'page/' + ( data.counter +=  1 ),
                         type : 'GET',
                         success : function( response ){
+                                
                             var
                                 entry = $( response ).contents().find( 'article' );
-                            listing.append( entry );
-                            data.reach += 1;
-                            ( ( entry.length > 0 ) ? data.fetch = true : data.fetch = false );
+                                
+                            // After 250 ms. remove the loading marker and get
+                            // the posts and display it.
+                            setTimeout( function(){ 
+                                
+                                loading.removeClass( 'show' );
+                                listing.append( entry );
+                                data.reach += 1;
+                                ( ( entry.length > 0 ) ? data.fetch = true : data.fetch = false );
+                                
+                            }, 250 );
                             
                         }
                     });

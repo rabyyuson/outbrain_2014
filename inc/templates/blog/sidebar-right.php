@@ -10,6 +10,11 @@
  */
 
 ?>
+<?php 
+// If we passed in a category id, return the category link
+if( $_GET['category_id'] ): ?>
+    <input type="hidden" name="category-url" value="<?php echo ( get_category_link( $_GET['category_id'] ) ); ?>" />
+<?php endif; ?>
 <div class="container">
     <div class="subscription">
         <h2>Get Weekly Content Marketing Tips</h2>

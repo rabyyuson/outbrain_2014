@@ -88,7 +88,7 @@ html.wf-loading {
     visibility:hidden;
 }
 html.wf-active body {
-    font-family:"freight-sans-pro";
+    font-family:"freight-sans-pro",sans-serif;
 }
 body {
     font:100%/1.5em sans-serif;

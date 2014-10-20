@@ -1,0 +1,10 @@
+/* Footer */
+footer .row.mega-footer {
+    position:relative !important;
+    z-index:10 !important;
+    background-color:#f2f2f2 !important;
+    color:#000 !important;
+}
+footer .row.mega-footer .inner .columns.twelve .columns.eight ul li a {
+    color:#000 !important;
+}

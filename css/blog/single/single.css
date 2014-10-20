@@ -1,6 +1,45 @@
 /* Content */
+.container.content {
+    position:relative;
+}
 .container.content .row .inner.clearfix .columns.eight {
     float:left;
+}
+.container.content .row .inner.clearfix .columns.eight .social-share {
+    position:fixed;
+    top:20%;
+    left:0;
+    background-color:#f2f2f2;
+    padding:10px;
+    border-radius:0 5px 5px 0;
+}
+.container.content .row .inner.clearfix .columns.eight .social-share li {
+    margin:5px 0 7px 0;
+}
+.container.content .row .inner.clearfix .columns.eight .social-share li img {
+    margin:0 0 0 1px;
+}
+.container.content .row .inner.clearfix .columns.eight .social-share li.email {
+    margin-bottom:0;
+}
+.container.content .row .inner.clearfix .columns.eight .social-share li .count {
+    text-align:center;
+    background-color:#fff;
+    position:relative;
+    min-height:24px;
+    border-radius:3px;
+    color:#000;
+}
+.container.content .row .inner.clearfix .columns.eight .social-share li .count::before {
+    content:'';
+    position:absolute;
+    top:-5px;
+    left:8px;
+    width:0;
+    height:0;
+    border-style:solid;
+    border-width:0 7px 10px 7px;
+    border-color:transparent transparent #ffffff transparent;
 }
 .container.content .row .inner.clearfix .columns.eight article {
     float:left;
@@ -15,7 +54,7 @@
     font-size:36px;
     font-weight:500;
     line-height:32px;
-    font-family:bebas-neue;
+    font-family:bebas-neue,sans-serif;
 }
 .container.content .row .inner.clearfix .columns.eight article .meta {
     float:left;
@@ -46,7 +85,6 @@
 .container.content .row .inner.clearfix .columns.eight article .content {
     float:left;
     width:100%;
-    border:1px dashed red;
 }
 .container.content .row .inner.clearfix .columns.eight article .content p {
     font-size:18px;
@@ -90,14 +128,14 @@
     font-size:82px;
     font-weight:500;
     margin-bottom:-13px;
-    font-family:bebas-neue;
+    font-family:bebas-neue,sans-serif;
     text-transform:uppercase;    
 }
 .container.content .row .inner.clearfix .columns.eight article .content blockquote p {
     font-size:24px;
     font-weight:500;
     line-height:26px;
-    font-family:bebas-neue;
+    font-family:bebas-neue,sans-serif;
     text-transform:uppercase;
 }
 .container.content .row .inner.clearfix .columns.eight article .content .alignright {
@@ -131,7 +169,7 @@
 }
 .container.content .row .inner.clearfix .columns.eight article .content .tip_box {
     border:3px solid #f08229;
-    background-color:#f5f5f5;
+    background-color:#f2f2f2;
     padding:1em;
     text-align:center;
 }
@@ -153,8 +191,287 @@
 .container.content .row .inner.clearfix .columns.eight article .content a {
     color:#f08229;
 }
+.container.content .row .inner.clearfix .columns.eight article .content a:hover {
+    text-decoration:underline;
+}
 .container.content .row .inner.clearfix .columns.eight article .footer-promotion {
     float:left;
     width:100%;
-    border:1px dashed red;
+    margin:1.5em 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .footer-promotion .image {
+    float:left;
+    width:40%;
+}
+.container.content .row .inner.clearfix .columns.eight article .footer-promotion .image img {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .columns.eight article .footer-promotion .information {
+    float:right;
+    width:60%;
+    height:214px;
+    position:relative;
+    padding-left:30px;
+}
+.container.content .row .inner.clearfix .columns.eight article .footer-promotion .information .title {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .columns.eight article .footer-promotion .information .description {
+    float:left;
+    width:100%;
+    font-size:18px;
+}
+.container.content .row .inner.clearfix .columns.eight article .footer-promotion .information .button {
+    float:left;
+    margin:1em 0 0 0;
+    color:#f18e50;
+    text-transform:uppercase;
+    padding:0.3em 1em;
+    font-weight:600;
+    background-color:#fff;
+    border:2px solid #000;
+    transition:background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.container.content .row .inner.clearfix .columns.eight article .footer-promotion .information .button:hover {
+    background-color:#000;
+    color:#fff;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta {
+    float:left;
+    width:100%;
+    border:1px solid #000;
+    margin:1.5em 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta .image {
+    float:left;
+    width:21%;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta .image img {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta .information {
+    float:right;
+    width:79%;
+    padding:15px 15px 15px 30px;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta .information .name {
+    float:left;
+    width:100%;
+    font-size:18px;
+    font-weight:500;
+    margin:0 0 10px 0;
+    text-transform:uppercase;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta .information .biography {
+    float:left;
+    width:100%;
+    font-size:17px;
+    line-height:21px;
+    margin:0 0 10px 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta .information .biography a {
+    font-size:18px;
+    color:#f08229;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta .information .biography a:hover {
+    text-decoration:underline;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta .information .social {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta .information .social li {
+    float:left;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta .information .social li a {
+    float:left;
+    margin:0 10px 0 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .author_meta .information .social li a img {
+    float:left;
+}
+.container.content .row .inner.clearfix .columns.eight article .recommendations {
+    float:left;
+    width:100%;
+    margin:1.5em 0;
+    border-top:6px solid #000;
+    padding-top:1em;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments {
+    float:left;
+    width:100%;
+    margin:1.5em 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond {
+    float:left;
+    width:100%;
+    margin:0 0 1.5em 0;
+    padding:0 0 1.5em 0;
+    border-bottom:4px solid #f8f8f8;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-reply-title {
+    float:left;
+    width:100%;
+    padding:0.25em 0.5em !important;
+    background-color:#000;
+    color:#fff;
+    text-transform:uppercase;
+    font-size:18px;
+    font-weight:600;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-reply-title.inner {
+    margin-top:1em;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form .comment-notes.inner {
+    padding:1em 0 !important;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-reply-title small {
+    font-size:100%;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-reply-title small a {
+    border-left:1px solid #868686;
+    color:#fff;
+    text-decoration:underline;
+    margin-left:0.25em;
+    padding-left:0.5em;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond form a:hover,
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-reply-title small a:hover {
+    text-decoration:underline;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form p {
+    margin-bottom:0;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form a {
+    color:#f08229;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form .comment-notes {
+    float:left;
+    width:100%;
+    font-size:16px;
+    padding:1em 0 !important;
+    margin:0;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form .comment-notes .required {
+    color:red;
+    font-weight:bold;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form .comment-form-author {
+    float:left;
+    width:48%;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form .comment-form-email {
+    float:right;
+    width:48%;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form .comment-form-author input[type=text],
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form .comment-form-email input[type=text],
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form .comment-form-comment textarea {
+    float:left;
+    width:100%;
+    font-size:18px;
+    padding:0.5em;
+    border:1px solid #000;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form .comment-form-comment {
+    float:left;
+    width:100%;
+    margin-top:1.5em;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form .form-submit {
+    float:right;
+    margin:0;
+    padding:0;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-respond .comment-form .form-submit input[type=submit] {
+    border:none;
+    background-color:transparent;
+    color:#333;
+    text-transform:uppercase;
+    font-size:18px;
+    font-weight:bold;
+    margin:0.5em 0 0 0;
+    padding:.5em 0 0.5em 0.5em;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list {
+    float:left;
+    width:100%;
+    padding:0;
+    margin:1.5em 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment {
+    float:left;
+    width:100%;
+    background-color:#f8f8f8;
+    padding:1.25em;
+    margin-bottom:1em;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment.depth-2 {
+    width:95%;
+    float:right;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment.depth-3 {
+    width:90%;
+    float:right;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment.depth-4 {
+    width:85%;
+    float:right;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment.depth-5 {
+    width:80%;
+    float:right;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-avatar {
+    float:left;
+    width:8%;
+    margin:0.25em 0 0 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-body {
+    float:right;
+    width:89%;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-meta {
+    float:left;
+    width:100%;
+    font-size:16px;
+    text-transform:uppercase;
+    font-weight:700;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-meta .separator {
+    float:left;
+    margin:0 0.5em;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-meta .author,
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-meta .date {
+    float:left;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-content {
+    float:left;
+    width:100%;
+    font-size:18px;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .reply {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .reply a {
+    float:right;
+    color:#333;
+    font-size:16px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .replying-to {
+    float:left;
+    color:#999;
+    text-transform:uppercase;
+    font-size:0.9em;
 }

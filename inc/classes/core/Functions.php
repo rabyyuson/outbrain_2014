@@ -224,7 +224,7 @@ class Functions {
         
         if( is_front_page() ) {
             
-            wp_enqueue_style( 'frontpage-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/front/frontpage.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'frontpage', Functions::replace_public_links( get_template_directory_uri() ) . '/css/front/frontpage.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'frontpage-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/front/frontpage.js', array(), null, TRUE );
         
             
@@ -234,11 +234,27 @@ class Functions {
         
         } elseif( is_home() ) {
             
-            wp_enqueue_style( 'blog-header-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'blog-home-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
-            wp_enqueue_style( 'blog-sidebar-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
+                        
+            
+        /********************************************
+         * Category Page
+         ********************************************/
+        
+        } elseif( is_category() ) {
+            
+            wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-category', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/category/category.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
                         
             
         /********************************************
@@ -247,12 +263,14 @@ class Functions {
         
         } elseif( is_single() ) {
             
-            wp_enqueue_style( 'blog-header-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'blog-single-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/single/single.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-single', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/single/single.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-single-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/single/single.js', array(), null, TRUE );
-            wp_enqueue_style( 'blog-sidebar-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
-                        
+            wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
+            ( ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) ? wp_enqueue_script( 'comment-reply' ) : false );
+            
             
         /********************************************
          * Page
@@ -260,7 +278,7 @@ class Functions {
         
         } elseif( is_page() && ! is_page_template() ) {
             
-            wp_enqueue_style( 'page-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page/page.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'page', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page/page.css', array(), FALSE, 'all' );
 
             
         /********************************************
@@ -269,7 +287,7 @@ class Functions {
             
         } elseif ( is_page_template( 'page-templates/amplify.php' ) ) {
             
-            wp_enqueue_style( 'amplify-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/amplify/amplify.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'amplify', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/amplify/amplify.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'amplify-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/amplify/amplify.js', array(), null, TRUE );
 
             
@@ -279,7 +297,7 @@ class Functions {
         
         } elseif( is_page_template( 'page-templates/guidelines.php' ) ) {
             
-            wp_enqueue_style( 'guidelines-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/amplify/guidelines.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'guidelines', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/amplify/guidelines.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'guidelines-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/amplify/guidelines.js', array(), null, TRUE );
             
             
@@ -289,14 +307,14 @@ class Functions {
             
         } elseif ( is_page_template( 'page-templates/engage.php' ) ) {
             
-            wp_enqueue_style( 'engage-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/engage/engage.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'bootstrap-css', Functions::replace_public_links( get_template_directory_uri() ) . '/inc/libraries/bootstrap/css/bootstrap.min.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'engage', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/engage/engage.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'bootstrap', Functions::replace_public_links( get_template_directory_uri() ) . '/inc/libraries/bootstrap/css/bootstrap.min.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'engage-waypoint-js', '//wp.outbrain.com/wp-content/themes/outbrain/static/engage-files/vr/js/waypoints.vr.js', array(), null, TRUE );
             wp_enqueue_script( 'jquery-easing-js', '//wp.outbrain.com/wp-content/themes/outbrain/static/engage-files/vr/js/jquery.easing.min.js', array(), null, TRUE );
             wp_enqueue_script( 'jquery-typer-js', '//wp.outbrain.com/wp-content/themes/outbrain/static/engage-files/vr/js/jquery.typer.js', array(), null, TRUE );
             wp_enqueue_script( 'engage-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/engage/engage.js', array(), null, TRUE );
             wp_enqueue_script( 'bootstrap-js', Functions::replace_public_links( get_template_directory_uri() ) . '/inc/libraries/bootstrap/js/bootstrap.min.js', array(), null, TRUE );
-            wp_enqueue_style( 'vr-css', '//wp.outbrain.com/wp-content/themes/outbrain/static/engage-files/vr/style.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'vr', '//wp.outbrain.com/wp-content/themes/outbrain/static/engage-files/vr/style.css', array(), FALSE, 'all' );
         
             
         /********************************************
@@ -305,8 +323,8 @@ class Functions {
             
         } elseif ( is_page_template( 'page-templates/company.php' ) ) {
 
-            wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'company-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/company.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'navigation', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'company', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/company.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/navigation.js', array(), null, TRUE );
                 
             
@@ -316,8 +334,8 @@ class Functions {
             
         } elseif ( is_page_template( 'page-templates/team.php' ) ) {
 
-            wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'team-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/team.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'navigation', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'team', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/team.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/navigation.js', array(), null, TRUE );
             wp_enqueue_script( 'team-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/team.js', array(), null, TRUE );
                
@@ -328,8 +346,8 @@ class Functions {
                 
         } elseif ( is_page_template( 'page-templates/offices.php' ) ) {
 
-            wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'offices-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/offices.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'navigation', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'offices', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/offices.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/navigation.js', array(), null, TRUE );
             wp_enqueue_script( 'offices-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/offices.js', array(), null, TRUE );
               
@@ -340,8 +358,8 @@ class Functions {
                 
         } elseif ( is_page_template( 'page-templates/press.php' ) ) {
 
-            wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'press-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/press.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'navigation', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'press', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/press.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/navigation.js', array(), null, TRUE );
             wp_enqueue_script( 'press-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/press.js', array(), null, TRUE );
         
@@ -352,7 +370,7 @@ class Functions {
         
         } elseif( is_page_template( 'page-templates/contact.php' ) ) {
             
-            wp_enqueue_style( 'contact-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/contact/contact.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'contact', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/contact/contact.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'contact-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/contact/contact.js', array(), null, TRUE );     
             wp_enqueue_script( 'gravityforms-js', Functions::replace_public_links( get_home_url() ) . '/wp-content/plugins/gravityforms/js/gravityforms.js?ver=1.7.12', array(), null, TRUE );     
             wp_enqueue_script( 'conditional-logic-js', Functions::replace_public_links( get_home_url() ) . '/wp-content/plugins/gravityforms/js/conditional_logic.js?ver=1.7.12', array(), null, TRUE );     
@@ -364,9 +382,9 @@ class Functions {
         
         } elseif ( is_page_template( 'page-templates/privacy-policy.php' ) ) {
 
-            wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'navigation', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/navigation.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/legal/navigation.js', array(), null, TRUE );
-            wp_enqueue_style( 'privacy-policy-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/privacy-policy.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'privacy-policy', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/privacy-policy.css', array(), FALSE, 'all' );
             
         
         /********************************************
@@ -375,9 +393,9 @@ class Functions {
         
         } elseif ( is_page_template( 'page-templates/terms-of-use.php' ) ) {
 
-            wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'navigation', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/navigation.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/legal/navigation.js', array(), null, TRUE );
-            wp_enqueue_style( 'terms-of-use-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/terms-of-use.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'terms-of-use', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/terms-of-use.css', array(), FALSE, 'all' );
             
         
         /********************************************
@@ -386,9 +404,9 @@ class Functions {
         
         } elseif ( is_page_template( 'page-templates/customer-terms.php' ) ) {
 
-            wp_enqueue_style( 'navigation-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'navigation', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/navigation.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/legal/navigation.js', array(), null, TRUE );
-            wp_enqueue_style( 'customer-terms-css', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/customer-terms.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'customer-terms', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/legal/customer-terms.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'customer-terms-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/legal/customer-terms.js', array(), null, TRUE );
          
             
@@ -415,7 +433,7 @@ class Functions {
              ********************************************/
             
             // Global styles.
-            wp_enqueue_style( 'outbrain-css', Functions::replace_public_links( get_stylesheet_uri() ), array(), FALSE, 'all' );
+            wp_enqueue_style( 'outbrain', Functions::replace_public_links( get_stylesheet_uri() ), array(), FALSE, 'all' );
 
             
             /********************************************
@@ -587,6 +605,7 @@ class Functions {
             $html = '<nav class="pagination" role="navigation">';
                 $html .= $links;
             $html .= '</nav>';
+            $html .= '<div class="loading">Loading...</div>';
         }
         
         return $html;

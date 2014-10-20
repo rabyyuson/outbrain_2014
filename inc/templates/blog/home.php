@@ -64,7 +64,7 @@
                         </a>
                     </li>
                 </ul>
-                <div class="count">Shares</div>
+                <div class="count">0 Shares</div>
             </div>
             <div class="read-more">
                 <a href="<?php echo get_the_permalink(); ?>">Read More &raquo;</a>

@@ -20,11 +20,29 @@
                     container : container.find( '.subscription' ),
                     form : container.find( '.subscription form' ),
                     list : container.find( '.subscription ul li' )
-                };
+                },
+                categories = container.find( '.categories' );
         
+            // Add the placeholder text pulled from the label
             subscription.list.each( function(){
                 if( $(this).find( 'input' ).attr( 'type' ) === 'text' ){
                     $(this).find( 'input' ).attr( 'placeholder', $(this).find( 'label' ).text() );
+                }
+            } );
+            
+            // On change event handler for the categories dropdown
+            // Get the category link and navigate to it
+            categories.find( 'select[id=cat]' ).on( 'change', function(){
+                if( parseInt( $(this).val() ) > 0 ){
+                    $.ajax({
+                        url : document.URL + '?category_id=' + $(this).val(),
+                        type: 'GET',
+                        success : function( response ){
+                            var
+                                category_url = $( response ).contents().find( 'input[name=category-url]' );
+                            document.location.href = category_url.val();
+                        }
+                    });
                 }
             } );
             
