@@ -229,7 +229,7 @@ class Functions {
         
             
         /********************************************
-         * Home or Blog Posts Index
+         * Blog
          ********************************************/
         
         } elseif( is_home() ) {
@@ -243,7 +243,7 @@ class Functions {
                         
             
         /********************************************
-         * Category Page
+         * Blog -- Category
          ********************************************/
         
         } elseif( is_category() ) {
@@ -258,7 +258,7 @@ class Functions {
                         
             
         /********************************************
-         * Single Post Detail Page
+         * Blog -- Single
          ********************************************/
         
         } elseif( is_single() ) {
@@ -270,6 +270,65 @@ class Functions {
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
             ( ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) ? wp_enqueue_script( 'comment-reply' ) : false );
+            
+            
+        /********************************************
+         * Blog -- Author Listing
+         ********************************************/
+        
+        } elseif( is_page_template( 'page-templates/authors.php' ) ) {
+            
+            wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-author-listing', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/author/listing.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-authors-listing-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/author/listing.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
+            
+            
+        /********************************************
+         * Blog -- Author Single
+         ********************************************/
+        
+        } elseif( is_author() ) {
+            
+            wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-author-listing', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/author/listing.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-author-single', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/author/single.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
+            
+            
+        /********************************************
+         * Blog -- Archives Listing
+         ********************************************/
+        
+        } elseif( is_page_template( 'page-templates/archives.php' ) ) {
+            
+            wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-archives-listing', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/archives/listing.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-archive-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/archives/listing.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
+            
+            
+        /********************************************
+         * Blog -- Archive Single
+         ********************************************/
+        
+        } elseif( is_archive() ) {
+            
+            wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-archives-listing', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/archives/listing.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-archive-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/archives/listing.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
             
             
         /********************************************
@@ -414,7 +473,7 @@ class Functions {
         
         
         /********************************************
-         * Check if we are not in admin area..
+         * Global/ALL Pages
          ********************************************/
                 
         if( ! strpos( $_SERVER['REQUEST_URI'], 'wp-admin' ) ) {
@@ -601,13 +660,14 @@ class Functions {
 
         $html = '';
         
-	if ( $links ) {
-            $html = '<nav class="pagination" role="navigation">';
-                $html .= $links;
-            $html .= '</nav>';
-            $html .= '<div class="loading">Loading...</div>';
-        }
-        
+	if ( $links ) : ?>
+
+            <nav class="pagination" role="navigation">
+                <?php echo $links; ?>
+            </nav>
+            <div class="loading">Loading...</div>
+            
+        <?php endif;
         return $html;
         
     }
@@ -620,27 +680,29 @@ class Functions {
      */
     public function webinar_default_content( $content, $post ) {
         
-        if( $post->post_type === 'webinars' ){
-            $content = '<div class="webinar-inner">';
-                $content .= '<div class="left">';
-                    $content .= '<div class="right">';
-                        $content .= '<ul>';
-                            $content .= '<li class="image">[ 155 x 155 IMG ]</li>';
-                            $content .= '<li class="name">[ Speaker Name ]</li>';
-                            $content .= '<li class="title">[ Title/Position ]</li>';
-                        $content .= '</ul>';
-                    $content .= '</div>';
-                    $content .= '<p>Enter the webinar\'s description information here...</p>';
-                    $content .= '<p>You can add some list here as well:</p>';
-                    $content .= '<ul>';
-                        $content .= '<li>Here\'s a sample item</li>';
-                        $content .= '<li>And here\'s another sample item</li>';
-                        $content .= '<li>And here\'s the last sample item</li>';
-                    $content .= '</ul>';
-                    $content .= '<p>Some more paragraph here...</p>';
-                $content .= '</div>';
-            $content .= '</div>';
-        }
+        if( $post->post_type === 'webinars' ) : ?>
+            
+            <div class="webinar-inner">
+                <div class="left">
+                    <div class="right">
+                        <ul>
+                            <li class="image">[ 155 x 155 IMG ]</li>
+                            <li class="name">[ Speaker Name ]</li>
+                            <li class="title">[ Title/Position ]</li>
+                        </ul>
+                    </div>
+                    <p>Enter the webinar's description information here...</p>
+                    <p>You can add some list here as well:</p>
+                    <ul>
+                        <li>Here's a sample item</li>
+                        <li>And here's another sample item</li>
+                        <li>And here's the last sample item</li>
+                    </ul>
+                    <p>Some more paragraph here...</p>
+                </div>
+            </div>
+            
+        <?php endif;
 
         return $content;
         
@@ -671,6 +733,7 @@ class Functions {
      * @return array
      */
     public function tinymce_add_button() {
+        
         if ( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' ) && get_user_option( 'rich_editing' ) ) {
             add_filter( 'mce_external_plugins', ( function( $plugin_array ) {
                 $plugin_array['indented_text_with_rule'] = Functions::replace_public_links( get_template_directory_uri() ) . '/js/core/blog-post-editor.js';
@@ -682,6 +745,7 @@ class Functions {
                 return $buttons;
             } );
         }
+        
     }
     
     /**
@@ -690,8 +754,157 @@ class Functions {
      * @return boolean
      */
     public function tinymce_kitchen_sink( $in ) {
+        
         $in['wordpress_adv_hidden'] = FALSE;
         return $in;
+        
+    }
+    
+    /**
+     * Get a list of authors by their group function
+     * @param array $users
+     * @param array $user_meta
+     * @return null
+     */
+    public static function get_authors_by_group( $users ) { ?>
+            
+        <ul>
+            <?php foreach( $users as $user ): ?>
+                <?php
+                    // Get all user meta information.
+                    // Take only the first index of the returned array result.
+                    $user_meta = array_map( function( $array ){ 
+                        return $array[0]; 
+                    }, get_user_meta( $user->ID ) );
+                ?>
+                <li class="user">
+                    <div class="image">
+                        <a href="<?php echo get_author_posts_url( $user->ID ); ?>">
+                            <?php echo get_avatar( $user->ID, 175 ); ?>
+                        </a>
+                    </div>
+                    <div class="information">
+                        <div class="name">
+                            <a href="<?php echo get_author_posts_url( $user->ID ); ?>">
+                                <?php echo $user->display_name; ?> <span class="medium"><?php echo $user_meta['user_title']; ?></span> 
+                            </a>
+                        </div>
+                        <p>
+                            <?php 
+                                // Limit the number of characters for the biography information.
+                                // Show an ellipsis and a Read More link at the end.
+                                $description = explode( ' ', ( $user_meta['description'] ? $user_meta['description'] : 'No information' ) );
+                                $description_html = substr( implode( ' ', $description ), 0, ( !is_author() ? 260 : 99999 ) ) . ( !is_author() ? '...' : false );
+                                $description_html .= ( !is_author() ? '<a href="'. get_author_posts_url( $user->ID ) . '">Read More &rsaquo;</a>' : false );
+                                echo $description_html;
+                            ?>
+                        </p>
+                        <ul class="social">
+                            <?php 
+                                // Get the social network links associated with this user.
+                                $social_networks = array(
+                                    array( 'id' => 'facebook', 'image' => get_template_directory_uri() . '/images/blog/global/social-facebook.png' ),
+                                    array( 'id' => 'twitter', 'image' => get_template_directory_uri() . '/images/blog/global/social-twitter.png' ),
+                                    array( 'id' => 'google_plus', 'image' => get_template_directory_uri() . '/images/blog/global/social-googleplus.png' ),
+                                    array( 'id' => 'linkedin', 'image' => get_template_directory_uri() . '/images/blog/global/social-linkedin.png' ),
+                                );
+                                foreach( $social_networks as $k => $v ):
+                                    if( $user_meta[ $v['id'] ] ): ?>
+                                        <li>
+                                            <a href="<?php echo $user_meta[ $v['id'] ] ?>" target="_blank">
+                                                <img src="<?php echo $v['image'] ?>" />
+                                            </a>
+                                        </li>
+                            <?php   endif;
+                                endforeach;
+                            ?>
+                        </ul>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+            
+    <?php
+    }
+    
+    /**
+     * Get the archives list
+     * @global type $wpdb
+     */
+    public static function get_archives() {
+        
+        global $wpdb; global $wp_query; $year = null;
+        
+        // Pull all the months and years of posts form the database
+        // We'll use these results later when building the navigation
+        $dates = $wpdb->get_results("
+            SELECT DISTINCT 
+                MONTH( post_date ) AS month,
+                YEAR( post_date ) AS year
+            FROM $wpdb->posts
+            WHERE post_status = 'publish'
+            AND post_date <= now()
+            AND post_type = 'post'
+            GROUP BY month, year
+            ORDER BY post_date 
+            DESC
+        ");
+        
+        // Iterate through the retrieved dates and display them.
+        // Show the Year first and then all of the Months.
+        foreach( $dates as $date ) :
+            
+            // Initialize the comparison variable to be used for checking
+            // which archive month to display in the navigation menu
+            $compare = array(
+                'selected_year' => (int)$wp_query->query['year'],
+                'selected_month' => (int)$wp_query->query['monthnum'],
+                'this_object_year' => (int)$date->year,
+                'this_object_month' => (int)$date->month,
+                'today' => getdate()
+            );
+        
+            // Build the navigation menu logic checker
+            $show_selected = function( $compare ){
+                if ( 
+                    $compare['selected_year'] === $compare['this_object_year'] ||
+                    ( !$compare['selected_year'] ) && $compare['this_object_year'] === $compare['today']['year'] 
+                ){ return 'show'; }
+            };
+            
+            // Build the selected month logic checker
+            $highlight_month = function( $compare ){
+                if( 
+                    $compare['selected_month'] === $compare['this_object_month'] ||
+                    ( !$compare['selected_month'] ) && $compare['this_object_month'] === $compare['today']['mon'] 
+                ){ return 'class="active"'; }
+            };
+            
+            // Show the year headline and wrap the yearly post.
+            // Adjust the $year variable and find out if we are moving to a new year value
+            if( $year != $date->year ) {
+                
+                $html = '</ul>';
+                $html .= '<h4 class="year-' . $date->year . '">' . $date->year . '</h4>';
+                $html .= '<ul class="year-'. $date->year . ' ' . $show_selected( $compare ) . '">';
+                echo $html;
+                
+                // Store the last pulled year from the object
+                $year = $date->year;
+            }
+            
+        ?>
+            
+            <li>
+                <a href="<?php echo get_month_link( $date->year, $date->month ); ?>" <?php echo $highlight_month( $compare ); ?>>
+                    <?php echo date( "F", mktime( 0, 0, 0, $date->month, 1, $date->year ) ); ?>
+                </a>
+            </li>
+            
+    <?php 
+        
+        endforeach;
+        
     }
     
 }

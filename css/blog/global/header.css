@@ -40,14 +40,6 @@ header.container .row.head .inner.clearfix .columns.four ul li a img {
 header.container .row.sub-head {
     background-color:#bcb9ae;
 }
-header.container .row.sub-head .inner.clearfix .columns.eight h3 {
-    float:left;
-    font-size:14px;
-    color:#fff;
-    font-weight:400;
-    text-transform:uppercase;
-    padding:0.25em 0.25em 0.30em 0;
-}
 header.container .row.sub-head .inner.clearfix .columns.eight ul {
     float:left;
 }
@@ -64,6 +56,9 @@ header.container .row.sub-head .inner.clearfix .columns.eight ul li a {
 }
 header.container .row.sub-head .inner.clearfix .columns.eight ul li a:hover {
     text-decoration:underline;
+}
+header.container .row.sub-head .inner.clearfix .columns.eight ul li:first-child a {
+    padding-left:0;
 }
 header.container .row.sub-head .inner.clearfix .columns.eight ul li:last-child a {
     border-right:none;

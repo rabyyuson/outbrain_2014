@@ -135,6 +135,7 @@
 }
 .container.content .row .inner.clearfix .columns.eight .loading {
     position:fixed;
+    z-index:99;
     bottom:-100px;
     border-radius:7px;
     left:50%;
@@ -146,4 +147,7 @@
 }
 .container.content .row .inner.clearfix .columns.eight .loading.show {
     bottom:30px;
+}
+footer.container.home {
+    display:none;
 }

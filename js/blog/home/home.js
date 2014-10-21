@@ -14,7 +14,6 @@
         init : function(){
            
             var 
-                header = $( 'header.container' ),
                 listing = $( '.container.content .columns.eight' ),
                 article = listing.find( 'article' ),
                 information = article.find( '.information' ),
@@ -24,7 +23,8 @@
                         return listing.height();
                     }
                 }, posts = {},
-                loading = listing.find( '.loading' );
+                loading = listing.find( '.loading' ),
+                footer = $( 'footer.container.home' );
             
             // Loop through the individual information block
             // Use the "read more" url to get the social share count
@@ -72,8 +72,22 @@
                                 
                             }, 250 );
                             
+                        },
+                        error : function() {
+                            
+                            // After 250 ms. remove the loading marker
+                            // Show the footer
+                            setTimeout( function(){ 
+
+                                loading.removeClass( 'show' );
+
+                            }, 250 );
+                            
+                            footer.show();
+                            
                         }
                     });
+                    
                 }
 
             };
@@ -92,7 +106,7 @@
                     // If the height of the scrolled height is 70% of the total
                     // entries height, then get the new entry elements and append
                     // it to the entries container.
-                    ( window_scroll_top > ( ( data.entries_height() ) - 1300 ) ? posts.get_data( data ) : false );
+                    ( window_scroll_top > ( ( data.entries_height() ) - 1500 ) ? posts.get_data( data ) : false );
 
                 }, 10 ) );
                 

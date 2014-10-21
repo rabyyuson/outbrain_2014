@@ -42,32 +42,32 @@
                     <ul>
                         <li>
                             <a href="http://facebook.com/outbrain" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-facebook.png" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-facebook.png" />
                             </a>
                         </li>
                         <li>
                             <a href="http://twitter.com/outbrain" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-twitter.png" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-twitter.png" />
                             </a>
                         </li>
                         <li>
                             <a href="https://plus.google.com/+outbrain" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-googleplus.png" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-googleplus.png" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.linkedin.com/company/outbrain" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-linkedin.png" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-linkedin.png" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.youtube.com/user/ContentDiscovery" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-youtube.png" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-youtube.png" />
                             </a>
                         </li>
                         <li>
                             <a href="http://www.pinterest.com/outbrain/" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-pinterest.png" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-pinterest.png" />
                             </a>
                         </li>
                     </ul>
@@ -77,7 +77,6 @@
         <div class="row sub-head">
             <div class="inner clearfix">
                 <div class="columns eight">
-                    <h3>Featured Categories:</h3>
                     <ul>
                     <?php
                         $categories = get_categories();

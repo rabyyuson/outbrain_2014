@@ -43,7 +43,6 @@
 }
 .container.content .row .inner.clearfix .columns.eight article {
     float:left;
-    margin:0 0 2.5em 0;
 }
 .container.content .row .inner.clearfix .columns.eight article .title {
     float:left;
@@ -453,10 +452,22 @@
 .container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-meta .date {
     float:left;
 }
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-meta .author a {
+    color:#f08229;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-meta .author a:hover {
+    text-decoration:underline;
+}
 .container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-content {
     float:left;
     width:100%;
     font-size:18px;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-content a {
+    color:#f08229;
+}
+.container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .comment-content a:hover {
+    text-decoration:underline;
 }
 .container.content .row .inner.clearfix .columns.eight article .comments .comment-list li.comment .reply {
     float:left;

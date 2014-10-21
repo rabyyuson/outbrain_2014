@@ -10,7 +10,19 @@
  */
 
 ?>
-<footer class="container">
+<footer class="container <?php echo ( is_home() ? 'home' : false ); ?>">
+    <div class="row sub-links">
+        <div class="inner clearfix">
+            <div class="columns twelve">
+                <ul>
+                    <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Authors' ) ) ); ?>">Authors</a></li>
+                    <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Archives' ) ) ); ?>">Archives</a></li>
+                    <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Categories' ) ) ); ?>">Categories</a></li>
+                    <li><a href="javascript:void(0)">Subscribe</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="row mega-footer">
         <div class="inner clearfix">
             <div class="columns twelve">
@@ -35,24 +47,34 @@
                 <div class="columns four">
                     <div class="title">Follow Us:</div>
                     <ul>
-                        <li class="first">
-                            <a href="https://plus.google.com/+outbrain" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/global/social-googleplus.png" />
+                        <li>
+                            <a href="http://www.pinterest.com/outbrain/" target="_blank">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-pinterest.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/user/ContentDiscovery" target="_blank">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-youtube.png" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.linkedin.com/company/outbrain" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/global/social-linkedin.png" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-linkedin.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/+outbrain" target="_blank">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-googleplus.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://twitter.com/outbrain" target="_blank">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-twitter.png" />
                             </a>
                         </li>
                         <li>
                             <a href="http://facebook.com/outbrain" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/global/social-facebook.png" />
-                            </a>
-                        </li>
-                        <li class="last">
-                            <a href="http://twitter.com/outbrain" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/global/social-twitter.png" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-facebook.png" />
                             </a>
                         </li>
                     </ul>
@@ -61,7 +83,7 @@
             <div class="columns twelve copyright">
                 <p>Copyright &copy; <?php echo date('Y'); ?> Outbrain Inc. All rights reserved. Outbrain is a trademark of Outbrain Inc.</p>
                 <a class="logo" href="<?php echo get_home_url(); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/global/logo-footer.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/footer-logo.png" />
                 </a>
             </div>
         </div>

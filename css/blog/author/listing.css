@@ -1,0 +1,100 @@
+/* Authors Listing */
+.container.authors .row .inner.clearfix .columns.eight .toggle {
+    float:left;
+    width:100%;
+    padding:0 0 5px 0;
+    margin:0 0 2em 0;
+    border-bottom:1px solid #000;
+}
+.container.authors .row .inner.clearfix .columns.eight .toggle a {
+    font-size:16px;
+    padding:0 10px;
+    margin:0 0 2em 0;
+    border-right:1px solid #000;
+    color:#999;
+    text-transform:uppercase;
+}
+.container.authors .row .inner.clearfix .columns.eight .toggle a.outbrainers {
+    padding-left:0;
+}
+.container.authors .row .inner.clearfix .columns.eight .toggle a.guests {
+    padding-right:0;
+    border-right:0;
+}
+.container.authors .row .inner.clearfix .columns.eight .toggle a.active {
+    color:#f08229;
+}
+.container.authors .row .inner.clearfix .columns.eight .toggle a.active:hover {
+    text-decoration:none;
+    color:#f08229;
+}
+.container.authors .row .inner.clearfix .columns.eight .toggle a:hover {
+    text-decoration:underline;
+    color:#000;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing {
+    float:left;
+    width:100%;
+    display:none;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing.active {
+    display:block;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user {
+    float:left;
+    width:100%;
+    margin:0 0 2em 0;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .image {
+    float:left;
+    width:25%;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .information {
+    float:right;
+    width:71%;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .information .name a {
+    float:left;
+    width:100%;
+    font-size:24px;
+    text-transform:uppercase;
+    margin:0 0 0.65em 0;
+    font-family:bebas-neue;
+    font-weight:500;
+    color:#000;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .information .name a .medium {
+    font-weight:300;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .information p {
+    float:left;
+    width:100%;
+    font-size:17px;
+    margin:0 0 0.75em 0;
+    padding:0;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .information p a {
+    font-size:15px;
+    color:#f08229;
+    text-transform:uppercase;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .information p a:hover {
+    text-decoration:underline;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .information .social {
+    float:left;
+    width:100%;
+    margin:0 0 0 -2px;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .information .social li {
+    float:left;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .information .social li a {
+    float:left;
+    margin:0 7px 0 0;
+    padding:0;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .information .social li a img {
+    float:left;
+    margin:0;
+}

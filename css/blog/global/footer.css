@@ -1,10 +1,59 @@
 /* Footer */
+footer.container {
+    padding:4em 0 0 0;
+}
 footer .row.mega-footer {
     position:relative !important;
     z-index:10 !important;
     background-color:#f2f2f2 !important;
     color:#000 !important;
+    padding:2em 0 !important;
 }
 footer .row.mega-footer .inner .columns.twelve .columns.eight ul li a {
+    color:#000 !important;
+}
+footer .row.sub-links {
+    float:left;
+    background-color:#c5c5c5;
+}
+footer .row.sub-links .inner.clearfix .columns.twelve ul {
+    float:left;
+    width:100%;
+    padding:10px 0;
+}
+footer .row.sub-links .inner.clearfix .columns.twelve ul li {
+    float:left;
+}
+footer .row.sub-links .inner.clearfix .columns.twelve ul li a {
+    float:left;
+    padding:0 10px;
+    border-right:1px solid #000;
+    color:#000;
+    font-size:0.9em;
+    text-transform:uppercase;
+}
+footer .row.sub-links .inner.clearfix .columns.twelve ul li:first-child a {
+    padding-left:0;
+}
+footer .row.sub-links .inner.clearfix .columns.twelve ul li:last-child a {
+    padding-right:0;
+    border-right:none;
+}
+footer .row.sub-links .inner.clearfix .columns.twelve ul li a:hover {
+    text-decoration:underline;
+}
+footer .row.mega-footer .inner .columns.twelve .columns.four div.title {
+    width:223px !important;
+}
+footer .row.mega-footer .inner .columns.twelve .columns.four ul {
+    width:235px !important;
+}
+footer .row.mega-footer .inner .columns.twelve .columns.four ul li {
+    margin-right:0 !important;
+}
+footer .row.mega-footer .inner .columns.twelve.copyright {
+    border-top:1px solid #000 !important;
+}
+footer .row.mega-footer .inner .columns.twelve.copyright p {
     color:#000 !important;
 }

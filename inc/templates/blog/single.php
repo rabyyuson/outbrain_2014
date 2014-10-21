@@ -14,7 +14,7 @@
     <ul>
         <li class="email">
             <a href="mailto: ?subject=Check%20out%20this%20blog%20post%20from%20Outbrain!&amp;body=Blog%20Post%20link%3A%20(<?php echo urlencode( get_the_permalink() ); ?>)%0A%0ASource%3A%20Outbrain%20Blog%20(http%3A%2F%2Fwww.outbrain.com%2Fblog%2F)">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/header/social-email.png" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/blog/global/social-email.png" />
             </a>
         </li>
         <li class="facebook">
@@ -52,7 +52,7 @@
             <?php echo esc_html( get_the_date( 'F j, Y' ) ); ?>
         </time>
         <div class="author">
-            <a href="<?php echo get_the_author_link(); ?>">
+            <a href="<?php echo get_author_posts_url( $post->post_author ) ?>">
                 <?php echo get_the_author(); ?>
             </a>
         </div>
@@ -103,10 +103,10 @@
                 <?php 
                     // Get the social network links associated with this user.
                     $social_networks = array(
-                        array( 'id' => 'facebook', 'image' => get_template_directory_uri() . '/images/blog/header/social-facebook.png' ),
-                        array( 'id' => 'twitter', 'image' => get_template_directory_uri() . '/images/blog/header/social-twitter.png' ),
-                        array( 'id' => 'google_plus', 'image' => get_template_directory_uri() . '/images/blog/header/social-googleplus.png' ),
-                        array( 'id' => 'linkedin', 'image' => get_template_directory_uri() . '/images/blog/header/social-linkedin.png' ),
+                        array( 'id' => 'facebook', 'image' => get_template_directory_uri() . '/images/blog/global/social-facebook.png' ),
+                        array( 'id' => 'twitter', 'image' => get_template_directory_uri() . '/images/blog/global/social-twitter.png' ),
+                        array( 'id' => 'google_plus', 'image' => get_template_directory_uri() . '/images/blog/global/social-googleplus.png' ),
+                        array( 'id' => 'linkedin', 'image' => get_template_directory_uri() . '/images/blog/global/social-linkedin.png' ),
                     );
                     foreach( $social_networks as $k => $v ):
                         if( $user_meta[ $v['id'] ] ): ?>

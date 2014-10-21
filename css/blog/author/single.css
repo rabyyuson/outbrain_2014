@@ -1,0 +1,65 @@
+/* Author Detail */
+.container.content .row .inner.clearfix .columns.eight {
+    margin:0 0 4em 0;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .image a,
+.container.authors .row .inner.clearfix .columns.eight .listings .listing .user .information .name a {
+    cursor:default !important;
+}
+.container.authors .row .inner.clearfix .columns.eight .listings .listing {
+    display:block !important;
+    margin-bottom:1em !important;
+}
+.container.content .row .inner.clearfix .columns.eight article .category-title a {
+    float:left;
+    color:#a3a2a0;
+    margin:0 0 7.5px 0;
+    font-size:15px;
+    width:100%;
+    text-transform:uppercase;
+}
+.container.content .row .inner.clearfix .columns.eight article .category-title a:hover {
+    text-decoration:underline;
+    color:#f08229;
+}
+.container.content .row .inner.clearfix .columns.eight article .title a {
+    font-size:24px !important;
+}
+.container.content .row .inner.clearfix .columns.eight article .meta time {
+    border-right:none !important;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content {
+    width:100% !important;
+    height:auto !important;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .read-more {
+    position:relative !important;
+    left:auto !important;
+    bottom:auto !important;
+}
+.container.content .row .inner.clearfix .columns.eight article .information .content .read-more a {
+    float:left !important;
+    margin:1em 0 0 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .close {
+    margin-top:2em !important;
+}
+.container.content .row .inner.clearfix .columns.eight article .close .dash {
+    width:100% !important;
+    height:1px !important;
+    background-color:#000 !important;
+}
+.container.content .row .inner.clearfix .columns.eight article::last-child .close {
+    display:none !important;
+}
+.container.authors .row .inner.clearfix .columns.eight .author-articles {
+    float:left;
+    width:100%;
+    font-weight:600;
+    font-size:18px;
+    color:#000;
+    text-transform:uppercase;
+    border-bottom:1px solid #000;
+    padding:0 0 10px 0;
+    margin:0 0 1em 0;
+}

@@ -21,7 +21,7 @@
             <?php echo esc_html( get_the_date( 'F j, Y' ) ); ?>
         </time>
         <div class="author">
-            <a href="<?php echo get_the_author_link(); ?>">
+            <a href="<?php echo get_author_posts_url( $post->post_author ); ?>">
                 <?php echo get_the_author(); ?>
             </a>
         </div>
