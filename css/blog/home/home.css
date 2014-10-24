@@ -6,11 +6,14 @@
     float:left;
     width:100%;
     background-color:#f2f2f2;
-    margin:1em 0 4em 0;
+    margin:0 0 3em 0;
 }
 .container.content .row .inner.clearfix .featured-posts article {
     float:left;
     width:30%;
+}
+.container.content .row .inner.clearfix .featured-posts article:hover .thumbnail .social {
+    bottom:0;
 }
 .container.content .row .inner.clearfix .featured-posts article.recommendation-0 .thumbnail {
     float:right;
@@ -26,6 +29,9 @@
     border-bottom:2px solid #fff;
     margin:0 !important;
 }
+.container.content .row .inner.clearfix .featured-posts article.recommendation-0 .information .title a {
+    margin:0 !important;
+}
 .container.content .row .inner.clearfix .featured-posts article.recommendation-1 {
     margin:30px 0 20px 20px !important;
 }
@@ -38,6 +44,32 @@
 .container.content .row .inner.clearfix .featured-posts article .thumbnail {
     float:left;
     width:100%;
+    position:relative;
+    overflow:hidden;
+}
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .social {
+    position:absolute;
+    left:0;
+    bottom:-100px;
+    width:100%;
+    background-color:#fff;
+    padding:5px;
+    opacity:0.9;
+    overflow:hidden;
+    transition:bottom 0.25s ease-in-out;
+}
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .social a {
+    margin:0 5px 0 0;
+}
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .social a img {
+    opacity:1;
+}
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .social .count {
+    opacity:1;
+    color:#000;
+    position:absolute;
+    top:6px;
+    left:138px;
 }
 .container.content .row .inner.clearfix .featured-posts article .thumbnail .image,
 .container.content .row .inner.clearfix .featured-posts article .thumbnail .image img,
@@ -59,6 +91,7 @@
     float:left;
     width:100%;
     color:#000;
+    margin:15px 0 0 0;
     text-transform:uppercase;
     font-size:26px;
     font-weight:500;
