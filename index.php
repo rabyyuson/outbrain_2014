@@ -48,7 +48,7 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
                         </div>
                         <div class="information">
                             <h1 class="title">
-                                <a href="javascript:void(0)">
+                                <a href="#">
                                     Post Title...
                                 </a>
                             </h1>
@@ -57,15 +57,16 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
                                     Formatted Time...
                                 </time>
                                 <div class="author">
-                                    <a href="javascript:void(0)">
+                                    <a href="#">
                                         The Author Name...
                                     </a>
                                 </div>
                             </div>
                             <div class="content">
                                 <div class="excerpt">
-                                    Post Content...<a href="<?php echo get_the_permalink(); ?>">Read More &raquo;</a>
+                                    Post Content...
                                 </div>
+                                <a href="#">Read More &raquo;</a>
                             </div>
                         </div>
                     </article>

@@ -28,7 +28,7 @@
                 footer = $( 'footer.container.home' );
             
             // Retrieve the share count data
-            posts.promise = function( link ){
+            window.promise = function( link ){
                 
                 // Asynchronously retrieve the count share data based on the passed url link
                 return $.ajax( {
@@ -46,7 +46,7 @@
                 // Pass in the read more link on each post to calculate the share count.
                 // Pull the ajax promise data and perform operations on the data
                 var
-                    promise = posts.promise( $( this ).find( '.content .read-more a' ).attr( 'href' ) );
+                    promise = window.promise( $( this ).find( '.content .read-more a' ).attr( 'href' ) );
                     
                 // Attach the done function to retrieve the data from the promise
                 promise.done( function( data ){

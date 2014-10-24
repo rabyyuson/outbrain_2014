@@ -5,61 +5,94 @@
 .container.content .row .inner.clearfix .featured-posts {
     float:left;
     width:100%;
-    border:1px dashed red;
+    background-color:#f2f2f2;
+    margin:1em 0 4em 0;
 }
 .container.content .row .inner.clearfix .featured-posts article {
     float:left;
-    width:32%;
-    border:1px dashed red;
+    width:30%;
 }
-.container.content .row .inner.clearfix .featured-posts article.first {
+.container.content .row .inner.clearfix .featured-posts article.recommendation-0 .thumbnail {
+    float:right;
+    width:49%;
+}
+.container.content .row .inner.clearfix .featured-posts article.recommendation-0 .information {
+    float:left;
+    width:49%;
+}
+.container.content .row .inner.clearfix .featured-posts article.recommendation-0 {
     width:100%;
+    padding:30px 20px 30px 20px !important;
+    border-bottom:2px solid #fff;
+    margin:0 !important;
+}
+.container.content .row .inner.clearfix .featured-posts article.recommendation-1 {
+    margin:30px 0 20px 20px !important;
+}
+.container.content .row .inner.clearfix .featured-posts article.recommendation-2 {
+    margin:30px 17px !important;
+}
+.container.content .row .inner.clearfix .featured-posts article.recommendation-3 {
+    margin:30px 0 !important;
 }
 .container.content .row .inner.clearfix .featured-posts article .thumbnail {
     float:left;
     width:100%;
-    border:1px dashed red;
 }
-.container.content .row .inner.clearfix .featured-posts article .thumbnail .image {
-    float:left;
-    width:100%;
-    border:1px dashed red;
-}
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .image,
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .image img,
 .container.content .row .inner.clearfix .featured-posts article .thumbnail .social {
     float:left;
     width:100%;
-    border:1px dashed red;
 }
 .container.content .row .inner.clearfix .featured-posts article .thumbnail .social ul,
 .container.content .row .inner.clearfix .featured-posts article .thumbnail .social ul li,
-.container.content .row .inner.clearfix .featured-posts article .thumbnail .social ul li a img {
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .social ul li a img,
+ .container.content .row .inner.clearfix .featured-posts article .thumbnail .social ul li a {
     float:left;
-}
-.container.content .row .inner.clearfix .featured-posts article .thumbnail .social ul li a {
-    float:left;
-    border:1px dashed red;
 }
 .container.content .row .inner.clearfix .featured-posts article .information {
     float:left;
     width:100%;
-    border:1px dashed red;
 }
-.container.content .row .inner.clearfix .featured-posts article .information .title {
+.container.content .row .inner.clearfix .featured-posts article .information .title a {
     float:left;
     width:100%;
-    border:1px dashed red;
+    color:#000;
+    text-transform:uppercase;
+    font-size:26px;
+    font-weight:500;
+    line-height:26px;
+    font-family:bebas-neue,sans-serif;
+}
+.container.content .row .inner.clearfix .featured-posts article.recommendation-0 .information .meta,
+.container.content .row .inner.clearfix .featured-posts article.recommendation-0 .information .content .excerpt {
+    display:block;
 }
 .container.content .row .inner.clearfix .featured-posts article .information .meta {
     float:left;
     width:100%;
-    border:1px dashed red;
+    display:none;
 }
 .container.content .row .inner.clearfix .featured-posts article .information .content {
     float:left;
     width:100%;
     height:auto;
-    border:1px dashed red;
 }
+.container.content .row .inner.clearfix .featured-posts article .information .content a {
+    color:#f08229;
+    text-transform:uppercase;
+}
+.container.content .row .inner.clearfix .featured-posts article .information .content a:hover {
+    text-decoration:underline;
+}
+.container.content .row .inner.clearfix .featured-posts article .information .content .excerpt {
+    width:auto !important;
+    font-size:18px;
+    margin:0 !important;
+    display:none;
+}
+
 .container.content .row .inner.clearfix article {
     float:left;
     margin:0 0 2.5em 0;
