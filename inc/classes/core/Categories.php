@@ -39,7 +39,8 @@ class Categories {
     public function category_edit_form( $category ) {
         
         // Grab the category options
-        $category_options = unserialize( get_option( 'category_meta_options_' . $category->term_id ) ); ?>
+        $category_options = unserialize( get_option( 'category_meta_options_' . $category->term_id ) );
+        ?>
 
         <style>
             .form-table.new-fields input[type=text] {
@@ -65,8 +66,11 @@ class Categories {
                         <label for="yes_feature">Yes</label>
                         <input id="yes_feature" type="radio" name="feature_category" value="1" <?php echo ( (int)$category_options['feature_category'] === 1 ? 'checked="checked"' : false ); ?> />
                         <label for="no_feature">No</label>
-                        <input id="no_feature" type="radio" name="feature_category" value="0" <?php echo ( (int)$category_options['feature_category'] === 0 ? 'checked="checked"' : 'checked="checked"' ); ?>  />
-                        <p class="description">Feature this Category?</p>
+                        <input id="no_feature" type="radio" name="feature_category" value="0" <?php echo ( (int)$category_options['feature_category'] === 0 && !(int)$category_options['feature_category'] ? 'checked="checked"' : false ); ?>  />
+                        <p class="description">Feature this Category? (Note: You need a post associated with this Category for this to show in the Featured area)</p>
+                        <p style="margin:10px 0;"></p>
+                        <input style="width:60px" type="text" name="order_category" value="<?php echo ( $category_options['order_category'] ? $category_options['order_category'] : '' ); ?>" placeholder="ex. 1" />
+                        <p class="description">Enter the order of this category (0 being the first position).</p>
                     </td>
                 </tr>
             </tbody>
@@ -84,7 +88,8 @@ class Categories {
     public function edited_category( $id ){
 
         $data = serialize( array(
-            'feature_category' => $_POST[ 'feature_category' ]
+            'feature_category' => $_POST[ 'feature_category' ],
+            'order_category' => $_POST[ 'order_category' ],
         ));
 
         update_option( 'category_meta_options_' . $id, $data );

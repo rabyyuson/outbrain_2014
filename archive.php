@@ -16,13 +16,13 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
             <div class="columns two">
                 <?php \Outbrain\Classes\Core\Functions::get_archives(); ?>
             </div>
-            <div class="columns six">
+            <div class="columns six blog-posts">
                 <?php
                     // Loop through the posts and show them
                     if ( have_posts() ) :
                         // Pull the view template for displaying the post data
                         while ( have_posts() ) : the_post();
-                            get_template_part( 'inc/templates/blog/home', get_post_format() );
+                            get_template_part( 'inc/templates/blog/archive', get_post_format() );
                         endwhile;
                         // Get the pagination links
                         echo \Outbrain\Classes\Core\Functions::get_pagination();

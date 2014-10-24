@@ -12,7 +12,7 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
 <div class="container content category" role="main">
     <div class="row">
         <div class="inner clearfix">
-            <div class="columns eight">
+            <div class="columns eight blog-posts">
                 <div class="category-title">
                     Category : <span><?php echo single_cat_title( '', false ); ?></span>
                 </div>

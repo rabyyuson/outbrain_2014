@@ -13,7 +13,63 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
 <div class="container content" role="main">
     <div class="row">
         <div class="inner clearfix">
-            <div class="columns eight">
+            <div class="columns eight blog-posts">
+                <div class="featured-posts">
+                    <article style="display:none;">
+                        <div class="thumbnail">
+                            <div class="image">
+                                Post Thumbnail...
+                            </div>
+                            <div class="social">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0)" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-facebook.png" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-twitter.png" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-googleplus.png" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-linkedin.png" />
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="count">0 Shares</div>
+                            </div>
+                        </div>
+                        <div class="information">
+                            <h1 class="title">
+                                <a href="javascript:void(0)">
+                                    Post Title...
+                                </a>
+                            </h1>
+                            <div class="meta">
+                                <time>
+                                    Formatted Time...
+                                </time>
+                                <div class="author">
+                                    <a href="javascript:void(0)">
+                                        The Author Name...
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="excerpt">
+                                    Post Content...<a href="<?php echo get_the_permalink(); ?>">Read More &raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
                 <?php
                     // Loop through the posts and show them
                     if ( have_posts() ) :

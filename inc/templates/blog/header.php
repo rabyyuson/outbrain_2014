@@ -79,17 +79,38 @@
                 <div class="columns eight">
                     <ul>
                     <?php
-                        $categories = get_categories();
-                        foreach( $categories as $k => $v ):
-                            $category_options = unserialize( get_option( 'category_meta_options_' . $v->term_id ) );
-                            if( (int)$category_options['feature_category'] === 1 ): ?>
-                                <li>
-                                    <a href="<?php echo get_category_link( $v->term_id ); ?>">
-                                        <?php echo $v->name; ?>
-                                    </a>
-                                </li>
-                    <?php   endif;
-                        endforeach;   ?>
+                    
+                        // Get all categories.
+                        $categories = array(
+                            'all' => get_categories(),
+                            'featured' => array()
+                        );
+                        
+                        // Loop through all the categories and identify
+                        // which ones are featured. Also store the order id.
+                        foreach( $categories['all'] as $k => $v ) {
+                            $meta_options = unserialize( get_option( 'category_meta_options_' . $v->term_id ) );
+                            if( (int)$meta_options['feature_category'] === 1 ) {
+                                array_push( $categories['featured'], array( 'data' => $v, 'order' => (int)$meta_options['order_category'] ) );
+                            }
+                        }
+                    
+                        // Sort the users by order value
+                        function sort_by_order_value( $a, $b ) {
+                            return strcmp( $a['order'], $b['order'] );
+                        }
+                        usort( $categories['featured'], 'sort_by_order_value' );
+                        
+                        // Loop through the refined featured categories and show them
+                        foreach( $categories['featured'] as $k => $v ):
+                            ?>
+                            <li>
+                                <a href="<?php echo get_category_link( $v['data']->term_id ); ?>">
+                                    <?php echo $v['data']->name; ?>
+                                </a>
+                            </li>
+                    <?php 
+                        endforeach; ?>
                 </div>
                 <div class="columns four">
                     <ul>

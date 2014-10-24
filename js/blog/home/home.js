@@ -14,7 +14,7 @@
         init : function(){
            
             var 
-                listing = $( '.container.content .columns.eight' ),
+                listing = $( '.container.content .blog-posts' ),
                 article = listing.find( 'article' ),
                 information = article.find( '.information' ),
                 data = {
@@ -23,22 +23,36 @@
                         return listing.height();
                     }
                 }, posts = {},
+                pagination = listing.find( '.pagination' ),
                 loading = listing.find( '.loading' ),
                 footer = $( 'footer.container.home' );
+            
+            // Retrieve the share count data
+            posts.promise = function( link ){
+                
+                // Asynchronously retrieve the count share data based on the passed url link
+                return $.ajax( {
+                    dataType : 'json',
+                    url : stylesheetDir + '/inc/libraries/social-counter/counter.php',
+                    data : { url : link }
+                } );
+                
+            };
             
             // Loop through the individual information block
             // Use the "read more" url to get the social share count
             information.each( function(){
                 
-                $.ajax( {
-                    dataType : 'json',
-                    url : stylesheetDir + '/inc/libraries/social-counter/counter.php',
-                    data : { url : $( this ).find( '.content .read-more a' ).attr( 'href' ) },
-                    success : function( data ){
-                        information.find( '.content .social .count' ).text( data.count + ' Shares' );
-                    }
+                // Pass in the read more link on each post to calculate the share count.
+                // Pull the ajax promise data and perform operations on the data
+                var
+                    promise = posts.promise( $( this ).find( '.content .read-more a' ).attr( 'href' ) );
+                    
+                // Attach the done function to retrieve the data from the promise
+                promise.done( function( data ){
+                    information.find( '.content .social .count' ).text( data.count + ' Shares' );
                 } );
-                
+
             } );
             
             // Posts Get Data function
@@ -103,10 +117,10 @@
                 $.data( this, 'scroll_timer', setTimeout(function() {
                     
                     // Show or hide the sub navigation panel
-                    // If the height of the scrolled height is 70% of the total
-                    // entries height, then get the new entry elements and append
-                    // it to the entries container.
-                    ( window_scroll_top > ( ( data.entries_height() ) - 1500 ) ? posts.get_data( data ) : false );
+                    // If there is pagination and if the height of the scrolled 
+                    // height is 70% of the total entries height, then get the 
+                    // new entry elements and append it to the entries container.
+                    ( window_scroll_top > ( ( data.entries_height() ) - 1500 ) && pagination.length ? posts.get_data( data ) : false );
 
                 }, 10 ) );
                 

@@ -1,15 +1,73 @@
 /* Content */
-.container.content .row .inner.clearfix .columns.eight {
+.blog-posts {
     float:left;
 }
-.container.content .row .inner.clearfix .columns.eight article {
+.container.content .row .inner.clearfix .featured-posts {
+    float:left;
+    width:100%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .featured-posts article {
+    float:left;
+    width:32%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .featured-posts article.first {
+    width:100%;
+}
+.container.content .row .inner.clearfix .featured-posts article .thumbnail {
+    float:left;
+    width:100%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .image {
+    float:left;
+    width:100%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .social {
+    float:left;
+    width:100%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .social ul,
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .social ul li,
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .social ul li a img {
+    float:left;
+}
+.container.content .row .inner.clearfix .featured-posts article .thumbnail .social ul li a {
+    float:left;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .featured-posts article .information {
+    float:left;
+    width:100%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .featured-posts article .information .title {
+    float:left;
+    width:100%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .featured-posts article .information .meta {
+    float:left;
+    width:100%;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix .featured-posts article .information .content {
+    float:left;
+    width:100%;
+    height:auto;
+    border:1px dashed red;
+}
+.container.content .row .inner.clearfix article {
     float:left;
     margin:0 0 2.5em 0;
 }
-.container.content .row .inner.clearfix .columns.eight article .title {
+.container.content .row .inner.clearfix article .title {
     float:left;
 }
-.container.content .row .inner.clearfix .columns.eight article .title a {
+.container.content .row .inner.clearfix article .title a {
     float:left;
     width:100%;
     margin:0 0 0.25em 0;
@@ -21,12 +79,12 @@
     font-family:bebas-neue,sans-serif;
     transition:color 0.1s ease-in-out;
 }
-.container.content .row .inner.clearfix .columns.eight article .meta {
+.container.content .row .inner.clearfix article .meta {
     float:left;
     width:100%;
     margin:0 0 1em 0;
 }
-.container.content .row .inner.clearfix .columns.eight article .meta time {
+.container.content .row .inner.clearfix article .meta time {
     float:left;
     color:#a3a2a0;
     border-right:1px solid #d3d3d3;
@@ -35,78 +93,78 @@
     font-size:14px;
     text-transform:uppercase;
 }
-.container.content .row .inner.clearfix .columns.eight article .meta .author {
+.container.content .row .inner.clearfix article .meta .author {
     float:left;
 }
-.container.content .row .inner.clearfix .columns.eight article .meta .author a {
+.container.content .row .inner.clearfix article .meta .author a {
     float:left;
     font-size:14px;
     color:#f08229;
     text-transform:uppercase;
 }
-.container.content .row .inner.clearfix .columns.eight article .meta .author a:hover {
+.container.content .row .inner.clearfix article .meta .author a:hover {
     text-decoration:underline;
 }
-.container.content .row .inner.clearfix .columns.eight article .information {
+.container.content .row .inner.clearfix article .information {
     float:left;
     width:100%;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .featured-image {
+.container.content .row .inner.clearfix article .information .featured-image {
     float:left;
     width:340px;
     height:250px;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .featured-image a {
+.container.content .row .inner.clearfix article .information .featured-image a {
     float:left;
 }
-.container.content .row .inner.clearfix .columns.eight article .information img {
+.container.content .row .inner.clearfix article .information img {
     display:block;
     margin:0 auto;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content {
+.container.content .row .inner.clearfix article .information .content {
     float:right;
     width:50%;
     height:250px;
     position:relative;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .excerpt {
+.container.content .row .inner.clearfix article .information .content .excerpt {
     float:left;
     width:100%;
     font-size:18px;
     margin:-6px 0 0 0;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .social {
+.container.content .row .inner.clearfix article .information .content .social {
     float:left;
     width:100%;
     position:absolute;
     bottom:60px;
     left:0;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .social ul,
-.container.content .row .inner.clearfix .columns.eight article .information .content .social ul li {
+.container.content .row .inner.clearfix article .information .content .social ul,
+.container.content .row .inner.clearfix article .information .content .social ul li {
     float:left;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .social ul li a {
+.container.content .row .inner.clearfix article .information .content .social ul li a {
     float:left;
     padding:0 0.15em;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .social ul li:first-child a {
+.container.content .row .inner.clearfix article .information .content .social ul li:first-child a {
     padding-left:0;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .social .count {
+.container.content .row .inner.clearfix article .information .content .social .count {
     float:left;
     margin:2px 0 0 7px;
     color:#a3a2a0;
     font-size:14px;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .read-more {
+.container.content .row .inner.clearfix article .information .content .read-more {
     float:left;
     width:100%;
     position:absolute;
     bottom:5px;
     left:0;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .read-more a {
+.container.content .row .inner.clearfix article .information .content .read-more a {
     color:#f18e50;
     text-transform:uppercase;
     padding:0.3em 1em;
@@ -115,25 +173,25 @@
     border:2px solid #000;
     transition:background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 }
-.container.content .row .inner.clearfix .columns.eight article .information .content .read-more a:hover {
+.container.content .row .inner.clearfix article .information .content .read-more a:hover {
     background-color:#000;
     color:#fff;
 }
-.container.content .row .inner.clearfix .columns.eight article .close {
+.container.content .row .inner.clearfix article .close {
     float:left;
     width:100%;
     margin:2.5em 0 0 0;
 }
-.container.content .row .inner.clearfix .columns.eight article .close .dash {
+.container.content .row .inner.clearfix article .close .dash {
     float:left;
     width:15%;
     height:7px;
     background-color:#dfdfdf;
 }
-.container.content .row .inner.clearfix .columns.eight .pagination {
+.container.content .row .inner.clearfix .blog-posts .pagination {
     text-indent:-9999px;
 }
-.container.content .row .inner.clearfix .columns.eight .loading {
+.blog-posts .loading {
     position:fixed;
     z-index:99;
     bottom:-100px;
@@ -145,7 +203,7 @@
     background:#000 url('../../../images/blog/home/ajax-loader.gif') no-repeat 86px 15px;
     transition:bottom 0.25s ease-in-out;
 }
-.container.content .row .inner.clearfix .columns.eight .loading.show {
+.blog-posts .loading.show {
     bottom:30px;
 }
 footer.container.home {

@@ -234,9 +234,11 @@ class Functions {
         
         } elseif( is_home() ) {
             
+            wp_enqueue_script( 'blog-outbrain', '//widgets.outbrain.com/outbrain.js', array(), null, FALSE );
             wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
+            wp_enqueue_script( 'blog-featured-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/featured.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
@@ -313,6 +315,7 @@ class Functions {
             wp_enqueue_style( 'blog-archives-listing', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/archives/listing.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-archive-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/archives/listing.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
             
             
@@ -328,6 +331,7 @@ class Functions {
             wp_enqueue_style( 'blog-archives-listing', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/archives/listing.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-archive-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/archives/listing.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
             
             
@@ -875,8 +879,8 @@ class Functions {
             // Build the selected month logic checker
             $highlight_month = function( $compare ){
                 if( 
-                    $compare['selected_month'] === $compare['this_object_month'] ||
-                    ( !$compare['selected_month'] ) && $compare['this_object_month'] === $compare['today']['mon'] 
+                    $compare['selected_month'] === $compare['this_object_month'] && $compare['selected_year'] === $compare['this_object_year'] ||
+                    ( !$compare['selected_month'] ) && $compare['this_object_month'] === $compare['today']['mon'] && $compare['this_object_year'] === $compare['today']['year']
                 ){ return 'class="active"'; }
             };
             
