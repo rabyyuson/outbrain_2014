@@ -15,6 +15,7 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
         <div class="inner clearfix">
             <div class="columns eight blog-posts">
                 <div class="featured-posts">
+                    <div class="loading">Loading Featured Posts...</div>
                     <article style="display:none;">
                         <div class="thumbnail">
                             <div class="image">

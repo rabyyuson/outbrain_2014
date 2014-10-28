@@ -25,13 +25,16 @@
                     },
                     callback : function( data ){
                         
+                        // Remove the loading text
+                        featured.container.find( '.loading' ).remove();
+                        
                         // Loop through the recommendations
                         for( var i in data.doc ){
                             
                             // Create a clone copy of the article container.
                             // Also show this element.
                             var 
-                                cloned_article = featured.article.clone( true ).css( 'display', 'block' ), counter = -1;
+                                cloned_article = featured.article.clone( false ).css( 'display', 'block' ), counter = -1;
                                 
                             // Identify the element's order sequence.
                             if( parseInt( i ) === 0 ){
@@ -58,9 +61,6 @@
                                 
                             // Add this cloned element to the featured post container.
                             featured.container.append( cloned_article );
-                
-                            // Remove the first template article from the featured list.
-                            featured.article.eq(0).remove();
                             
                             // Pass in the original url of each recommendation to calculate the share count.
                             // Pull the ajax promise data and perform operations on the data
@@ -75,13 +75,16 @@
                             } );
                 
                         }
+                
+                        // Remove the first template article from the featured list.
+                        featured.article.eq(0).remove();
 
                     }
                 };
             
             // Call the Outbrain Widget JS API and load the recommendations
             // through the callback function.
-            OBR.extern.callRecs(featured.request, featured.callback);
+            OBR.extern.callRecs( featured.request, featured.callback );
             
         }
        

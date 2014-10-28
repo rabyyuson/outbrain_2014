@@ -89,9 +89,9 @@
                         // Loop through all the categories and identify
                         // which ones are featured. Also store the order id.
                         foreach( $categories['all'] as $k => $v ) {
-                            $meta_options = unserialize( get_option( 'category_meta_options_' . $v->term_id ) );
-                            if( (int)$meta_options['feature_category'] === 1 ) {
-                                array_push( $categories['featured'], array( 'data' => $v, 'order' => (int)$meta_options['order_category'] ) );
+                            
+                            if( function_exists( 'get_field' ) && (int)get_field( 'category_featured', $v ) === 1 ) {
+                                array_push( $categories['featured'], array( 'data' => $v, 'order' => (int)get_field( 'category_order', $v ) ) );
                             }
                         }
                     

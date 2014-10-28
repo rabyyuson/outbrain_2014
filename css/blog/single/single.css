@@ -295,9 +295,43 @@
 .container.content .row .inner.clearfix .columns.eight article .recommendations {
     float:left;
     width:100%;
-    margin:1.5em 0;
+    margin:1.5em 0 2.5em 0;
     border-top:6px solid #000;
     padding-top:1em;
+}
+.container.content .row .inner.clearfix .columns.eight article .recommendations h3 {
+    float:left;
+    width:100%;
+    margin:0 0 1em 0;
+    font-size:18px;
+    text-transform:uppercase;
+}
+.container.content .row .inner.clearfix .columns.eight article .recommendations .posts {
+    float:left;
+    width:100%;
+    margin:1em 0 0 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .recommendations .posts .post {
+    float:left;
+    width:23%;
+    color:#000;
+    font-size:18px;
+}
+.container.content .row .inner.clearfix .columns.eight article .recommendations .posts .post .image {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .columns.eight article .recommendations .posts .post .content {
+    float:left;
+    width:100%;
+    margin:10px 0 0 0;
+    line-height:22px;
+}
+.container.content .row .inner.clearfix .columns.eight article .recommendations .posts .post.recommendation-1 {
+    margin:0 19px;
+}
+.container.content .row .inner.clearfix .columns.eight article .recommendations .posts .post.recommendation-2 {
+    margin:0 19px 0 0;
 }
 .container.content .row .inner.clearfix .columns.eight article .comments {
     float:left;

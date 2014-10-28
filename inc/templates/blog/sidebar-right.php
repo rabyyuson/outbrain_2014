@@ -28,7 +28,7 @@ if( $_GET['category_id'] ): ?>
                 if( function_exists( 'get_field' ) ): ?>
                     <script>
                         var post_options = [
-                        <?php foreach( get_field( 'subscription_form_field_selection', $post->ID ) as $class_name ):
+                        <?php foreach( get_field( 'blog_single_sidebar_subscription_form_field_selection', $post->ID ) as $class_name ):
                             echo "'" . $class_name . "',";
                         endforeach; ?>
                         ]

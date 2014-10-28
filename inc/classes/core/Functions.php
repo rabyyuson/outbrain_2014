@@ -59,13 +59,15 @@ class Functions {
         // Add action.
 
         add_action( 'admin_head', array( Functions::get_class_full_name(), 'editor_style' ) );
-        add_action( 'admin_menu', array( Functions::get_class_full_name(), 'register_webinar_help_page' ) );
         add_action( 'wp_enqueue_scripts', array( Functions::get_class_full_name(), 'wp_enqueue_scripts' ) );
         add_action( 'widgets_init', array( Functions::get_class_full_name(), 'widgets_init' ) );
         add_action( 'init', array( Functions::get_class_full_name(), 'tinymce_add_button' ) );
         add_action( 'admin_menu', function(){
             add_submenu_page( 'edit.php?post_type=webinars', 'Help', 'Help', 'edit_posts', 'webinar-help-page', function(){
                 include( TEMPLATEPATH . '/inc/addons/webinar/help/how-to-create-an-outbrainy-webinar.php' );
+            } );
+            add_submenu_page( 'edit.php', 'More Options', 'More Options', 'activate_plugins', 'post-more-options', function(){
+                include( TEMPLATEPATH . '/inc/templates/blog/admin/post.php' );
             } );
         } );
         
@@ -81,29 +83,124 @@ class Functions {
 
         // Add filter.
         
-        add_filter( 'default_content', 'webinar_default_content', 10, 2 );
+        add_filter( 'default_content', array( Functions::get_class_full_name(), 'default_content' ), 10, 2 );
         add_filter( 'tiny_mce_before_init', array( Functions::get_class_full_name(), 'tinymce_kitchen_sink' ) );
         add_filter( 'the_content', array( Functions::get_class_full_name(), 'replace_public_links' ) );
         
         // Remove filter.
         
-        remove_filter('template_redirect', 'redirect_canonical');
+        remove_filter( 'template_redirect', 'redirect_canonical' );
             
             
+        /********************************************
+         * Post Types
+         ********************************************/
+            
+        register_post_type( 'webinars', array(
+            
+            'description'       => 'Webinars',
+            'public'            => TRUE,
+            'show_ui'           => TRUE,
+            'capability_type'   => 'post',
+            'hierarchical'      => TRUE,
+            'rewrite'           => FALSE,
+            'query_var'         => TRUE,
+            'supports'          => array(
+                'title', 'editor'
+            ),
+            'labels'            => array(
+                'name'               => 'Webinars',
+		'singular_name'      => 'Webinar',
+		'menu_name'          => 'Webinars',
+		'name_admin_bar'     => 'Webinar',
+		'add_new'            => 'Add New',
+		'add_new_item'       => 'Add New Webinar',
+		'new_item'           => 'New Webinar',
+		'edit_item'          => 'Edit Webinar',
+		'view_item'          => 'View Webinar',
+		'all_items'          => 'All Webinars',
+		'search_items'       => 'Search Webinars',
+		'parent_item_colon'  => 'Parent Webinars:',
+		'not_found'          => 'No webinars found.',
+		'not_found_in_trash' => 'No webinars found in Trash.'
+            ),
+            
+        ) );
+        
+        register_post_type( 'downloads', array(
+            
+            'description'       => 'Downloads',
+            'public'            => TRUE,
+            'show_ui'           => TRUE,
+            'capability_type'   => 'post',
+            'hierarchical'      => TRUE,
+            'rewrite'           => FALSE,
+            'query_var'         => TRUE,
+            'supports'          => array(
+                'title', 'editor'
+            ),
+            'labels'            => array(
+                'name'               => 'Downloads',
+		'singular_name'      => 'Download',
+		'menu_name'          => 'Downloads',
+		'name_admin_bar'     => 'Download',
+		'add_new'            => 'Add New',
+		'add_new_item'       => 'Add New Download',
+		'new_item'           => 'New Download',
+		'edit_item'          => 'Edit Download',
+		'view_item'          => 'View Download',
+		'all_items'          => 'All Downloads',
+		'search_items'       => 'Search Downloads',
+		'parent_item_colon'  => 'Parent Downloads:',
+		'not_found'          => 'No downloads found.',
+		'not_found_in_trash' => 'No downloads found in Trash.'
+            ),
+            
+        ));
+        
+        register_post_type( 'press', array(
+            
+            'label'             => __( 'Press' ),
+            'singular_label'    => __( 'Press' ),
+            'public'            => TRUE,
+            'show_ui'           => TRUE,
+            'capability_type'   => 'post',
+            'hierarchical'      => TRUE,
+            'query_var'         => TRUE,
+            'rewrite'           => array(
+                'slug' => '_press'
+            ),
+            'supports'          => array(
+                'title', 'editor', 'author'
+            ),
+            
+        ));
+        
+        
         /********************************************
          * Taxonomies
          ********************************************/
             
-        register_taxonomy( 'classification', 'casestudies', array( 
+        register_taxonomy( 'download-file', 'downloads', array( 
             
-            'hierarchical'      =>  TRUE, 
-            'label'             => 'Classification', 
-            'query_var'         => TRUE, 
-            'rewrite'           => FALSE,
-            'edit_item'         => 'Edit Classification', 
-            'update_item'       => 'Update Classification', 
-            'add_new_item'      => 'Add New Classification', 
-            'new_item_name'     => 'New Classification Name',
+            'hierarchical'  => TRUE, 
+            'query_var'     => TRUE, 
+            'rewrite'       => FALSE,
+            'labels'        => array(
+                'name'                => 'Category',
+                'singular_name'       => 'Category',
+                'menu_name'           => 'Categories',
+                'parent_item_colon'   => 'Parent Category',
+                'all_items'           => 'All Categories',
+                'view_item'           => 'View Category',
+                'add_new_item'        => 'Add New Category',
+                'add_new'             => 'Add New',
+                'edit_item'           => 'Edit Category',
+                'update_item'         => 'Update Category',
+                'search_items'        => 'Search Category',
+                'not_found'           => 'Not Found',
+                'not_found_in_trash'  => 'Not found in Trash',
+            ),
             
         ) ); 
         
@@ -129,65 +226,7 @@ class Functions {
             ),
             
         ) ); 
-            
-            
-        /********************************************
-         * Post Types
-         ********************************************/
-            
-        register_post_type( 'webinars', array(
-            
-            'description'       => 'Webinars',
-            'public'            => TRUE,
-            'show_ui'           => TRUE,
-            'capability_type'   => 'post',
-            'hierarchical'      => TRUE,
-            'rewrite'           => FALSE,
-            'query_var'         => TRUE,
-            'supports'          => array(
-                'title', 'editor'
-            ),
-            'labels'            => array(
-                'name'              => 'Webinars',
-                'add_new'           => 'Add New',
-                'add_new_item'      => 'Add New Webinar',
-            ),
-            
-        ) );
         
-        register_post_type( 'casestudies', array(
-            
-            'label'             => __( 'Case Studies' ),
-            'singular_label'    => __( 'Case Study' ),
-            'public'            => TRUE,
-            'show_ui'           => TRUE,
-            'capability_type'   => 'post',
-            'hierarchical'      => TRUE,
-            'rewrite'           => FALSE,
-            'query_var'         => TRUE,
-            'supports'          => array(
-                'title', 'editor', 'author'
-            ),
-            
-        ));
-        
-        register_post_type( 'press', array(
-            
-            'label'             => __( 'Press' ),
-            'singular_label'    => __( 'Press' ),
-            'public'            => TRUE,
-            'show_ui'           => TRUE,
-            'capability_type'   => 'post',
-            'hierarchical'      => TRUE,
-            'query_var'         => TRUE,
-            'rewrite'           => array(
-                'slug' => '_press'
-            ),
-            'supports'          => array(
-                'title', 'editor', 'author'
-            ),
-            
-        ));
         
         // Check if we are on Staging or Production
         // If in Staging, use the Sandbox Salesforce SOAP location
@@ -265,6 +304,7 @@ class Functions {
         
         } elseif( is_single() ) {
             
+            wp_enqueue_script( 'blog-outbrain', '//widgets.outbrain.com/outbrain.js', array(), null, FALSE );
             wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'blog-single', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/single/single.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-single-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/single/single.js', array(), null, TRUE );
@@ -677,36 +717,62 @@ class Functions {
     }
     
     /**
-     * The default webinar editor content
+     * The default editor content
      * @param string $content
      * @param object $post
      * @return string
      */
-    public function webinar_default_content( $content, $post ) {
+    public function default_content( $content, $post ) {
         
-        if( $post->post_type === 'webinars' ) : ?>
+        if( (string)$post->post_type === 'webinars' ) : 
             
-            <div class="webinar-inner">
-                <div class="left">
-                    <div class="right">
+            $content = '
+                <div class="webinar-inner">
+                    <div class="left">
+                        <div class="right">
+                            <ul>
+                                <li class="image">[ 155 x 155 IMG ]</li>
+                                <li class="name">[ Speaker Name ]</li>
+                                <li class="title">[ Title/Position ]</li>
+                            </ul>
+                        </div>
+                        <p>Enter the webinar\'s description information here...</p>
+                        <p>You can add some list here as well:</p>
                         <ul>
-                            <li class="image">[ 155 x 155 IMG ]</li>
-                            <li class="name">[ Speaker Name ]</li>
-                            <li class="title">[ Title/Position ]</li>
+                            <li>Here\'s a sample item</li>
+                            <li>And here\'s another sample item</li>
+                            <li>And here\'s the last sample item</li>
                         </ul>
+                        <p>Some more paragraph here...</p>
                     </div>
-                    <p>Enter the webinar's description information here...</p>
-                    <p>You can add some list here as well:</p>
-                    <ul>
-                        <li>Here's a sample item</li>
-                        <li>And here's another sample item</li>
-                        <li>And here's the last sample item</li>
-                    </ul>
-                    <p>Some more paragraph here...</p>
                 </div>
-            </div>
+            ';
+        
+        elseif( (string)$post->post_type === 'downloads' ): 
+        
+            $content = '
+                <div class="webinar-inner">
+                    <div class="left">
+                        <div class="right">
+                            <ul>
+                                <li class="image">[ 155 x 155 IMG ]</li>
+                                <li class="name">[ Speaker Name ]</li>
+                                <li class="title">[ Title/Position ]</li>
+                            </ul>
+                        </div>
+                        <p>Enter the webinar\'s description information here...</p>
+                        <p>You can add some list here as well:</p>
+                        <ul>
+                            <li>Here\'s a sample item</li>
+                            <li>And here\'s another sample item</li>
+                            <li>And here\'s the last sample item</li>
+                        </ul>
+                        <p>Some more paragraph here...</p>
+                    </div>
+                </div>
+            ';
             
-        <?php endif;
+        endif;
 
         return $content;
         
@@ -719,15 +785,20 @@ class Functions {
     public function editor_style() {
         
         global $current_screen;
+        
         switch ( $current_screen->post_type ) {
+            
             case 'webinars':
-                add_editor_style( 'inc/webinar/css/editor_style.css' );
+                add_editor_style( 'inc/addons/webinar/css/editor_style.css' );
                 break;
+            
             case 'post':
                 add_editor_style( 'css/core/blog-post-editor.css' );
                 break;
+            
             default:
                 break;
+            
         }
         
     }

@@ -38,7 +38,7 @@ header.container .row.head .inner.clearfix .columns.four ul li a img {
     float:left;
 }
 header.container .row.sub-head {
-    background-color:#bcb9ae;
+    background-color:#f28520;
 }
 header.container .row.sub-head .inner.clearfix .columns.eight ul {
     float:left;
@@ -52,7 +52,7 @@ header.container .row.sub-head .inner.clearfix .columns.eight ul li a {
     color:#fff;
     font-weight:400;
     padding:0.25em 0.75em 0.45em 0.75em;
-    border-right:1px solid #c9c7be;
+    border-right:1px solid #f59d4d;
 }
 header.container .row.sub-head .inner.clearfix .columns.eight ul li a:hover {
     text-decoration:underline;
@@ -73,7 +73,7 @@ header.container .row.sub-head .inner.clearfix .columns.four ul li {
 header.container .row.sub-head .inner.clearfix .columns.four ul li a {
     float:left;
     font-size:14px;
-    color:#dedede;
+    color:#fff;
     font-weight:400;
     padding:0.25em 0.5em 0.45em 0.5em;
 }
@@ -84,7 +84,7 @@ header.container .row.sub-head .inner.clearfix .columns.four ul li.active a:hove
     text-decoration:none;
 }
 header.container .row.sub-head .inner.clearfix .columns.four ul li.active a {
-    color:#fff;
+    font-weight:700;
 }
 header.container .row.sub-head .inner.clearfix .columns.four ul li.last a {
     padding-right:0;

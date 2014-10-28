@@ -16,15 +16,56 @@
             var
                 article_container = $( '.container.content .columns.eight' ),
                 content = article_container.find( 'article .content' ),
-                sidebar_container = $( '.sidebar_container.content .columns.four .sidebar_container' ),
+                subscription = $( '.container.content .columns.four .subscription' ),
                 subscription = {
-                    sidebar_container : sidebar_container.find( '.subscription' ),
-                    form : sidebar_container.find( '.subscription form' ),
-                    list : sidebar_container.find( '.subscription ul li' )
+                    list : subscription.find( 'ul li' )
                 },
                 respond = $( '#respond' ), comment_reply = $( '.comment-reply-link' ),
                 comment_reply_title = $( '.comment-reply-title' ), social,
-                social_share = $( '.social-share' );
+                social_share = $( '.social-share' ),
+                recommendations = {
+                    posts : article_container.find( 'article .recommendations .posts' ),
+                    post : article_container.find( 'article .recommendations .post' ),
+                    request : {
+                        permalink: "http://www.outbrain.com" + window.location.pathname,
+                        widgetId: "AR_1"
+                    },
+                    callback : function( data ) {
+                        
+                        // Limit the number of recommendations to 4
+                        data.doc = data.doc.slice( 0, 4 );
+                        
+                        // Loop through the recommendations
+                        for( var i in data.doc ) {
+                            
+                            // Create a clone copy of the post container.
+                            // Also show this element.
+                            var 
+                                cloned_article = recommendations.post.clone( false ).css( 'display', 'block' );
+                            
+                            // Serve 200 x 150 spec
+                            // Insert the returned title.
+                            // Insert the returned href.
+                            // Add the key value as the class name.
+                            
+                            cloned_article.find( '.image' ).html( '<img src="' + data.doc[i].thumbnail.url + '" width="165" height="165" />' );
+                            cloned_article.find( '.content' ).text( data.doc[i].content );
+                            cloned_article.attr( { 'href' : data.doc[i].url, 'target' : ( data.doc[i].orig_url.indexOf( 'outbrain.com' ) === -1 ? '_blank' : '_self' ) } );
+                            cloned_article.addClass( 'recommendation-' + i );
+                            
+                            // Add this cloned element to the featured post container.
+                            recommendations.posts.append( cloned_article );
+                            
+                        }
+                            
+                        recommendations.posts.find( '.post' ).eq(0).remove();
+                        
+                    }
+                };
+                
+            // Call the Outbrain Widget JS API and load the recommendations
+            // through the callback function.
+            OBR.extern.callRecs( recommendations.request, recommendations.callback );
         
             // Get the social like counter
             social = {
