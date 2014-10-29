@@ -63,12 +63,12 @@
     <?php if( function_exists( 'get_field' ) && get_field( 'footer_promotion_title' ) ): ?>
         <div class="footer-promotion">
             <div class="image">
-                <img src="<?php echo ( function_exists( 'get_field' ) ? get_field( 'blog_single_footer_promotion_image', $post->ID ) : false ); ?>" />
+                <img src="<?php echo get_field( 'blog_single_footer_promotion_image', $post->ID ); ?>" />
             </div>
             <div class="information">
-                <h3 class="title"><?php echo ( function_exists( 'get_field' ) ? get_field( 'blog_single_footer_promotion_title', $post->ID ) : false ); ?></h3>
-                <p class="description"><?php echo ( function_exists( 'get_field' ) ? get_field( 'blog_single_footer_promotion_description', $post->ID ) : false ); ?></p>
-                <a class="button" href="<?php echo ( function_exists( 'get_field' ) ? get_field( 'blog_single_footer_promotion_button_link_url', $post->ID ) : false ); ?>">
+                <h3 class="title"><?php echo get_field( 'blog_single_footer_promotion_title', $post->ID ); ?></h3>
+                <p class="description"><?php echo get_field( 'blog_single_footer_promotion_description', $post->ID ); ?></p>
+                <a class="button" href="<?php echo get_field( 'blog_single_footer_promotion_button_link_url', $post->ID ); ?>">
                     <?php echo ( function_exists( 'get_field' ) ? get_field( 'blog_single_footer_promotion_button_text', $post->ID ) : false ); ?>
                 </a>
             </div>

@@ -1,0 +1,98 @@
+#tinymce {
+    background:#070a0f url('../images/background.jpg');
+    background-size:cover;
+}
+.download-inner {
+    color:#fff;
+    float:left;
+    width:100%;
+    font-family:sans-serif;
+    position:relative;
+}
+.download-inner .left {
+    float:left;
+    width:70%;
+    padding:10px 20px 40px 10px;
+}
+.download-inner .left .heading-title {
+    float:left;
+    width:100%;
+    font-size:32px;
+    line-height:36px;
+    text-transform:uppercase;
+    font-weight:700;
+    margin:0 0 10px 0;
+}
+.download-inner .left .heading-subtitle {
+    float:left;
+    width:100%;
+    margin:0 0 30px 0;
+    font-size:20px;
+    font-weight:600;
+    line-height:24px;
+}
+.download-inner .left .heading-paragraph {
+    float:left;
+    width:100%;
+    margin:0 0 30px 0;
+    font-size:22px;
+    line-height:30px;
+}
+.download-inner .left .mid-section {
+    float:left;
+    width:100%;
+}
+.download-inner .left .mid-section .left {
+    float:left;
+    width:30%;
+    border:none;
+    padding:0;
+}
+.download-inner .left .mid-section .left .image {
+    font-size:20px;
+    margin:15px 0 0 0;
+}
+.download-inner .left .mid-section .right {
+    float:right;
+    width:50%;
+}
+.download-inner .left .mid-section .right .mid-list {
+    float:left;
+    width:100%;
+    padding:0;
+}
+.download-inner .left .mid-section .right .mid-list li:before {
+    content:'•';
+    position:absolute;
+    left:-25px;
+    top:0;
+    color:#de4f61;
+    font-size:40px;
+}
+.download-inner .left .mid-section .right .mid-list li {
+    position:relative;
+    float:left;
+    width:100%;
+    font-size:22px;
+    line-height:24px;
+    list-style-type:none;
+    margin:0 0 15px 0;
+}
+.download-inner .left .mid-section .right .mid-paragraph {
+    float:left;
+    width:100%;
+    font-size:22px;
+    line-height:24px;
+    font-weight:700;
+    margin:15px 0 0 0;
+}
+.download-inner .right.form {
+    position:absolute;
+    top:20%;
+    left:75%;
+    padding:150px 10%;
+    color:#000;
+    background-color:#ddd;
+    font-size:18px;
+    text-align:center;
+}

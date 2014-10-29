@@ -54,9 +54,6 @@ function webinars_render_meta_box_content( $post ) {
                         e.preventDefault();
                         location.href = newLink;
                     })
-                } else if(sl[i][0].nodeName === 'INPUT'){
-                    sl[i].remove()
-                    $('#edit-slug-box a.button.button-small').eq(1).remove()
                 }
             }
             function makeLive(string) {

@@ -23,6 +23,9 @@
     transition:none !important;
     background-color:transparent !important;
 }
+.container.content .row .inner.clearfix .featured-posts .loading img {
+    margin:0 0 -1px 5px;
+}
 .container.content .row .inner.clearfix .featured-posts article {
     float:left;
     width:30%;

@@ -66,9 +66,6 @@ class Functions {
             add_submenu_page( 'edit.php?post_type=webinars', 'Help', 'Help', 'edit_posts', 'webinar-help-page', function(){
                 include( TEMPLATEPATH . '/inc/addons/webinar/help/how-to-create-an-outbrainy-webinar.php' );
             } );
-            add_submenu_page( 'edit.php', 'More Options', 'More Options', 'activate_plugins', 'post-more-options', function(){
-                include( TEMPLATEPATH . '/inc/templates/blog/admin/post.php' );
-            } );
         } );
         
         
@@ -99,16 +96,17 @@ class Functions {
         register_post_type( 'webinars', array(
             
             'description'       => 'Webinars',
+            'capability_type'   => 'post',
             'public'            => TRUE,
             'show_ui'           => TRUE,
-            'capability_type'   => 'post',
             'hierarchical'      => TRUE,
-            'rewrite'           => FALSE,
             'query_var'         => TRUE,
-            'supports'          => array(
-                'title', 'editor'
+            'supports'          => array( 'title', 'editor' ),
+            'rewrite'           => array( 
+                'with_front'    => FALSE,
+                'slug'          => 'webinars'
             ),
-            'labels'            => array(
+            'labels'                 => array(
                 'name'               => 'Webinars',
 		'singular_name'      => 'Webinar',
 		'menu_name'          => 'Webinars',
@@ -130,14 +128,15 @@ class Functions {
         register_post_type( 'downloads', array(
             
             'description'       => 'Downloads',
+            'capability_type'   => 'post',
             'public'            => TRUE,
             'show_ui'           => TRUE,
-            'capability_type'   => 'post',
             'hierarchical'      => TRUE,
-            'rewrite'           => FALSE,
             'query_var'         => TRUE,
-            'supports'          => array(
-                'title', 'editor'
+            'supports'          => array( 'title', 'editor' ),
+            'rewrite'           => array( 
+                'with_front'    => FALSE,
+                'slug'          => 'downloads'
             ),
             'labels'            => array(
                 'name'               => 'Downloads',
@@ -162,16 +161,15 @@ class Functions {
             
             'label'             => __( 'Press' ),
             'singular_label'    => __( 'Press' ),
+            'capability_type'   => 'post',
             'public'            => TRUE,
             'show_ui'           => TRUE,
-            'capability_type'   => 'post',
             'hierarchical'      => TRUE,
             'query_var'         => TRUE,
-            'rewrite'           => array(
-                'slug' => '_press'
-            ),
-            'supports'          => array(
-                'title', 'editor', 'author'
+            'supports'          => array( 'title', 'editor', 'author' ),
+            'rewrite'           => array( 
+                'with_front'    => FALSE,
+                'slug'          => 'press'
             ),
             
         ));
@@ -185,7 +183,7 @@ class Functions {
             
             'hierarchical'  => TRUE, 
             'query_var'     => TRUE, 
-            'rewrite'       => FALSE,
+            'rewrite'       => TRUE,
             'labels'        => array(
                 'name'                => 'Category',
                 'singular_name'       => 'Category',
@@ -226,6 +224,18 @@ class Functions {
             ),
             
         ) ); 
+        
+        // Check if the ACF plugin is activated and the function is available
+        // Add the options page on the "More Options" are under Posts
+        
+        if( function_exists( 'acf_add_options_sub_page' ) )
+        {
+            acf_add_options_sub_page( array(
+                'title'         => 'More Options',
+                'parent'        => 'edit.php',
+                'capability'    => 'manage_options'
+            ));
+        }
         
         
         // Check if we are on Staging or Production
@@ -751,23 +761,29 @@ class Functions {
         elseif( (string)$post->post_type === 'downloads' ): 
         
             $content = '
-                <div class="webinar-inner">
+                <div class="download-inner">
                     <div class="left">
-                        <div class="right">
-                            <ul>
-                                <li class="image">[ 155 x 155 IMG ]</li>
-                                <li class="name">[ Speaker Name ]</li>
-                                <li class="title">[ Title/Position ]</li>
-                            </ul>
+                        <h1 class="heading-title">Get Weekly<br/>Content Marketing Tips</h1>
+                        <h3 class="heading-subtitle">Subscribe to get weekly tips and insights directly to your inbox</h3>
+                        <p class="heading-paragraph">Getting started and then scaling content marketing is tough. We’ve been helping marketers succeed with content marketing for over 8 years, and now we’re sharing what we’ve learned.</p>
+                        <div class="mid-section">
+                            <div class="left">
+                                <div class="image">[ 345 x 450 image ]</div>
+                            </div>
+                            <div class="right">
+                                <ul class="mid-list">
+                                    <li>Lorem ipsum dolor sit ametconsectetur adipiscing elit</li>
+                                    <li>In id auctor libero. In quis libero sed nibh rutrum vulputate quis non odio</li>
+                                    <li>Sed tincidunt pulvinar magna non</li>
+                                    <li>Nullam tincidunt fermentum leo non ornare</li>
+                                    <li>Lorem ipsum dolor sit ametconsectetur adipiscing elit</li>
+                                </ul>
+                                <p class="mid-paragraph">We’re excited to help you make content marketing succeed for your business. Subscribe today!</p>
+                            </div>
                         </div>
-                        <p>Enter the webinar\'s description information here...</p>
-                        <p>You can add some list here as well:</p>
-                        <ul>
-                            <li>Here\'s a sample item</li>
-                            <li>And here\'s another sample item</li>
-                            <li>And here\'s the last sample item</li>
-                        </ul>
-                        <p>Some more paragraph here...</p>
+                    </div>
+                    <div class="right form">
+                        <div class="">Form</div>
                     </div>
                 </div>
             ';
@@ -790,6 +806,10 @@ class Functions {
             
             case 'webinars':
                 add_editor_style( 'inc/addons/webinar/css/editor_style.css' );
+                break;
+            
+            case 'downloads':
+                add_editor_style( 'inc/addons/downloads/css/editor_style.css' );
                 break;
             
             case 'post':

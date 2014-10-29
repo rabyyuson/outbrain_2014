@@ -111,6 +111,7 @@
                             </li>
                     <?php 
                         endforeach; ?>
+                    </ul>
                 </div>
                 <div class="columns four">
                     <ul>

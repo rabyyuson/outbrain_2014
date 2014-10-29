@@ -1,0 +1,358 @@
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Normalize
+ * 2.0 - Global
+ * 3.0 - Content
+ *   3.1 - Downloads
+ * 4.0 - Media Queries
+ * -----------------------------------------------------------------------------
+ */
+
+
+/**
+ * 1.0 Normalize
+ *
+ * Resetting and normalizing styles by http://github.com/necolas/normalize.css
+ *
+ * -----------------------------------------------------------------------------
+ */
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none}[hidden]{display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html,button,input,select,textarea{font-family:'freight-sans-pro',sans-serif}body{margin:0}a:focus{outline:thin dotted}a:hover,a:active{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.75em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}blockquote{margin:1em 40px}dfn{font-style:italic}mark{background:#ff0;color:#000}p,pre{margin:1em 0}pre,code,kbd,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small{font-size:75%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}dl,menu,ol,ul{margin:1em 0}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button;*overflow:visible}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+
+
+/*
+ *
+ * 2.0 Global
+ *
+ * Styles and layouts used across the whole site. These declarations provide base 
+ * structure to the site. Also included declarations for the Responsive Web Design
+ * layout and other nice goodies.
+ *
+ * -----------------------------------------------------------------------------
+ */
+
+/* IE10 and future W3C viewport support */
+
+@viewport { width: device-width; }
+@-ms-viewport { width: device-width; }
+
+/* Inner container padding and margin fix and OS X smooth fonts */
+
+* {
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    -webkit-font-smoothing:antialiased;
+    outline:0;
+}
+
+/* Flexible images */
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+body,
+html {
+    height:100%;
+    width:100%;
+    webkit-overflow-scrolling:touch;
+    background:#05080d url('../images/background.jpg') no-repeat center center fixed;
+    background-size:cover;
+    position:relative;
+}
+body {
+    font:110%/1.5em 'freight-sans-pro',Helvetica,Arial,sans-serif;
+}
+input, select, textarea {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* Block containers */
+
+.container {
+    width:100%;
+    margin:0 auto;
+}
+.container .row .columns {
+    float:left;
+}
+.row {
+    float:left;
+    clear:both;
+    width:100%;
+}
+
+/* Clearfix for blocks */
+
+.clearfix:after,
+.container:after {
+    content:'';
+    display:block;
+    overflow:hidden;
+    visibility:hidden;
+    width:0;
+    height:0;
+    clear:both;
+}
+.clearfix, 
+.container { 
+    zoom:1;
+}
+
+/* External Stuffs */
+embed, iframe, param {
+    width:100% !important;
+}
+
+/* Fluid 12 column grid */
+
+.container .row .columns.one { width: 8.33%; }
+.container .row .columns.two { width: 16.66%; }
+.container .row .columns.three { width: 25%; }
+.container .row .columns.four { width: 33.33%; }
+.container .row .columns.five { width: 41.66%; }
+.container .row .columns.six { width: 50%; }
+.container .row .columns.seven { width: 58.33%; }
+.container .row .columns.eight { width: 66.66%; }
+.container .row .columns.nine { width: 75%; }
+.container .row .columns.ten { width: 83.33%; }
+.container .row .columns.eleven { width: 91.66%; }
+.container .row .columns.twelve { width: 100%; }
+
+/* 1250px maximum width */
+
+.container .row .inner {
+    max-width:1350px;
+    margin:0 auto;
+    padding:0 7.5em;
+}
+
+
+/*
+ *
+ * 3.1 Header
+ *
+ * The styles for the header.
+ *
+ * -----------------------------------------------------------------------------
+ */
+
+header.container {
+    float:left;
+    width:100%;
+    background-color:#ece9e9;
+    border-top:10px solid #f28520;
+}
+header.container .row.head .inner.clearfix .columns.eight {
+    float:left;
+}
+header.container .row.head .inner.clearfix .columns.eight .logo {
+    float:left;
+    margin:10px 0;
+}
+header.container .row.head .inner.clearfix .columns.eight .back {
+    float:left;
+    margin:15px 0 0 20px;
+    color:#8e8e8e;
+    text-transform:uppercase;
+    font-size:15px;
+    text-decoration:none;
+}
+header.container .row.head .inner.clearfix .columns.eight .back:hover {
+    text-decoration:underline;
+}
+header.container .row.head .inner.clearfix .columns.four {
+    float:right;
+}
+header.container .row.head .inner.clearfix .columns.four ul {
+    float:right;
+    margin:13px 0 10px 0;
+}
+header.container .row.head .inner.clearfix .columns.four ul li {
+    float:left;
+}
+header.container .row.head .inner.clearfix .columns.four ul li a {
+    float:left;
+    margin:0 0 0 5px;
+}
+header.container .row.head .inner.clearfix .columns.four ul li a img {
+    float:left;
+}
+
+
+/*
+ *
+ * 3.2 Content
+ *
+ * The styles for the header.
+ *
+ * -----------------------------------------------------------------------------
+ */
+
+.container.content {
+    float:left;
+    padding:3em 0;
+    color:#fff;
+}
+.container.content .row .inner.clearfix .columns.eight,
+.container.content .row .inner.clearfix .columns.eight .content .download-inner {
+    float:left;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner h1 {
+    float:left;
+    width:100%;
+    font-family:bebas-neue;
+    font-size:73px;
+    font-weight:500;
+    text-transform:uppercase;
+    line-height:65px;
+    margin:0;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner h3 {
+    float:left;
+    width:100%;
+    font-size:26px;
+    font-weight:600;
+    line-height:36px;
+    margin:20px 0 0 0;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .heading-paragraph {
+    float:left;
+    width:100%;
+    font-size:24px;
+    font-weight:400;
+    line-height:32px;
+    margin:40px 0 0 0;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .mid-section {
+    float:left;
+    width:100%;
+    margin:40px 0 0 0;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .right.form {
+    display:none;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .mid-section .left,
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .mid-section .left .image,
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .mid-section .left .image a {
+    float:left;
+    cursor:default;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .mid-section .left {
+    width:49%;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .mid-section .right {
+    float:right;
+    width:43%;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .mid-section .right .mid-list {
+    float:left;
+    margin:-10px 0 0 0;
+    padding:0;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .mid-section .right .mid-list li {
+    float:left;
+    margin:0;
+    padding:0;
+    font-size:24px;
+    line-height:32px;
+    list-style-type:none;
+    position:relative;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .mid-section .right .mid-list li:before {
+    content:'•';
+    position:absolute;
+    left:-25px;
+    top:0;
+    color:#de4f61;
+    font-size:33px;
+}
+.container.content .row .inner.clearfix .columns.eight .content .download-inner .mid-section .right .mid-paragraph {
+    float:left;
+    margin:40px 0 0 0;
+    padding:0;
+    font-size:24px;
+    line-height:32px;
+    list-style-type:none;
+    position:relative;
+    font-weight:700;
+}
+.container.content .row .inner.clearfix .columns.four {
+    float:right;
+    border:1px dashed #fff;
+}
+
+
+/*
+ *
+ * 3.3 Footer
+ *
+ * The styles for the header.
+ *
+ * -----------------------------------------------------------------------------
+ */
+
+footer.container {
+    float:left;
+    width:100%;
+    background-color:#000;
+    color:#fff;
+}
+footer.container .row .inner.clearfix .columns.four {
+    float:left;
+}
+footer.container .row .inner.clearfix .columns.four ul {
+    float:left;
+    padding:0;
+    margin:0;
+}
+footer.container .row .inner.clearfix .columns.four ul li {
+    float:left;
+    margin:0;
+    list-style-type:none;
+}
+footer.container .row .inner.clearfix .columns.four ul li a {
+    float:left;
+    color:#cbc8c8;
+    font-size:15px;
+    text-transform:uppercase;
+    text-decoration:none;
+    margin:5px 20px 5px 0;
+}
+footer.container .row .inner.clearfix .columns.four ul li a:hover {
+    text-decoration:underline;
+}
+footer.container .row .inner.clearfix .columns.eight {
+    float:right;
+}
+footer.container .row .inner.clearfix .columns.eight p {
+    float:right;
+    width:100%;
+    text-align:right;
+    margin:5px 0;
+    font-size:15px;
+    color:#cbc8c8;
+}
+
+
+/**
+ * 4.0 Media Queries
+ *
+ * Responsive Web Design layout breakpoints and its accompanying styles.
+ *
+ * -----------------------------------------------------------------------------
+ */
+
+@media only screen and (max-width: 1350px) {
+    
+    .container .registration .inner {
+        width:65%;
+        margin:0 5em 0 0;
+    }
+    
+}
