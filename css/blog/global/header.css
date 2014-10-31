@@ -113,3 +113,48 @@ header.container .row.breadcrumbs .inner.clearfix ul li a:after {
 header.container .row.breadcrumbs .inner.clearfix ul li:last-child a:after {
     display:none;
 }
+
+/* Featured Header Promotion */
+.container.content .row .inner.clearfix .header-promotion {
+    float:left;
+    width:100%;
+    margin:0 0 2.5em 0;
+}
+.container.content .row .inner.clearfix .header-promotion .image {
+    float:left;
+    width:40%;
+}
+.container.content .row .inner.clearfix .header-promotion .image img {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .header-promotion .information {
+    float:right;
+    width:60%;
+    position:relative;
+    padding-left:30px;
+}
+.container.content .row .inner.clearfix .header-promotion .information .title {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .header-promotion .information .description {
+    float:left;
+    width:100%;
+    font-size:18px;
+}
+.container.content .row .inner.clearfix .header-promotion .information .button {
+    float:left;
+    margin:1em 0 0 0;
+    color:#f18e50;
+    text-transform:uppercase;
+    padding:0.3em 1em;
+    font-weight:600;
+    background-color:#fff;
+    border:2px solid #000;
+    transition:background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.container.content .row .inner.clearfix .header-promotion .information .button:hover {
+    background-color:#000;
+    color:#fff;
+}

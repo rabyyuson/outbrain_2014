@@ -18,6 +18,7 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
             </div>
             <div class="columns six blog-posts">
                 <?php
+                    \Outbrain\Classes\Core\Functions::get_header_featured_promotion( 'archive_single' );
                     // Loop through the posts and show them
                     if ( have_posts() ) :
                         // Pull the view template for displaying the post data

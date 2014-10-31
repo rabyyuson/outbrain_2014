@@ -196,7 +196,7 @@ header.container .row.head .inner.clearfix .columns.four ul li a img {
 
 .container.content {
     float:left;
-    padding:3em 0;
+    padding:3em 0 12em 0;
     color:#fff;
 }
 .container.content .row .inner.clearfix .columns.eight,
@@ -232,7 +232,7 @@ header.container .row.head .inner.clearfix .columns.four ul li a img {
 .container.content .row .inner.clearfix .columns.eight .content .download-inner .mid-section {
     float:left;
     width:100%;
-    margin:40px 0 0 0;
+    margin:50px 0 0 0;
 }
 .container.content .row .inner.clearfix .columns.eight .content .download-inner .right.form {
     display:none;
@@ -284,7 +284,123 @@ header.container .row.head .inner.clearfix .columns.four ul li a img {
 }
 .container.content .row .inner.clearfix .columns.four {
     float:right;
-    border:1px dashed #fff;
+    margin:230px 0 0 0;
+    padding:0 0 0 50px;
+}
+.container.content .row .inner.clearfix .columns.four .download_header_label {
+    float:left;
+    width:100%;
+    font-family:bebas-neue;
+    font-size:40px;
+    font-weight:500;
+    text-transform:uppercase;
+    line-height:40px;
+    margin:0 0 20px 0;
+}
+.container.content .row .inner.clearfix .columns.four .hide {
+    display:none;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields {
+    float:left;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields li {
+    float:left;
+    list-style-type:none;
+    width:100%;
+    display:none;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields li.first_name,
+.container.content .row .inner.clearfix .columns.four .gform_fields li.email_address,
+.container.content .row .inner.clearfix .columns.four .gform_fields li.show {
+    display:block;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields li label {
+    display:none;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields li.weekly-checkbox {
+    float:left;
+    width:100%;
+    position:relative;
+    height:45px;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields li.weekly-checkbox label {
+    display:block;
+    position:absolute;
+    top:0;
+    right:0;
+    font-size:20px;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields li.weekly-checkbox .gfield_checkbox input {
+    position:absolute;
+    top:7px;
+    left:0;
+    padding:0;
+    margin:0;
+    width:auto;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields li.weekly-checkbox .gfield_checkbox label {
+    position:absolute;
+    top:0;
+    left:0;
+    width:312px;
+    text-indent:-9999px;
+    cursor:pointer;
+    padding:5px 0;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields li.weekly-checkbox .ginput_container {
+    position:absolute;
+    top:0;
+    left:0;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields li input,
+.container.content .row .inner.clearfix .columns.four .gform_fields li select {
+    float:left;
+    text-transform:uppercase;
+    padding:10px;
+    font-size:22px;
+    width:100%;
+    margin:0 0 15px 0;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields li select option {
+    color:#000;
+}
+.container.content .row .inner.clearfix .columns.four .gform_fields li select {
+    color:#c3c1c1;
+}
+.container.content .row .inner.clearfix .columns.four .gform_footer input[type=submit] {
+    background-color:#de4f61;
+    float:left;
+    width:100%;
+    padding:8px 0;
+    font-size:32px;
+    text-transform:uppercase;
+    color:#fff;
+    border:none;
+    font-weight:600;
+}
+.container.content .row .inner.clearfix .columns.four .gform_footer input[type=submit]:hover {
+    background-color:#FF5F73;
+}
+.container.content .row .inner.clearfix .columns.four .download_footer_note_label {
+    float:left;
+    width:100%;
+    font-size:15px;
+    line-height:18px;
+}
+.container.content .row .inner.clearfix .columns.four .validation_error,
+.container.content .row .inner.clearfix .columns.four .gfield_description.validation_message {
+    float:left;
+    width:100%;
+    background-color:#edccd0;
+    padding:15px 20px;
+    font-weight:600;
+    font-size:18px;
+    line-height:24px;
+    color:#7F0A19;
+    margin:0 0 20px 0;
 }
 
 
@@ -298,7 +414,9 @@ header.container .row.head .inner.clearfix .columns.four ul li a img {
  */
 
 footer.container {
-    float:left;
+    position:fixed;
+    left:0;
+    bottom:0;
     width:100%;
     background-color:#000;
     color:#fff;
@@ -322,7 +440,7 @@ footer.container .row .inner.clearfix .columns.four ul li a {
     font-size:15px;
     text-transform:uppercase;
     text-decoration:none;
-    margin:5px 20px 5px 0;
+    margin:10px 20px 10px 0;
 }
 footer.container .row .inner.clearfix .columns.four ul li a:hover {
     text-decoration:underline;
@@ -334,9 +452,116 @@ footer.container .row .inner.clearfix .columns.eight p {
     float:right;
     width:100%;
     text-align:right;
-    margin:5px 0;
+    margin:10px 0;
     font-size:15px;
     color:#cbc8c8;
+}
+
+
+/*
+ *
+ * 3.4 Thank You
+ *
+ * The styles for the thank you page.
+ *
+ * -----------------------------------------------------------------------------
+ */
+
+.container.content.ty {
+    padding:6em 0 12em 0;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve h1 {
+    display:block;
+    margin:0 auto;
+    width:80%;
+    font-family:bebas-neue;
+    font-size:73px;
+    font-weight:500;
+    text-transform:uppercase;
+    line-height:65px;
+    text-align:center;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve h3 {
+    display:block;
+    margin:0 auto;
+    width:80%;
+    font-size:26px;
+    font-weight:600;
+    padding:20px 0 0 0;
+    line-height:36px;
+    text-align:center;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve .links {
+    width:60%;
+    display:block;
+    padding:40px 0 0 0;
+    margin:0 auto;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve .links .buttons {
+    float:left;
+    width:100%;
+    display:block;
+    margin:0 auto;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve .links .buttons a.download {
+    background-color:#de4f61;
+    float:left;
+    width:48%;
+    padding:15px 0;
+    font-size:27px;
+    text-transform:uppercase;
+    color:#fff;
+    border:none;
+    font-weight:600;
+    text-align:center;
+    text-decoration:none;
+    border-bottom:2px solid #3b3a3b;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve .links .buttons a.download:hover {
+    background-color:#FF5F73;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve .links .buttons a.email {
+    background-color:#73cde1;
+    float:right;
+    width:48%;
+    padding:15px 0;
+    font-size:27px;
+    text-transform:uppercase;
+    color:#fff;
+    border:none;
+    font-weight:600;
+    text-align:center;
+    text-decoration:none;
+    border-bottom:2px solid #3b3a3b;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve .links .buttons a.email:hover {
+    background-color:#5ae1ff;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve .social {
+    clear:both;
+    width:22%;
+    padding:30px 0 0 0;
+    margin:0 auto;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve .social a {
+    float:left;
+    margin:0 5px;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve .back {
+    clear:both;
+    width:30%;
+    padding:5px 0 0 0;
+    margin:0 auto;
+    text-align:center;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve .back a {
+    color:#fff;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:16px;
+}
+.container.content.ty .row .inner.clearfix .columns.twelve .back a:hover {
+    text-decoration:underline;
 }
 
 

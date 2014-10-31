@@ -13,6 +13,7 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
     <div class="row">
         <div class="inner clearfix">
             <div class="columns eight blog-posts">
+                <?php \Outbrain\Classes\Core\Functions::get_header_featured_promotion( 'category_single' ); ?>
                 <div class="category-title">
                     Category : <span><?php echo single_cat_title( '', false ); ?></span>
                 </div>

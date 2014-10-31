@@ -14,20 +14,7 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
     <div class="row">
         <div class="inner clearfix">
             <div class="columns eight blog-posts">
-                <?php if( function_exists( 'get_field' ) && get_field( 'blog_post_index_header_promotion_image' ) ): ?>
-                    <div class="header-promotion">
-                        <div class="image">
-                            <img src="<?php echo ( function_exists( 'get_field' ) ? get_field( 'blog_post_index_header_promotion_image' ) : false ); ?>" />
-                        </div>
-                        <div class="information">
-                            <h3 class="title"><?php echo ( function_exists( 'get_field' ) ? get_field( 'blog_post_index_header_promotion_title' ) : false ); ?></h3>
-                            <p class="description"><?php echo ( function_exists( 'get_field' ) ? get_field( 'blog_single_footer_promotion_description', $post->ID ) : false ); ?></p>
-                            <a class="button" href="<?php echo ( function_exists( 'get_field' ) ? get_field( 'blog_single_footer_promotion_button_link_url', $post->ID ) : false ); ?>">
-                                <?php echo ( function_exists( 'get_field' ) ? get_field( 'blog_single_footer_promotion_button_text', $post->ID ) : false ); ?>
-                            </a>
-                        </div>
-                    </div>
-                <?php endif; ?>
+                <?php \Outbrain\Classes\Core\Functions::get_header_featured_promotion( 'post_index' ); ?>
                 <div class="featured-posts">
                     <div class="loading">Loading Featured Posts...<img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/ajax-loader-featured.gif" /></div>
                     <article style="display:none;">

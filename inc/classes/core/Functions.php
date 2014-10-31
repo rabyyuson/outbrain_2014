@@ -67,8 +67,7 @@ class Functions {
                 include( TEMPLATEPATH . '/inc/addons/webinar/help/how-to-create-an-outbrainy-webinar.php' );
             } );
         } );
-        
-        
+
         // Remove action.
         
         remove_action( 'wp_head', 'wp_generator' );
@@ -83,6 +82,17 @@ class Functions {
         add_filter( 'default_content', array( Functions::get_class_full_name(), 'default_content' ), 10, 2 );
         add_filter( 'tiny_mce_before_init', array( Functions::get_class_full_name(), 'tinymce_kitchen_sink' ) );
         add_filter( 'the_content', array( Functions::get_class_full_name(), 'replace_public_links' ) );
+        add_filter( 'gform_confirmation', function( $confirmation, $form, $lead, $ajax ){
+            
+            // First check if we are dealing with a 'downloads' post-type
+            // If yes, redirect the page to a thank you page and pass the data ids.
+            global $post, $wp_query;
+            if( (string)$wp_query->query['post_type'] === 'downloads' ){
+                $confirmation = array( 'redirect' => get_permalink( $post->ID ) . '?pid=' . $post->ID . '&paid=' . $post->post_author . '&lid=' . $lead['id'] . '&fid=' . $lead['form_id'] );
+                return $confirmation;
+            }
+            
+        }, 10, 4 );
         
         // Remove filter.
         
@@ -236,8 +246,7 @@ class Functions {
                 'capability'    => 'manage_options'
             ));
         }
-        
-        
+                
         // Check if we are on Staging or Production
         // If in Staging, use the Sandbox Salesforce SOAP location
         // If in Production, use the Production Salesforce SOAP location
@@ -924,7 +933,7 @@ class Functions {
     
     /**
      * Get the archives list
-     * @global type $wpdb
+     * @global object $wpdb
      */
     public static function get_archives() {
         
@@ -999,6 +1008,188 @@ class Functions {
     <?php 
         
         endforeach;
+        
+    }
+    
+    /**
+     * 
+     * @param string $network
+     * @param string $url
+     * @param string $title
+     * @param string $description
+     * @param string $via
+     * @return string
+     */
+    public static function share_this_page( $network, $url, $title, $description, $via ) {
+        
+        // Define options
+        $options = array(
+            'facebook' => array(
+                'app_id'    =>  '665869746843573'
+            )
+        );
+        
+        // Build the url sharer with the passed parameter values.
+        $sharer = array(
+            "facebook"      =>  "https://www.facebook.com/dialog/share?app_id=" . $options['facebook']['app_id'] . "&display=popup&href=$url&redirect_uri=$url",
+            "twitter"       =>  "https://twitter.com/share?url=$url&text=$title&via=$via",
+            "google_plus"   =>  "https://plus.google.com/share?url=$url",
+            "linkedin"      =>  "http://www.linkedin.com/shareArticle?url=$url&title=$title"
+        );
+        
+        return $sharer[$network];
+    }
+    
+    /**
+     * Get the first image from the post
+     * @global object $post
+     * @return string
+     */
+    public static function get_first_post_image() {
+        
+        global $post;
+        $default_img = '';
+        ob_start(); ob_end_clean();
+        
+        // Look for image match and pass the returned result to the $default_img variable.
+        $output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
+        $default_img = $matches[1][0];
+        
+        $default_img = ( empty( $default_img ) ? "http://wp.outbrain.com/wp-content/themes/outbrain/images/logo.png" : $default_img );
+        
+        return $default_img;
+    }
+    
+    /**
+     * Get the featured header promotion box
+     * @param string $section
+     */
+    public static function get_header_featured_promotion( $section ) {
+        
+        if( function_exists( 'get_field' ) ) {
+            
+            // Let's first build the field name mapping.
+            $field = array(
+                
+                'global' => array(
+                    'image'         => 'blog_global_header_promotion_image',
+                    'title'         => 'blog_global_header_promotion_title',
+                    'description'   => 'blog_global_header_promotion_description',
+                    'button_text'   => 'blog_global_header_promotion_button_text',
+                    'button_url'    => 'blog_global_header_promotion_button_link_url',
+                ),
+                
+                'post_index' => array(
+                    'image'         => 'blog_post_index_header_promotion_image',
+                    'title'         => 'blog_post_index_header_promotion_title',
+                    'description'   => 'blog_post_index_header_promotion_description',
+                    'button_text'   => 'blog_post_index_header_promotion_button_text',
+                    'button_url'    => 'blog_post_index_header_promotion_button_link_url',
+                ),
+                
+                'post_single' => array(
+                    'image'         => 'blog_post_single_header_promotion_image',
+                    'title'         => 'blog_post_single_header_promotion_title',
+                    'description'   => 'blog_post_single_header_promotion_description',
+                    'button_text'   => 'blog_post_single_header_promotion_button_text',
+                    'button_url'    => 'blog_post_single_header_promotion_button_link_url',
+                ),
+                
+                'category_index' => array(
+                    'image'         => 'blog_category_index_header_promotion_image',
+                    'title'         => 'blog_category_index_header_promotion_title',
+                    'description'   => 'blog_category_index_header_promotion_description',
+                    'button_text'   => 'blog_category_index_header_promotion_button_text',
+                    'button_url'    => 'blog_category_index_header_promotion_link_url',
+                ),
+                
+                'category_single' => array(
+                    'image'         => 'blog_category_single_header_promotion_image',
+                    'title'         => 'blog_category_single_header_promotion_title',
+                    'description'   => 'blog_category_single_header_promotion_description',
+                    'button_text'   => 'blog_category_single_header_promotion_button_text',
+                    'button_url'    => 'blog_category_single_header_promotion_button_link_url',
+                ),
+                
+                'author_index' => array(
+                    'image'         => 'blog_author_index_header_promotion_image',
+                    'title'         => 'blog_author_index_header_promotion_title',
+                    'description'   => 'blog_author_index_header_promotion_description',
+                    'button_text'   => 'blog_author_index_header_promotion_button_text',
+                    'button_url'    => 'blog_author_index_header_promotion_button_link_url',
+                ),
+                
+                'author_single' => array(
+                    'image'         => 'blog_author_single_header_promotion_image',
+                    'title'         => 'blog_author_single_header_promotion_title',
+                    'description'   => 'blog_author_single_header_promotion_description',
+                    'button_text'   => 'blog_author_single_header_promotion_button_text',
+                    'button_url'    => 'blog_author_single_header_promotion_button_link_url',
+                ),
+                
+                'archive_index' => array(
+                    'image'         => 'blog_archive_index_header_promotion_image',
+                    'title'         => 'blog_archive_index_header_promotion_title',
+                    'description'   => 'blog_archive_index_header_promotion_description',
+                    'button_text'   => 'blog_archive_index_header_promotion_button_text',
+                    'button_url'    => 'blog_archive_index_header_promotion_button_link_url',
+                ),
+                
+                'archive_single' => array(
+                    'image'         => 'blog_archive_single_header_promotion_image',
+                    'title'         => 'blog_archive_single_header_promotion_title',
+                    'description'   => 'blog_archive_single_header_promotion_description',
+                    'button_text'   => 'blog_archive_single_header_promotion_button_text',
+                    'button_url'    => 'blog_archive_single_header_promotion_button_link_url',
+                ),
+                
+            ); 
+            
+            // Check to see if we have global featured promotion
+            if( 
+                get_field( $field['global']['image'], 'option' ) &&
+                get_field( $field['global']['title'], 'option' ) &&
+                get_field( $field['global']['description'], 'option' ) &&
+                get_field( $field['global']['button_text'], 'option' ) &&
+                get_field( $field['global']['button_url'], 'option' ) 
+            ){
+                $display = array(
+                    'image'         => $field['global']['image'],
+                    'title'         => $field['global']['title'],
+                    'description'   => $field['global']['description'],
+                    'button_text'   => $field['global']['button_text'],
+                    'button_url'    => $field['global']['button_url'],
+                );
+            } else {
+                $display = array(
+                    'image'         => $field[$section]['image'],
+                    'title'         => $field[$section]['title'],
+                    'description'   => $field[$section]['description'],
+                    'button_text'   => $field[$section]['button_text'],
+                    'button_url'    => $field[$section]['button_url'],
+                );
+            }
+            
+            // Check if we have data
+            if( $display ): ?>
+            
+            <div class="header-promotion">
+                <div class="image">
+                    <img src="<?php echo get_field( $display['image'], 'option' ); ?>" />
+                </div>
+                <div class="information">
+                    <h3 class="title"><?php echo get_field( $display['title'], 'option' ); ?></h3>
+                    <p class="description"><?php echo get_field(  $display['description'], 'option' ); ?></p>
+                    <form method="POST" action="<?php echo get_field( $display['button_url'], 'option' ); ?>">
+                        <input type="submit" class="button" value="<?php echo get_field( $display['button_text'], 'option' ); ?>" />
+                        <input type="hidden" name="origin_url" value="<?php echo esc_url( get_permalink() ); ?>" />
+                    </form>
+                </div>
+            </div>
+            
+        <?php
+            endif;
+        }
         
     }
     

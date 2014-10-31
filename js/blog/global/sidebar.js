@@ -24,6 +24,7 @@
                 categories = container.find( '.categories' );
         
             // Add the placeholder text pulled from the label
+            // Adjust the color of the selected item on change.
             subscription.list.each( function(){
                 if( $(this).find( 'input' ).attr( 'type' ) === 'text' ){
                     $(this).find( 'input' ).attr( 'placeholder', $(this).find( 'label' ).text() );
@@ -33,6 +34,7 @@
             // On change event handler for the categories dropdown
             // Get the category link and navigate to it
             categories.find( 'select[id=cat]' ).on( 'change', function(){
+                $(this).css( 'color', '#000' );
                 if( parseInt( $(this).val() ) > 0 ){
                     $.ajax({
                         url : document.URL + '?category_id=' + $(this).val(),

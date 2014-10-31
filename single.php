@@ -14,7 +14,8 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
     <div class="row">
         <div class="inner clearfix">
             <div class="columns eight">
-                <?php
+                <?php 
+                    \Outbrain\Classes\Core\Functions::get_header_featured_promotion( 'post_single' );
                     // Loop through the posts and show them
                     if ( have_posts() ) :
                         // Pull the view template for displaying the post data
