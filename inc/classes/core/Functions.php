@@ -1186,8 +1186,14 @@ class Functions {
                 );
             }
             
-            // Check if we have data
-            if( $display ): ?>
+            // Check if we have data to display...
+            if(
+                get_field( $display['image'], 'option' ) &&
+                get_field( $display['title'], 'option' ) &&
+                get_field( $display['description'], 'option' ) &&
+                get_field( $display['button_text'], 'option' ) &&
+                get_field( $display['button_url'], 'option' ) 
+            ): ?>
             
             <div class="header-promotion">
                 <div class="image">

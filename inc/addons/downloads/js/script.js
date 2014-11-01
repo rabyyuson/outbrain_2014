@@ -23,7 +23,7 @@
                 
             // If we have a back_url link value, let's use that for the 
             // "Back to Blog" href value.
-            if( back_url.length ){
+            if( typeof( back_url ) != 'undefined' ){
                 header.find( '.back' ).attr( 'href', back_url );
             }
         
