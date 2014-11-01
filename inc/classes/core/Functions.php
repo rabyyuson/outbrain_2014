@@ -287,46 +287,31 @@ class Functions {
         
             
         /********************************************
-         * Blog
+         * Blog -- Post Index
          ********************************************/
         
         } elseif( is_home() ) {
             
             wp_enqueue_script( 'blog-outbrain', '//widgets.outbrain.com/outbrain.js', array(), null, FALSE );
             wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
-            wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
-            wp_enqueue_script( 'blog-featured-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/featured.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-post-index', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/post/index.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-post-index-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/post/index.js', array(), null, TRUE );
+            wp_enqueue_script( 'blog-post-featured-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/post/featured.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
-                        
+                    
             
         /********************************************
-         * Blog -- Category
-         ********************************************/
-        
-        } elseif( is_category() ) {
-            
-            wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
-            wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
-            wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
-            wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
-            wp_enqueue_style( 'blog-category', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/category/category.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
-                        
-            
-        /********************************************
-         * Blog -- Single
+         * Blog -- Post Single
          ********************************************/
         
         } elseif( is_single() ) {
             
             wp_enqueue_script( 'blog-outbrain', '//widgets.outbrain.com/outbrain.js', array(), null, FALSE );
             wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'blog-single', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/single/single.css', array(), FALSE, 'all' );
-            wp_enqueue_script( 'blog-single-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/single/single.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-post-single', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/post/single.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-post-single-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/post/single.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
@@ -334,7 +319,38 @@ class Functions {
             
             
         /********************************************
-         * Blog -- Author Listing
+         * Blog -- Category Index
+         ********************************************/
+        
+        } elseif( is_page_template( 'page-templates/categories.php' ) ) {
+            
+            wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-categories', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/category/category.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
+                        
+            
+        /********************************************
+         * Blog -- Category Single
+         ********************************************/
+        
+        } elseif( is_category() ) {
+            
+            wp_enqueue_script( 'blog-outbrain', '//widgets.outbrain.com/outbrain.js', array(), null, FALSE );
+            wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-post-index', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/post/index.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-post-index-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/post/index.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-category-single', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/category/single.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
+                        
+              
+        /********************************************
+         * Blog -- Author Index
          ********************************************/
         
         } elseif( is_page_template( 'page-templates/authors.php' ) ) {
@@ -342,8 +358,8 @@ class Functions {
             wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
-            wp_enqueue_style( 'blog-author-listing', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/author/listing.css', array(), FALSE, 'all' );
-            wp_enqueue_script( 'blog-authors-listing-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/author/listing.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-author-index', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/author/index.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-author-index-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/author/index.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
             
             
@@ -356,14 +372,14 @@ class Functions {
             wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
-            wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
-            wp_enqueue_style( 'blog-author-listing', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/author/listing.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-post-index', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/post/index.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-author-index', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/author/index.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'blog-author-single', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/author/single.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
             
             
         /********************************************
-         * Blog -- Archives Listing
+         * Blog -- Archives Index
          ********************************************/
         
         } elseif( is_page_template( 'page-templates/archives.php' ) ) {
@@ -371,10 +387,10 @@ class Functions {
             wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
-            wp_enqueue_style( 'blog-archives-listing', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/archives/listing.css', array(), FALSE, 'all' );
-            wp_enqueue_script( 'blog-archive-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/archives/listing.js', array(), null, TRUE );
-            wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
-            wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-archives-index', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/archives/index.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-archive-index-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/archives/index.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-post-index', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/post/index.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-post-index-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/post/index.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
             
             
@@ -387,10 +403,10 @@ class Functions {
             wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
-            wp_enqueue_style( 'blog-archives-listing', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/archives/listing.css', array(), FALSE, 'all' );
-            wp_enqueue_script( 'blog-archive-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/archives/listing.js', array(), null, TRUE );
-            wp_enqueue_style( 'blog-home', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/home/home.css', array(), FALSE, 'all' );
-            wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-archives-index', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/archives/index.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-archive-index-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/archives/index.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-post-index', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/post/index.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-post-index-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/post/index.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
             
             
@@ -947,7 +963,7 @@ class Functions {
                 YEAR( post_date ) AS year
             FROM $wpdb->posts
             WHERE post_status = 'publish'
-            AND post_date <= now()
+            AND post_date <= '" . date( 'Y-m-d H:i:s' ) . "'
             AND post_type = 'post'
             GROUP BY month, year
             ORDER BY post_date 

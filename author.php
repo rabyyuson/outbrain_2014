@@ -14,6 +14,7 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
     <div class="row">
         <div class="inner clearfix">
             <div class="columns eight blog-posts">
+                <?php \Outbrain\Classes\Core\Functions::get_header_featured_promotion( 'author_single' ); ?>
                 <div class="listings">
                     <div class="listing">
                         <?php 

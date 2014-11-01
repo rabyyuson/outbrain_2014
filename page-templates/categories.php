@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Template Name: Authors
+ * Template Name: Categories
  *
- * The template for the blog authors page
- * @url: www.outbrain.com/blog/author
+ * The template for the categories page
+ * @url: www.outbrain.com/blog/categories
  *
  * -----------------------------------------------------------------------------
  */
 
 get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
-<div class="container content authors" role="main">
+<div class="container content categories" role="main">
     <div class="row">
         <div class="inner clearfix">
             <div class="columns eight">
