@@ -18,25 +18,25 @@
             </a>
         </li>
         <li class="facebook">
-            <a href="javascript:void(0)" target="_blank">
+            <a href="<?php echo \Outbrain\Classes\Core\Functions::share_this_page( 'facebook', $post ); ?>" target="_blank">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-facebook.png" />
                 <div class="count">0</div>
             </a>
         </li>
         <li class="twitter">
-            <a href="javascript:void(0)" target="_blank">
+            <a href="<?php echo \Outbrain\Classes\Core\Functions::share_this_page( 'twitter', $post ); ?>" target="_blank">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-twitter.png" />
                 <div class="count">0</div>
             </a>
         </li>
         <li class="googleplus">
-            <a href="javascript:void(0)" target="_blank">
+            <a href="<?php echo \Outbrain\Classes\Core\Functions::share_this_page( 'google_plus', $post ); ?>" target="_blank">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-googleplus.png" />
                 <div class="count">0</div>
             </a>
         </li>
         <li class="linkedin">
-            <a href="javascript:void(0)" target="_blank">
+            <a href="<?php echo \Outbrain\Classes\Core\Functions::share_this_page( 'linkedin', $post ); ?>" target="_blank">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-linkedin.png" />
                 <div class="count">0</div>
             </a>

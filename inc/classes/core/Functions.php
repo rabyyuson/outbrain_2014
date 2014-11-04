@@ -329,7 +329,7 @@ class Functions {
             wp_enqueue_script( 'blog-home-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/home/home.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
-            wp_enqueue_style( 'blog-categories', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/category/category.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-categories', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/category/index.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
                         
             
@@ -407,6 +407,22 @@ class Functions {
             wp_enqueue_script( 'blog-archive-index-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/archives/index.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-post-index', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/post/index.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'blog-post-index-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/post/index.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
+            
+            
+        /********************************************
+         * Blog -- Archive Single
+         ********************************************/
+        
+        } elseif( is_search() ) {
+            
+            wp_enqueue_script( 'blog-outbrain', '//widgets.outbrain.com/outbrain.js', array(), null, FALSE );
+            wp_enqueue_style( 'blog-header', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/header.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-search', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/search/index.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'blog-post-index', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/post/index.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-post-index-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/post/index.js', array(), null, TRUE );
+            wp_enqueue_style( 'blog-sidebar', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/sidebar.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'blog-sidebar-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/blog/global/sidebar.js', array(), null, TRUE );
             wp_enqueue_style( 'blog-footer', Functions::replace_public_links( get_template_directory_uri() ) . '/css/blog/global/footer.css', array(), FALSE, 'all' );
             
             
@@ -1028,32 +1044,56 @@ class Functions {
     }
     
     /**
+     * Sort an array by the order key
+     * @param object $a
+     * @param object $b
+     * @return array
+     */
+    public static function sort_by_order_value( $a, $b ) {
+        return strcmp( $a['order'], $b['order'] );
+    }
+    
+    /**
      * 
      * @param string $network
-     * @param string $url
-     * @param string $title
-     * @param string $description
-     * @param string $via
+     * @param object $post
      * @return string
      */
-    public static function share_this_page( $network, $url, $title, $description, $via ) {
+    public static function share_this_page( $network, $post ) {
         
         // Define options
         $options = array(
             'facebook' => array(
-                'app_id'    =>  '665869746843573'
+                'app_id' => '665869746843573'
+            ),
+            'twitter' => array(
+                'via' => 'Outbrain'
             )
         );
         
         // Build the url sharer with the passed parameter values.
         $sharer = array(
-            "facebook"      =>  "https://www.facebook.com/dialog/share?app_id=" . $options['facebook']['app_id'] . "&display=popup&href=$url&redirect_uri=$url",
-            "twitter"       =>  "https://twitter.com/share?url=$url&text=$title&via=$via",
-            "google_plus"   =>  "https://plus.google.com/share?url=$url",
-            "linkedin"      =>  "http://www.linkedin.com/shareArticle?url=$url&title=$title"
+            "facebook"      =>  "https://www.facebook.com/dialog/share?app_id=" . $options['facebook']['app_id'] . "&display=page&href=" . get_permalink( $post->ID ) . "&redirect_uri=" . get_permalink( $post->ID ),
+            "twitter"       =>  "https://twitter.com/share?url=" . get_permalink( $post->ID ) . "&text=" . $post->post_title . "&via=" . $options['twitter']['via'],
+            "google_plus"   =>  "https://plus.google.com/share?url=" . get_permalink( $post->ID ) . "",
+            "linkedin"      =>  "http://www.linkedin.com/shareArticle?url=" . get_permalink( $post->ID ) . "&title=" . $post->post_title . ""
         );
         
         return $sharer[$network];
+    }
+    
+    /**
+     * Get the post content description
+     * @global object $post
+     * @return string
+     */
+    public static function get_post_content_description() {
+        
+        global $post;
+        $default_content = $post->post_content;
+        
+        return $default_content;
+        
     }
     
     /**
@@ -1069,11 +1109,12 @@ class Functions {
         
         // Look for image match and pass the returned result to the $default_img variable.
         $output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
-        $default_img = $matches[1][0];
+        $default_img = get_home_url() . $matches[1][0];
         
         $default_img = ( empty( $default_img ) ? "http://wp.outbrain.com/wp-content/themes/outbrain/images/logo.png" : $default_img );
         
         return $default_img;
+        
     }
     
     /**
@@ -1159,6 +1200,14 @@ class Functions {
                     'button_url'    => 'blog_archive_single_header_promotion_button_link_url',
                 ),
                 
+                'search_index' => array(
+                    'image'         => 'blog_search_header_promotion_image',
+                    'title'         => 'blog_search_header_promotion_title',
+                    'description'   => 'blog_search_header_promotion_description',
+                    'button_text'   => 'blog_search_header_promotion_button_text',
+                    'button_url'    => 'blog_search_header_promotion_button_link_url',
+                ),
+                
             ); 
             
             // Check to see if we have global featured promotion
@@ -1211,6 +1260,33 @@ class Functions {
             
         <?php
             endif;
+        }
+        
+    }
+    
+    /**
+     * Get the subcategories
+     * @param object $categories
+     * @param object $category
+     * @param string $return
+     * @return object/bool
+     */
+    public static function get_sub_categories( $categories, $category, $return ) {
+        
+        // Find out if the parent id is equal to the category_parent id.
+        // If true, this category is a child of the parent category.
+        foreach( $categories as $k1 => $v1 ) {
+            if( (int)$v1->category_parent === (int)$category->term_id ) {
+                if( $return == 'value' ) { ?>
+                    <li class="children">
+                        <a class="children-link" href="<?php echo get_category_link( $v1->term_id ); ?>">
+                            <?php echo $v1->name; ?>
+                        </a>
+                    </li>
+                <?php } elseif( $return == 'bool' ) {
+                    return ( $v1 ? 'class="show"' : false );
+                }
+            }
         }
         
     }

@@ -37,7 +37,7 @@
                 $(this).css( 'color', '#000' );
                 if( parseInt( $(this).val() ) > 0 ){
                     $.ajax({
-                        url : document.URL + '?category_id=' + $(this).val(),
+                        url : blog_url + '?category_id=' + $(this).val(),
                         type: 'GET',
                         success : function( response ){
                             var

@@ -1,23 +1,21 @@
 <?php
 
 /**
- * Category Template
+ * Search Template
  *
- * The category single page. Display information about the selected category.
- * @url: www.outbrain.com/category/{category-name}
+ * The template view for the search
+ * @url: www.outbrain.com/?s={query}
  *
  * -----------------------------------------------------------------------------
  */
 
 get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
-<div class="container content category" role="main">
+<div class="container content search" role="main">
     <div class="row">
         <div class="inner clearfix">
             <div class="columns eight blog-posts">
-                <?php \Outbrain\Classes\Core\Functions::get_header_featured_promotion( 'category_single' ); ?>
-                <div class="category-title">
-                    Category : <span><?php echo single_cat_title( '', false ); ?></span>
-                </div>
+                <?php \Outbrain\Classes\Core\Functions::get_header_featured_promotion( 'search_index' ); ?>
+                <h2 class="search-title">Search Results For: <span><?php echo get_search_query(); ?></span></h2>
                 <?php
                     // Loop through the posts and show them
                     if ( have_posts() ) :

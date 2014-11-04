@@ -37,7 +37,7 @@
     <meta name="google-site-verification" content="pqwHMrZc0kt8HDXj4j4aI2e-KSl3rYJgBD9E84mnhD8" />
     <meta property="og:site_name" content="Outbrain" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="http://wp.outbrain.com/wp-content/themes/outbrain/images/logo.png" />
+    <meta property="og:image" content="<?php echo \Outbrain\Classes\Core\Functions::get_first_post_image(); ?>" />
     <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
     <?php function ob_getMyURL(){ echo ( function_exists ( 'getMyURL' ) ? getMyURL() : 'https://my2.outbrain.com' ); } ?>
     <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/ie/html5.js" type="text/javascript"></script><![endif]-->

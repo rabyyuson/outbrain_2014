@@ -18,7 +18,6 @@
                     <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Authors' ) ) ); ?>">Authors</a></li>
                     <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Archives' ) ) ); ?>">Archives</a></li>
                     <li><a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Categories' ) ) ); ?>">Categories</a></li>
-                    <li><a href="javascript:void(0)">Subscribe</a></li>
                 </ul>
             </div>
         </div>

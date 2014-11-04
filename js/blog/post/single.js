@@ -88,13 +88,15 @@
         
             // Get the subscription form fields and search through the post_options
             // array fields that were set to be shown..
-            subscription.list.each( function(){
-                for( var i = 0; i < post_options.length; i++ ){
-                    if( $(this).hasClass( post_options[i].toString() ) ){
-                        $(this).addClass( 'show' );
+            if( post_options.length > 0 ) {
+                subscription.list.each( function(){
+                    for( var i = 0; i < post_options.length; i++ ){
+                        if( $(this).hasClass( post_options[i].toString() ) ){
+                            $(this).addClass( 'show' );
+                        }
                     }
-                }
-            } );
+                } );
+            }
                       
             // Loop through all blockquote and calculate the position based on
             // the text-align value.

@@ -44,22 +44,22 @@
             <div class="social">
                 <ul>
                     <li>
-                        <a href="javascript:void(0)" target="_blank">
+                        <a href="<?php echo \Outbrain\Classes\Core\Functions::share_this_page( 'facebook', $post ); ?>" target="_blank">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-facebook.png" />
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" target="_blank">
+                        <a href="<?php echo \Outbrain\Classes\Core\Functions::share_this_page( 'twitter', $post ); ?>" target="_blank">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-twitter.png" />
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" target="_blank">
+                        <a href="<?php echo \Outbrain\Classes\Core\Functions::share_this_page( 'google_plus', $post ); ?>" target="_blank">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-googleplus.png" />
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" target="_blank">
+                        <a href="<?php echo \Outbrain\Classes\Core\Functions::share_this_page( 'linkedin', $post ); ?>" target="_blank">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-linkedin.png" />
                         </a>
                     </li>

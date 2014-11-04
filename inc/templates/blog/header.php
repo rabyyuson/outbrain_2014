@@ -20,7 +20,8 @@
     <meta name="google-site-verification" content="pqwHMrZc0kt8HDXj4j4aI2e-KSl3rYJgBD9E84mnhD8" />
     <meta property="og:site_name" content="Outbrain" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="http://wp.outbrain.com/wp-content/themes/outbrain/images/logo.png" />
+    <meta property="og:image" content="<?php echo \Outbrain\Classes\Core\Functions::get_first_post_image(); ?>" />
+    <meta property="og:description" content="<?php echo wp_strip_all_tags( \Outbrain\Classes\Core\Functions::get_post_content_description(), 1 ); ?>" />
     <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
     <?php function ob_getMyURL(){ echo ( function_exists ( 'getMyURL' ) ? getMyURL() : 'https://my2.outbrain.com' ); } ?>
     <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/ie/html5.js" type="text/javascript"></script><![endif]-->
@@ -89,17 +90,13 @@
                         // Loop through all the categories and identify
                         // which ones are featured. Also store the order id.
                         foreach( $categories['all'] as $k => $v ) {
-                            
                             if( function_exists( 'get_field' ) && (int)get_field( 'category_featured', $v ) === 1 ) {
                                 array_push( $categories['featured'], array( 'data' => $v, 'order' => (int)get_field( 'category_order', $v ) ) );
                             }
                         }
                     
                         // Sort the users by order value
-                        function sort_by_order_value( $a, $b ) {
-                            return strcmp( $a['order'], $b['order'] );
-                        }
-                        usort( $categories['featured'], 'sort_by_order_value' );
+                        usort( $categories['featured'], '\Outbrain\Classes\Core\Functions::sort_by_order_value' );
                         
                         // Loop through the refined featured categories and show them
                         foreach( $categories['featured'] as $k => $v ):
@@ -120,7 +117,7 @@
                                 Outbrain Home
                             </a>
                         </li> 
-                        <li class="active">
+                        <li>
                             <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Amplify' ) ) ); ?>">
                                 Amplify
                             </a>
@@ -153,7 +150,7 @@
             <div class="inner clearfix">
                 <ul>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ); ?>">
                             Blog Home
                         </a>
                     </li>

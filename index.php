@@ -19,27 +19,25 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
                     <div class="loading">Loading Featured Posts...<img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/ajax-loader-featured.gif" /></div>
                     <article style="display:none;">
                         <div class="thumbnail">
-                            <div class="image">
-                                Post Thumbnail...
-                            </div>
+                            <div class="image"></div>
                             <div class="social">
                                 <ul>
-                                    <li>
+                                    <li class="facebook">
                                         <a href="javascript:void(0)" target="_blank">
                                             <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-facebook.png" />
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="twitter">
                                         <a href="javascript:void(0)" target="_blank">
                                             <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-twitter.png" />
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="google_plus">
                                         <a href="javascript:void(0)" target="_blank">
                                             <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-googleplus.png" />
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="linkedin">
                                         <a href="javascript:void(0)" target="_blank">
                                             <img src="<?php echo get_template_directory_uri(); ?>/images/blog/home/social-linkedin.png" />
                                         </a>
@@ -50,24 +48,16 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
                         </div>
                         <div class="information">
                             <h1 class="title">
-                                <a href="#">
-                                    Post Title...
-                                </a>
+                                <a href="#"></a>
                             </h1>
                             <div class="meta">
-                                <time>
-                                    Formatted Time...
-                                </time>
+                                <time></time>
                                 <div class="author">
-                                    <a href="#">
-                                        The Author Name...
-                                    </a>
+                                    <a href="#"></a>
                                 </div>
                             </div>
                             <div class="content">
-                                <div class="excerpt">
-                                    Post Content...
-                                </div>
+                                <div class="excerpt"></div>
                                 <a href="#">Read More &raquo;</a>
                             </div>
                         </div>

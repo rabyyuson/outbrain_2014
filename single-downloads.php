@@ -133,21 +133,13 @@ if( function_exists( 'get_field' ) ) {
                             <a class="email" href="mailto: ?subject=Check%20out%20this%20download%20file%20from%20Outbrain!&amp;body=Download%3A%0A--file--">Email to a friend</a>
                         </div>
                         <div class="social">
-                            <?php
-                                // A local social function to determine the social network.
-                                // Shortens and simplifies the social network retrieval.
-                                function social( $network ) {
-                                    global $post;
-                                    return \Outbrain\Classes\Core\Functions::share_this_page( $network, get_permalink( $post->ID ), $post->post_title, $post->post_content, 'Outbrain' );
-                                }
-                            ?>
-                            <a class="facebook" href="<?php echo social( 'facebook' ); ?>" target="_blank">
+                            <a class="facebook" href="<?php echo \Outbrain\Classes\Core\Functions::share_this_page( 'facebook', $post ); ?>" target="_blank">
                                 <img src="<?php echo get_template_directory_uri(); ?>/inc/addons/downloads/images/social-facebook.png" />
                             </a>
-                            <a class="twitter" href="<?php echo social( 'twitter' ); ?>" target="_blank">
+                            <a class="twitter" href="<?php echo \Outbrain\Classes\Core\Functions::share_this_page( 'twitter', $post ); ?>" target="_blank">
                                 <img src="<?php echo get_template_directory_uri(); ?>/inc/addons/downloads/images/social-twitter.png" />
                             </a>
-                            <a class="linkedin" href="<?php echo social( 'linkedin' ); ?>" target="_blank">
+                            <a class="linkedin" href="<?php echo \Outbrain\Classes\Core\Functions::share_this_page( 'linkedin', $post ); ?>" target="_blank">
                                 <img src="<?php echo get_template_directory_uri(); ?>/inc/addons/downloads/images/social-linkedin.png" />
                             </a>
                         </div>

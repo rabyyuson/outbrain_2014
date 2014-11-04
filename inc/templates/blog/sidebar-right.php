@@ -21,10 +21,10 @@ if( $_GET['category_id'] ): ?>
         <p>Subscribe to get weekly tips and insights directly to your inbox</p>
         <?php gravity_form( 15, false, false, false, null, true, 1 ); ?>
         <?php
-            // Check to see if the current user is an admin and we are on single
-            // page. If true, get the selected field options and store them in 
-            // a javascript variable "post_options" used in single.js for checking
-            if( current_user_can( 'activate_plugins' ) && is_single() ):
+            // Check to see if we are on single page. If true, get the selected 
+            // field options and store them in a javascript variable "post_options" 
+            // used in single.js for checking.
+            if( is_single() ):
                 if( function_exists( 'get_field' ) ): ?>
                     <script>
                         var post_options = [
@@ -36,6 +36,10 @@ if( $_GET['category_id'] ): ?>
         <?php   endif;
             endif;
         ?>
+        <script>
+            // Get the blog permalink.
+            var blog_url = '<?php echo esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ); ?>';
+        </script>
     </div>
     <div class="search">
         <?php get_search_form( 1 ); ?>

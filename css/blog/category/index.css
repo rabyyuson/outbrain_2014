@@ -1,0 +1,65 @@
+.container.content .row .inner.clearfix .listings {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .listings li.parent {
+    border-bottom:1px solid #000;
+    padding:0 0 1em 0;
+    margin:0 0 1.5em 0;
+}
+.container.content .row .inner.clearfix .listings li.parent,
+.container.content .row .inner.clearfix .listings li.parent .sub-categories {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .listings li.parent a {
+    color:#73cde1;
+    float:left;
+    width:100%;
+    text-transform:uppercase;
+    font-size:17px;
+    font-weight:500;
+    margin:0 0 10px 0;
+}
+.container.content .row .inner.clearfix .listings li.parent a:hover {
+    text-decoration:underline;
+}
+.container.content .row .inner.clearfix .listings li.parent .sub-categories h3 {
+    float:left;
+    width:100%;
+    font-size:15px;
+    text-transform:uppercase;
+    color:#000;
+    margin:0 0 5px 0;
+    display:none;
+}
+.container.content .row .inner.clearfix .listings li.parent .sub-categories h3.show {
+    display:block;
+}
+.container.content .row .inner.clearfix .listings li.parent .sub-categories ul {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .listings li.parent .sub-categories ul li {
+    float:left;
+}
+.container.content .row .inner.clearfix .listings li.parent .sub-categories ul li a {
+    float:left;
+    color:#7e7c7c;
+    font-size:14px;
+    margin:0;
+    position:relative;
+    padding:0 10px 0 0;
+}
+.container.content .row .inner.clearfix .listings li.parent .sub-categories ul li a:hover {
+    text-decoration:underline;
+}
+.container.content .row .inner.clearfix .listings li.parent .sub-categories ul li:last-child a:after {
+    display:none;
+}
+.container.content .row .inner.clearfix .listings li.parent .sub-categories ul li a:after {
+    content:',';
+    position:absolute;
+    bottom:0;
+    right:6px;
+}
