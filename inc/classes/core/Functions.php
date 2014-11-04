@@ -1291,6 +1291,29 @@ class Functions {
         
     }
     
+    public static function get_breadcrumbs() {
+        
+        // Declare the links array and other variables.
+        $links = array(); global $post;
+        $links[0] = array( 'link' => esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ), 'text' => 'Blog Home' );
+        
+        // Let's check where we are and display the appropriate breadcrumbs..
+        if( is_home() ){
+            $links[1] = array( 'link' => 'javascript:void(0)', 'text' => 'Post Index' );
+        } elseif( is_single() ) {
+            $links[1] = array( 'link' => 'javascript:void(0)', 'text' => 'Post Index' );
+        } elseif( is_page_template( 'page-templates/categories.php' ) ) {
+        } elseif( is_category() ) {
+        } elseif( is_page_template( 'page-templates/authors.php' ) ) {
+        } elseif( is_author() ) {
+        } elseif( is_page_template( 'page-templates/archives.php' ) ) {
+        } elseif( is_archive() ) {
+        } elseif( is_search() ) {
+        } elseif( is_page() && ! is_page_template() ) {
+        }
+        
+    }
+    
 }
 
 // call the after theme setup method
