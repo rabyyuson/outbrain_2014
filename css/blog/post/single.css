@@ -316,6 +316,9 @@
     color:#000;
     font-size:18px;
 }
+.container.content .row .inner.clearfix .columns.eight article .recommendations .posts .post:hover .content {
+    text-decoration:underline;
+}
 .container.content .row .inner.clearfix .columns.eight article .recommendations .posts .post .image {
     float:left;
     width:100%;

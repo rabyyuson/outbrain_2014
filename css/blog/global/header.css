@@ -96,7 +96,8 @@ header.container .row.breadcrumbs .inner.clearfix ul,
 header.container .row.breadcrumbs .inner.clearfix ul li {
     float:left;
 }
-header.container .row.breadcrumbs .inner.clearfix ul li a {
+header.container .row.breadcrumbs .inner.clearfix ul li a,
+header.container .row.breadcrumbs .inner.clearfix ul li span {
     float:left;
     color:#959292;
     font-size:12px;
@@ -105,12 +106,14 @@ header.container .row.breadcrumbs .inner.clearfix ul li a {
 header.container .row.breadcrumbs .inner.clearfix ul li a:hover {
     text-decoration:underline;
 }
-header.container .row.breadcrumbs .inner.clearfix ul li a:after {
+header.container .row.breadcrumbs .inner.clearfix ul li a:after,
+header.container .row.breadcrumbs .inner.clearfix ul li span:after {
     content:'›';
     float:right;
     margin:-1px 0 0 0.5em;
 }
-header.container .row.breadcrumbs .inner.clearfix ul li:last-child a:after {
+header.container .row.breadcrumbs .inner.clearfix ul li:last-child a:after,
+header.container .row.breadcrumbs .inner.clearfix ul li:last-child span:after {
     display:none;
 }
 

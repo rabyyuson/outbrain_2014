@@ -149,16 +149,27 @@
         <div class="row breadcrumbs">
             <div class="inner clearfix">
                 <ul>
-                    <li>
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ); ?>">
-                            Blog Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            Breadcrumb
-                        </a>
-                    </li>
+                    <?php 
+                        // Get the breadcrumbs and display it.
+                        // Check to see what type it is (link/placeholder).
+                        foreach( \Outbrain\Classes\Core\Functions::get_breadcrumbs() as $k => $v ) :
+                            if( $v['type'] === 'link' ): ?>
+                                <li>
+                                    <a href="<?php echo $v['url']; ?>">
+                                        <?php echo $v['text']; ?>
+                                    </a>
+                                </li>
+                    <?php 
+                            elseif( $v['type'] === 'placeholder' ): ?>
+                                <li>
+                                    <span>
+                                        <?php echo $v['text']; ?>
+                                    </span>
+                                </li>
+                    <?php
+                            endif;
+                        endforeach; 
+                    ?>
                 </ul>
             </div>
         </div>

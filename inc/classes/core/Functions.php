@@ -1090,8 +1090,9 @@ class Functions {
     public static function get_post_content_description() {
         
         global $post;
-        $default_content = $post->post_content;
-        
+        $default_content = explode( ' ', wp_strip_all_tags( $post->post_content ) );
+        $default_content = substr( implode( ' ', $default_content ), 0, 300 ) . '...';
+
         return $default_content;
         
     }
@@ -1291,26 +1292,173 @@ class Functions {
         
     }
     
+    /**
+     * Get the breadcrumbs
+     * @global object $post
+     * @return array
+     */
     public static function get_breadcrumbs() {
         
         // Declare the links array and other variables.
-        $links = array(); global $post;
-        $links[0] = array( 'link' => esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ), 'text' => 'Blog Home' );
+        // Declare the first link to always be the blog home url.
+        $links = array(); global $post, $wp_query;
         
-        // Let's check where we are and display the appropriate breadcrumbs..
+        // Map the month array and use them to populate the month for the links.
+        $months = array( "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" );
+        
+        // Post listing.
         if( is_home() ){
-            $links[1] = array( 'link' => 'javascript:void(0)', 'text' => 'Post Index' );
+            
+            $links[0] = array( 
+                'type' => 'placeholder',
+                'text' => 'Blog Home'
+            );
+            
+        // Post detail.
         } elseif( is_single() ) {
-            $links[1] = array( 'link' => 'javascript:void(0)', 'text' => 'Post Index' );
+            
+            $links[0] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ),
+                'text' => 'Blog Home'
+            );
+            $links[1] = array( 
+                'type' => 'placeholder',
+                'text' => $post->post_title
+            );
+            
+        // Category listing.
         } elseif( is_page_template( 'page-templates/categories.php' ) ) {
+            
+            $links[0] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ),
+                'text' => 'Blog Home'
+            );
+            $links[1] = array( 
+                'type' => 'placeholder',
+                'text' => 'Categories'
+            );
+            
+        // Category detail.
         } elseif( is_category() ) {
+            
+            $links[0] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ),
+                'text' => 'Blog Home'
+            );
+            $links[1] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Categories' ) ) ),
+                'text' => 'Categories'
+            );
+            
+            // Split the category name and insert it in the links array.
+            $name = explode( '-', $wp_query->query_vars['category_name'] );
+            $name = ucwords( $name[0] . ' ' . $name[1] );
+            
+            $links[2] = array( 
+                'type' => 'placeholder',
+                'text' => $name
+            );
+            
+        // Author listing.
         } elseif( is_page_template( 'page-templates/authors.php' ) ) {
+            
+            $links[0] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ),
+                'text' => 'Blog Home'
+            );
+            $links[1] = array( 
+                'type' => 'placeholder',
+                'text' => 'Authors'
+            );
+            
+        // Author detail.
         } elseif( is_author() ) {
+            
+            $links[0] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ),
+                'text' => 'Blog Home'
+            );
+            $links[1] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Authors' ) ) ),
+                'text' => 'Authors'
+            );
+            
+            // Split the author name and insert it in the links array.
+            $name = explode( '-', $wp_query->query_vars['author_name'] );
+            $name = ucwords( $name[0] . ' ' . $name[1] );
+            
+            $links[2] = array( 
+                'type' => 'placeholder',
+                'text' => $name
+            );
+            
+        // Archives listing.
         } elseif( is_page_template( 'page-templates/archives.php' ) ) {
+            
+            $links[0] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ),
+                'text' => 'Blog Home'
+            );
+            $links[1] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Archives' ) ) ),
+                'text' => 'Archives'
+            );
+            
+            // Get the current date.
+            $current_date = getdate();
+            
+            $links[2] = array( 
+                'type' => 'placeholder',
+                'text' => $months[ $current_date['mon'] - 1 ] . ' ' . $current_date['year']
+            );
+            
+        // Archives detail.
         } elseif( is_archive() ) {
+                        
+            $links[0] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ),
+                'text' => 'Blog Home'
+            );
+            $links[1] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Archives' ) ) ),
+                'text' => 'Archives'
+            );
+            
+            $links[2] = array( 
+                'type' => 'placeholder',
+                'text' => $months[ $wp_query->query_vars['monthnum'] - 1 ] . ' ' . $wp_query->query_vars['year']
+            );
+            
         } elseif( is_search() ) {
-        } elseif( is_page() && ! is_page_template() ) {
+            
+            $links[0] = array( 
+                'type' => 'link',
+                'url' => esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ),
+                'text' => 'Blog Home'
+            );
+            $links[1] = array( 
+                'type' => 'placeholder',
+                'text' => 'Search'
+            );
+            $links[2] = array( 
+                'type' => 'placeholder',
+                'text' => ucwords( $wp_query->query_vars['s'] )
+            );
+            
         }
+        
+        return $links;
         
     }
     

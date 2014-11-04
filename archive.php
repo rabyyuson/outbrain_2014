@@ -42,4 +42,4 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
         </div>
     </div>
 </div>
-<?php wp_footer(); get_template_part( 'inc/templates/blog/footer', get_post_format() );
+<?php get_template_part( 'inc/templates/blog/footer', get_post_format() );

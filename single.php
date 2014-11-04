@@ -14,6 +14,7 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
     <div class="row">
         <div class="inner clearfix">
             <div class="columns eight">
+                <div class="OUTBRAIN" data-src="permalink" data-widget-id="SL_1" data-ob-template="outbrain" ></div>
                 <?php 
                     \Outbrain\Classes\Core\Functions::get_header_featured_promotion( 'post_single' );
                     // Loop through the posts and show them
@@ -39,4 +40,4 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
         </div>
     </div>
 </div>
-<?php wp_footer(); get_template_part( 'inc/templates/blog/footer', get_post_format() );
+<?php get_template_part( 'inc/templates/blog/footer', get_post_format() );
