@@ -101,17 +101,17 @@ get_header(); ?>
                     Outbrain built and operates the world's largest content discovery platform, helping people to discover interesting, relevant, and trusted content wherever they are. Our technology delivers consumer insight, reaching an audience of more than 550 million people around the globe each month.
                 </p>
                 <ul class="map">
-                    <li class="location" data-coordinates-y="205" data-coordinates-x="130">
+                    <li class="location" data-coordinates-y="205" data-coordinates-x="130" data-margin-left="123">
                         <div class="information">
                             <p>San Francisco, USA</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="232" data-coordinates-x="557">
+                    <li class="location" data-coordinates-y="232" data-coordinates-x="557" data-margin-left="103">
                         <div class="information">
                             <p>Netanya, Israel</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="166" data-coordinates-x="457">
+                    <li class="location" data-coordinates-y="166" data-coordinates-x="457" data-margin-left="78">
                         <div class="information">
                             <p>London, UK</p>
                         </div>

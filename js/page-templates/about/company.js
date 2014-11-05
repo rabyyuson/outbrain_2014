@@ -71,10 +71,11 @@
                 var
                     coordinates = {
                         y : $(this).data( 'coordinates-y' ),
-                        x : $(this).data( 'coordinates-x' )
+                        x : $(this).data( 'coordinates-x' ),
+                        margin_left : $(this).data( 'margin-left' )
                     };
                 $(this).css({ 'position' : 'absolute', 'top' : coordinates.y, 'left' : coordinates.x });
-                $(this).find( '.information' ).css( 'margin-left', -Math.abs( $(this).find( '.information' ).width() * 1.52 ) + 'px' );
+                $(this).find( '.information' ).css( 'margin-left', -Math.abs(coordinates.margin_left) + 'px' );
                 $(this).prepend( 
                     $( '<div/>' ).attr( 'class', 'dot' ).on({
                         mouseover : function(){
