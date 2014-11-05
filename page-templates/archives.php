@@ -13,33 +13,37 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
 <div class="container content" role="main">
     <div class="row">
         <div class="inner clearfix">
-            <div class="columns two">
-                <?php \Outbrain\Classes\Core\Functions::get_archives(); ?>
-            </div>
-            <div class="columns six blog-posts">
-                <?php 
-                    \Outbrain\Classes\Core\Functions::get_header_featured_promotion( 'archive_index' );
-                    
-                    // Get posts for this month
-                    // This is only show for the archives listing page
-                    // Once the user clicks on any of the archives month date,
-                    // it will serve the appropriate monthly posts
-                    $today = getdate();
-                    $archive_posts = new WP_Query( 'year=' . $today['year'] . '&monthnum=' . $today['mon'] );
-                    
-                    // Loop through the posts and show them
-                    if ( $archive_posts->have_posts() ) :
-                        // Pull the view template for displaying the post data
-                        while ( $archive_posts->have_posts() ) : $archive_posts->the_post();
-                            get_template_part( 'inc/templates/blog/archive', get_post_format() );
-                        endwhile;
-                        // Get the pagination links
-                        echo \Outbrain\Classes\Core\Functions::get_pagination();
-                    else :
-                        // If no content, include the "No posts found" template.
-                        get_template_part( 'inc/templates/blog/none', 'none' );
-                    endif;
-                ?>
+            <div class="columns eight">
+                <?php
+                    // Get the header promotion.
+                    \Outbrain\Classes\Core\Functions::get_header_featured_promotion( 'archive_index' ); ?>
+                <div class="columns three">
+                    <?php \Outbrain\Classes\Core\Functions::get_archives(); ?>
+                </div>
+                <div class="columns nine blog-posts">
+                    <?php 
+
+                        // Get posts for this month
+                        // This is only show for the archives listing page
+                        // Once the user clicks on any of the archives month date,
+                        // it will serve the appropriate monthly posts
+                        $today = getdate();
+                        $archive_posts = new WP_Query( 'year=' . $today['year'] . '&monthnum=' . $today['mon'] );
+
+                        // Loop through the posts and show them
+                        if ( $archive_posts->have_posts() ) :
+                            // Pull the view template for displaying the post data
+                            while ( $archive_posts->have_posts() ) : $archive_posts->the_post();
+                                get_template_part( 'inc/templates/blog/archive', get_post_format() );
+                            endwhile;
+                            // Get the pagination links
+                            echo \Outbrain\Classes\Core\Functions::get_pagination();
+                        else :
+                            // If no content, include the "No posts found" template.
+                            get_template_part( 'inc/templates/blog/none', 'none' );
+                        endif;
+                    ?>
+                </div>
             </div>
             <div class="columns four">
                 <?php

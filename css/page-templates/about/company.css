@@ -4,8 +4,8 @@
 }
 /* Sections */
 .container.company .row.section {
-    background-color:#f4f4f4;
-    padding:3em 0 5em 0;
+    background-color:#73cde1;
+    padding:3em 0;
 }
 .container.company .row.section .columns.twelve {
     position:relative;
@@ -17,28 +17,16 @@
     width:100%;
     text-transform:uppercase;
     text-align:center;
-    margin:0 0 1.5em 0;
+    color:#fff;
+    margin:0 0 0.5em 0;
 }
 .container.company .row.section .columns.twelve p.description {
     font-size:1.25em;
     font-weight:300;
     text-align:center;
-    color:#666;
-    margin:0 0 3em 0;
+    color:#fff;
+    margin:0 0 1em 0;
     line-height:1.35em;
-}
-.container.company .row.section .columns.twelve .left {
-    position:absolute;
-    right:70%;
-    bottom:38%;
-    width:250px;
-}
-.container.company .row.section .columns.twelve .left p.information {
-    font-size:1.1em;
-    line-height:1.5em;
-    font-weight:300;
-    text-align:left;
-    color:#666;
 }
 .container.company .row.section .columns.twelve img {
     width:780px;
@@ -46,42 +34,170 @@
 }
 .container.company .row.section.mission {
     background-color:#fff;
+    padding:4em 0;
 }
-.container.company .row.section.mission .columns.twelve p.description {
-    margin-bottom:0;
-}
-.container.company .row.section.lighthouse {
-    background-image:url('../../../images/page-templates/about/company/lighthouse.jpg');
-    height:900px;
-    background-size:cover;
-}
-.container.company .row.section.lighthouse .columns.twelve .quote {
-    float:left;
-    width:600px;
-    margin:60px 0 0 0;
-}
-.container.company .row.section.lighthouse .columns.twelve .quote .opening-quote-mark {
+.container.company .row.section.mission .columns.twelve,
+.container.company .row.section.mission .columns.twelve .teaser {
     float:left;
     width:100%;
-    font-weight:700;
-    font-size:140px;
 }
-.container.company .row.section.lighthouse .columns.twelve .quote .message {
+.container.company .row.section.mission .columns.twelve .teaser .columns.four.title {
     float:left;
-    width:100%;
-    font-size:44px;
+}
+.container.company .row.section.mission .columns.twelve .teaser .columns.four.title h3 {
+    float:left;
+    font-size:33px;
     font-weight:600;
-    line-height:54px;
-    margin:10px 0 0 0;
-}
-.container.company .row.section.lighthouse .columns.twelve .quote .credentials {
-    float:left;
-    width:100%;
-    font-size:34px;
-    line-height:39px;
-    font-weight:600;
-    margin:40px 0 0 0;
-}
-.container.company .row.section.lighthouse .columns.twelve .quote .credentials .name {
     text-transform:uppercase;
+    padding:1.25em 1.35em 1.25em 1em;
+    border-right:10px solid #73cde1;
+}
+.container.company .row.section.mission .columns.twelve .teaser .columns.eight.description {
+    float:right;
+    font-size:31px;
+    line-height:36px;
+    margin:17px 0 0 0;
+    font-weight:600;
+}
+.container.company .row.section.mission .columns.twelve .video {
+    float:left;
+    width:100%;
+    margin:3em 0 0 0;
+    padding:0;
+    position:relative;
+    box-shadow:0 5px 20px rgba(0,0,0,0.25);
+}
+.container.company .row.section.mission .columns.twelve .video .play {
+    position:absolute;
+    top:34%;
+    left:42%;
+    width:164px;
+    height:164px;
+    cursor:pointer;
+    z-index:5;
+}
+.container.company .row.section.mission .columns.twelve .video video {
+    float:left;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:auto;
+    cursor:pointer;
+    position:relative;
+    z-index:3;
+}
+.container.company .row.section.outbrain-numbers .columns.twelve.box {
+    float:left;
+    width:100%;
+    border:3px solid #000;
+    background-color:#fff;
+    margin:2em 0 0 0;
+    padding:3em 2em;
+}
+.container.company .row.section.outbrain-numbers .columns.twelve.box .columns.four {
+    float:left;
+    text-align:center;
+    padding:0 15px 0 0;
+    border-right:1px solid #bbb;
+}
+.container.company .row.section.outbrain-numbers .columns.twelve.box .columns.four:last-child {
+    border-right:none;
+}
+.container.company .row.section.outbrain-numbers .columns.twelve.box .columns.four h3 {
+    float:left;
+    width:100%;
+    text-transform:uppercase;
+    font-weight:400;
+    font-size:70px;
+    margin:0;
+    padding:20px 0;
+    font-family:bebas-neue,sans-serif;
+}
+.container.company .row.section.outbrain-numbers .columns.twelve.box .columns.four p {
+    float:left;
+    width:100%;
+    font-size:23px;
+    margin:10px 0 0 0;
+    font-weight:500;
+    padding:0;
+}
+.container.company .row.section.outbrain-numbers .columns.twelve.box .columns.four p span {
+    color:#818181;
+}
+.container.company .row.section.outbrain-numbers .columns.twelve.footnote {
+    float:left;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+.container.company .row.section.outbrain-numbers .columns.twelve.footnote p {
+    float:left;
+    width:100%;
+    text-align:center;
+    margin:5px 0 0 0;
+    padding:0;
+    font-size:13px;
+}
+.container.company .row.section.global-offices {
+    background-color:#fff;
+    padding:4em 0;
+}
+.container.company .row.section.global-offices .columns.twelve h2 {
+    color:#020202;
+}
+.container.company .row.section.global-offices .columns.twelve p.description {
+    color:#666;
+}
+.container.company .row.section.global-offices .columns.twelve .map {
+    float:left;
+    width:100%;
+    height:535px;
+    background:url('../../../images/page-templates/about/company/global-map.png') no-repeat center center;
+    margin:2em 0 3em 0;
+    position:relative;
+}
+.container.company .row.section.global-offices .columns.twelve .map .location,
+.container.company .row.section.global-offices .columns.twelve .map .location .information p {
+    float:left;
+    margin:0;
+    padding:0;
+}
+.container.company .row.section.global-offices .columns.twelve .map .location .information {
+    float:left;
+    width:auto;
+    color:#f08229;
+    font-size:13px;
+    text-transform:uppercase;
+    margin:-53px 0 0 0;
+    padding:5px 10px;
+    background-color:#fff;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.25);
+    position:relative;
+    text-align:right;
+    display:none;
+    z-index:10;
+}
+.container.company .row.section.global-offices .columns.twelve .map .location .information.show {
+    display:block;
+}
+.container.company .row.section.global-offices .columns.twelve .map .location .information:after {
+    content:' ';
+    position:absolute;
+    bottom:-18px;
+    right:-3px;
+    width:25px; 
+    height:18px;
+    background:url('../../../images/page-templates/about/company/location-tail.png') no-repeat center center;
+}
+.container.company .row.section.global-offices .columns.twelve .map .location .dot {
+    position:absolute;
+    top:0;
+    left:0;
+    width:20px;
+    height:20px;
+    background-color:#f08229;
+    border-radius:50%;
+    border:2px solid #fff;
+    cursor:pointer;
+    z-index:5;
 }

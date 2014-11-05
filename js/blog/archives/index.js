@@ -15,7 +15,7 @@
            
             var 
                 container = $( '.container.content' ),
-                navigation = container.find( '.columns.two' );
+                navigation = container.find( '.columns.three' );
         
             // On click event handler
             navigation.find( 'h4' ).on( {

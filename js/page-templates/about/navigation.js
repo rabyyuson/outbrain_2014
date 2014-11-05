@@ -32,7 +32,7 @@
                 $.data( this, 'scrollTimer', setTimeout(function() {
 
                     // Show or hide the sub navigation panel
-                    if ( win.scroll_top > 350 && win.width > 971 ) {
+                    if ( win.scroll_top > 485 && win.width > 971 ) {
                       
                         // Hide the first level navigation then show the second level navigation
                         // Add some padding to the discovery section to prevent jumping

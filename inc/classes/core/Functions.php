@@ -480,6 +480,7 @@ class Functions {
             wp_enqueue_style( 'navigation', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
             wp_enqueue_style( 'company', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/company.css', array(), FALSE, 'all' );
             wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/navigation.js', array(), null, TRUE );
+            wp_enqueue_script( 'company-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/company.js', array(), null, TRUE );
                 
             
         /********************************************
@@ -612,19 +613,6 @@ class Functions {
             wp_enqueue_script( 'footer-scripts-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/core/footer-scripts.js', array(), null, TRUE );
             
         }   
-        
-    }
-    
-    /**
-     * Check if we are on blog
-     * @global object $post
-     * @return boolean
-     */
-    public function is_blog () {
-        
-        global $post;
-        $posttype = get_post_type( $post );
-        return ( ( ( is_archive() ) || ( is_author() ) || ( is_category() ) || ( is_home() ) || ( is_single() ) || ( is_tag() ) ) && ( $posttype == 'post' ) ) ? true : false;
         
     }
     
