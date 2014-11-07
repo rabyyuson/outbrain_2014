@@ -508,6 +508,18 @@ class Functions {
               
                 
         /********************************************
+         * About -- Careers
+         ********************************************/
+                
+        } elseif ( is_page_template( 'page-templates/careers.php' ) ) {
+
+            wp_enqueue_style( 'navigation', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/navigation.css', array(), FALSE, 'all' );
+            wp_enqueue_style( 'careers', Functions::replace_public_links( get_template_directory_uri() ) . '/css/page-templates/about/careers.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'navigation-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/navigation.js', array(), null, TRUE );
+            wp_enqueue_script( 'careers-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/page-templates/about/careers.js', array(), null, TRUE );
+              
+                
+        /********************************************
          * About -- Press
          ********************************************/
                 
@@ -1448,6 +1460,18 @@ class Functions {
         
         return $links;
         
+    }
+    
+    /**
+     * Shuffle images and return them
+     * @param int $min
+     * @param int $max
+     * @return array
+     */
+    public function shuffle_numbers( $min, $max ){
+        $numbers = range( $min, $max );
+        shuffle( $numbers );
+        return $numbers;
     }
     
 }

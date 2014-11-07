@@ -1,11 +1,15 @@
 /* Hero */
 .container.about .row.hero {
-    /*background-image:url('../../../images/page-templates/about/company/hero.jpg');*/
+    background:#fff url('../../../images/page-templates/about/offices/hero.jpg') no-repeat center center;
 }
+.container.about .row.hero .inner .columns.twelve {
+    margin:8em 0 0 0 !important;
+}
+
 /* Head */
 .container.offices .row.head {
-    background-color:#f4f4f4;
-    padding:3em 0 0 0;
+    background-color:#dd4f61;
+    padding:3em 0;
 }
 .container.offices .row.head .columns.twelve h2 {
     font-size:2em;
@@ -14,28 +18,29 @@
     width:100%;
     text-transform:uppercase;
     text-align:center;
-    margin:0 0 1.5em 0;
+    color:#fff;
+    margin:0 0 0.5em 0;
 }
 .container.offices .row.head .columns.twelve p.description {
     font-size:1.25em;
     font-weight:300;
     text-align:center;
-    color:#666;
-    margin:0 0 3em 0;
+    color:#fff;
+    margin:0 0 1em 0;
     line-height:1.35em;
 }
 /* Locations */
 .container.offices .row.locations {
     background-color:#f4f4f4;
     background-size:cover;
-    height:1000px;
+    height:673px;
     transition:background-image 0.5s ease-in-out;
 }
 .container.offices .row.locations .navigation {
     font-size:1.15em;
     float:left;
     border-top:7px solid #f28520;
-    padding:40px 0 50px 0;
+    padding:30px 0;
     background-color:rgba(255,255,255,0.9);
     position:relative;
     z-index:1;
@@ -84,9 +89,9 @@
     width: 0;
     height: 0;
     position:absolute;
-    top:47px;
+    top:38px;
     left:-20px;
     border-style: solid;
     border-width: 10px 10px 10px 0;
-    border-color: transparent rgba(0,0,0,1) transparent transparent;
+    border-color: transparent #f28520 transparent transparent;
 }

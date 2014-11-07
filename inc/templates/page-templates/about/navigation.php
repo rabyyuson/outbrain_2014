@@ -24,7 +24,7 @@
                     <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Offices' ) ) ); ?>">Offices</a>
                 </li>
                 <li class="columns two nav-link careers" data-jump="fourth">
-                    <a href="javascript:void(0)">Careers</a>
+                    <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Careers' ) ) ); ?>">Careers</a>
                 </li>
                 <li class="columns two nav-link press" data-jump="fifth">
                     <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Press' ) ) ); ?>">Press</a>
@@ -52,7 +52,7 @@
                 <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Offices' ) ) ); ?>" class="nav-link">Offices</a>
             </div>
             <div class="columns two careers">
-                <a href="javascript:void(0)" class="nav-link" data-jump="fourth">Careers</a>
+                <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Careers' ) ) ); ?>" class="nav-link">Careers</a>
             </div>
             <div class="columns two press">
                 <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Press' ) ) ); ?>" class="nav-link">Press</a>

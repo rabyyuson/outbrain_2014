@@ -15,7 +15,12 @@ get_header(); ?>
         <div class="inner clearfix">
             <div class="columns twelve">
                 <div class="details">
-                    <h1><?php echo strtoupper( $post->post_title ); ?></h1>
+                    <h1>
+                        Meet our leaders
+                    </h1>
+                    <p>
+                        The people behind the scenes.
+                    </p>
                 </div>
             </div>
         </div>
@@ -24,16 +29,20 @@ get_header(); ?>
         // Reference the about page template navigation menu
         include_once( TEMPLATEPATH . '/inc/templates/page-templates/about/navigation.php' );
     ?>
-    <div class="row people navigation-clip">
+    <div class="row our-executives navigation-clip">
         <div class="inner clearfix">
             <div class="columns twelve">
-                <h2 class="title">Leadership Lorem Ipsum</h2>
+                <h2 class="title">Our Executives</h2>
                 <p class="description">
-                    Yaron Galai and Ori Lahav founded Outbrain in 2006. The company has since grown to over 400 employees in 18 offices around the world.
+                    Outbrain built and operates the world's largest content discovery platform, helping people to discover interesting, relevant, and trusted content wherever they are. Our technology delivers consumer insight, reaching an audience of more than 550 million people around the globe each month.
                 </p>
-                
+            </div>
+        </div>
+    </div>
+    <div class="row people">
+        <div class="inner clearfix">
+            <div class="columns twelve">
                 <div class="section">
-                    <h3>Executive Team</h3>
                     <ul>
                         <li>
                             <img src="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/team/executive-team/yaron-galai.jpg" />
@@ -105,9 +114,24 @@ get_header(); ?>
                             </div>
                         </li>
                     </ul>
-                </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="row board-of-directors">
+        <div class="inner clearfix">
+            <div class="columns twelve">
+                <h2 class="title">Our Board of Directors</h2>
+                <p class="description">
+                    Outbrain built and operates the world's largest content discovery platform, helping people to discover interesting, relevant, and trusted content wherever they are. Our technology delivers consumer insight, reaching an audience of more than 550 million people around the globe each month.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row people">
+        <div class="inner clearfix">
+            <div class="columns twelve">
                 <div class="section">
-                    <h3>Board of Directors</h3>
                     <ul class="board-of-directors">
                         <li>
                             <div class="information">

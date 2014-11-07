@@ -59,12 +59,12 @@
                         <ul>
                             <li class="first">
                                 <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Amplify' ) ) ); ?>" <?php echo ( $wp_query->query_vars['pagename'] === 'amplify' ? 'class="selected"' : false ); ?>>
-                                    Amplify
+                                    Marketers
                                 </a>
                             </li> 
                             <li>
                                 <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Engage' ) ) ); ?>" <?php echo ( $wp_query->query_vars['pagename'] === 'engage' ? 'class="selected"' : false ); ?>>
-                                    Engage
+                                    Publishers
                                 </a>
                             </li>
                             <li>

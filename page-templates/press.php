@@ -15,7 +15,12 @@ get_header(); ?>
         <div class="inner clearfix">
             <div class="columns twelve">
                 <div class="details">
-                    <h1><?php echo strtoupper( $post->post_title ); ?></h1>
+                    <h1>
+                        Outbrain in the news
+                    </h1>
+                    <p>
+                        A peek into the latest on Outbrain.
+                    </p>
                 </div>
             </div>
         </div>
@@ -24,11 +29,20 @@ get_header(); ?>
         // Reference the about page template navigation menu
         include_once( TEMPLATEPATH . '/inc/templates/page-templates/about/navigation.php' );
     ?>
-    <div class="row listing navigation-clip">
+    <div class="row head navigation-clip">
+        <div class="inner clearfix">
+            <div class="columns twelve">
+                <h2 class="title">Press Coverage</h2>
+                <p class="description">
+                    The joy of discovery is a global. We operate offices around the world and we aim to make each of them For press inquiries, here's the best way to <a href="javascript:void(0)">contact us</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row listing">
         <div class="inner clearfix">
             <div class="columns twelve">
                 <div class="list">
-                    <h3 class="title">Outbrain in the news</h3>
                     <ul class="entries">
                     <?php
 
@@ -45,8 +59,7 @@ get_header(); ?>
                             if( function_exists( 'get_fields' ) ):
                                 $content = get_fields( $v->ID );
                     ?>
-                                <li class="entry">
-                                    <a href="<?php echo $content['link']; ?>" target="_blank">
+                                <li class="entry">                                    
                                         <img class="image" src="<?php echo $content['image']; ?>" />
                                         <div class="copy">
                                             <div class="date">
@@ -56,10 +69,9 @@ get_header(); ?>
                                                 <?php echo $v->post_title; ?>
                                             </div>
                                             <div class="body">
-                                                <?php echo strip_tags( $content['content'] ); ?>
+                                                <?php echo strip_tags( $content['content'] ); ?>...<a href="<?php echo $content['link']; ?>" target="_blank">Read More</a>
                                             </div>
                                         </div>
-                                    </a>
                                 </li>
                     <?php
                             else:

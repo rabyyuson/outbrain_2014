@@ -15,7 +15,12 @@ get_header(); ?>
         <div class="inner clearfix">
             <div class="columns twelve">
                 <div class="details">
-                    <h1><?php echo strtoupper( $post->post_title ); ?></h1>
+                    <h1>
+                        Our Offices
+                    </h1>
+                    <p>
+                        Lorem ipsum lipsum lorem.
+                    </p>
                 </div>
             </div>
         </div>
@@ -56,6 +61,11 @@ get_header(); ?>
                 </ul>
                 <ul class="information">
                     
+                    <?php
+                        // Randomize the numbers array to display random images.
+                        $numbers = \Outbrain\Classes\Core\Functions::shuffle_numbers( 1, 12 );
+                    ?>
+                    
                     <!-- New York -->
                     <li class="current">
                         <div class="address">
@@ -68,7 +78,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/dir//39+W+13th+St,+New+York,+NY+10011/@40.7363192,-73.9981453,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x89c25999bc55878b:0x8b08f78ea1e50f17!2m2!1d-73.9959995!2d40.7363192" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[0]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Netanya -->
@@ -83,7 +93,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/Arieh+Regev+St+4,+Netanya,+Israel/@32.2818484,34.8632044,17z/data=!3m1!4b1!4m2!3m1!1s0x151d3f7e325de2db:0xf6973a78cb60ec88" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york2.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[1]; ?>.jpg"></div>
                     </li>
                     
                     <!-- London -->
@@ -98,7 +108,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/6+Ramillies+St,+Soho,+London+W1F+7TY,+UK/@51.5153788,-0.1392263,17z/data=!3m1!4b1!4m2!3m1!1s0x4876052ac793af6b:0xa233f862b99a1781" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[2]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Paris -->
@@ -113,7 +123,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/234+Rue+du+Faubourg+Saint-Honor%C3%A9,+75008+Paris,+France/@48.8763361,2.3029536,17z/data=!3m1!4b1!4m2!3m1!1s0x47e66fc06ebd6007:0xe994142b54e5204d">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york2.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[3]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Munich -->
@@ -128,7 +138,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/St.-Martin-Stra%C3%9Fe+53,+81669+M%C3%BCnchen,+Germany/@48.119863,11.600828,17z/data=!3m1!4b1!4m2!3m1!1s0x479ddf9b7de6b6ab:0x5e8a8033f2c9502a" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[4]; ?>.jpg"></div>
                     </li>
                     
                     <!-- San Francisco -->
@@ -141,7 +151,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/225+Bush+Street,+San+Francisco,+CA+94104/@37.79086,-122.40147,17z/data=!3m1!4b1!4m2!3m1!1s0x8085806f937e666d:0xdba83743068dd900" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york2.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[5]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Chicago -->
@@ -154,7 +164,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/101+N+Upper+Wacker+Dr,+Chicago,+IL+60606/@41.8835892,-87.6363918,15z/data=!4m2!3m1!1s0x880e2cb85afab5d3:0x7a17381d6871f55e?sa=X&ei=taIlVPiVCcmfyATqm4FY&ved=0CB0Q8gEwAA" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[6]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Washington -->
@@ -167,7 +177,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/2111+Wilson+Blvd,+Arlington,+VA+22201/@38.8919159,-77.0854019,17z/data=!3m1!4b1!4m2!3m1!1s0x89b7b661ff2aaef5:0x5a3dc39c6773688a" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york2.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[7]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Singapore -->
@@ -182,7 +192,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/21+Tanjong+Pagar+Rd,+Singapore+088444/@1.279466,103.844022,17z/data=!3m1!4b1!4m2!3m1!1s0x31da196d59f18143:0x6decf9e0bdf343e2" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[8]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Sydney -->
@@ -197,7 +207,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/241+Commonwealth+St,+Surry+Hills+NSW+2010,+Australia/@-33.883614,151.209694,17z/data=!3m1!4b1!4m2!3m1!1s0x6b12ae22057f458f:0x14f52421bcb68576" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york2.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[9]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Atlanta -->
@@ -210,7 +220,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/2859+Paces+Ferry+Rd,+Atlanta,+GA+30339/@33.8677883,-84.4688859,17z/data=!3m1!4b1!4m2!3m1!1s0x88f5044291a26f03:0xead14c7de9893179" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[10]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Sao Paolo -->
@@ -223,7 +233,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/R.+Leopoldo+Couto+Magalh%C3%A3es+J%C3%BAnior,+1+-+Moema,+S%C3%A3o+Paulo+-+SP,+Brazil/@-23.5894386,-46.6849041,17z/data=!3m1!4b1!4m2!3m1!1s0x94ce5741553847bf:0x85d94a32e977c5eb" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york2.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[11]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Milan -->
@@ -238,7 +248,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/Via+Conservatorio,+22,+20122+Milano,+Italy/@45.4658916,9.2028109,17z/data=!3m1!4b1!4m2!3m1!1s0x4786c6a348b6afa9:0xc5502ec3436611de" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[2]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Madrid -->
@@ -253,7 +263,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="https://www.google.com/maps/place/Calle+Serrano,+93,+28006+Madrid,+Spain/@40.4375619,-3.6865147,17z/data=!3m1!4b1!4m2!3m1!1s0xd4228eb95342483:0x2cef4245d9e3621e" target="_blank">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york2.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[6]; ?>.jpg"></div>
                     </li>
                     
                     <!-- Tokyo -->
@@ -270,7 +280,7 @@ get_header(); ?>
                         <div class="directions">
                             <a href="javascript:void(0)">Get Directions</a>
                         </div>
-                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/new-york.jpg"></div>
+                        <div class="background-image" data-image_path="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/offices/office-<?php echo $numbers[9]; ?>.jpg"></div>
                     </li>
                     
                 </ul>

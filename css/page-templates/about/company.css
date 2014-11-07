@@ -1,6 +1,6 @@
 /* Hero */
 .container.about .row.hero {
-    /*background-image:url('../../../images/page-templates/about/company/hero.jpg');*/
+    background:#fff url('../../../images/page-templates/about/company/hero.jpg') no-repeat center center;
 }
 /* Sections */
 .container.company .row.section {

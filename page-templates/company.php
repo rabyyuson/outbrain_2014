@@ -101,9 +101,9 @@ get_header(); ?>
                     Outbrain built and operates the world's largest content discovery platform, helping people to discover interesting, relevant, and trusted content wherever they are. Our technology delivers consumer insight, reaching an audience of more than 550 million people around the globe each month.
                 </p>
                 <ul class="map">
-                    <li class="location" data-coordinates-y="205" data-coordinates-x="130" data-margin-left="123">
+                    <li class="location" data-coordinates-y="174" data-coordinates-x="112" data-margin-left="143">
                         <div class="information">
-                            <p>San Francisco, USA</p>
+                            <p>San Francisco, CA, USA</p>
                         </div>
                     </li>
                     <li class="location" data-coordinates-y="232" data-coordinates-x="557" data-margin-left="103">
@@ -114,6 +114,61 @@ get_header(); ?>
                     <li class="location" data-coordinates-y="166" data-coordinates-x="457" data-margin-left="78">
                         <div class="information">
                             <p>London, UK</p>
+                        </div>
+                    </li>
+                    <li class="location" data-coordinates-y="182" data-coordinates-x="469" data-margin-left="88">
+                        <div class="information">
+                            <p>Paris, France</p>
+                        </div>
+                    </li>
+                    <li class="location" data-coordinates-y="175" data-coordinates-x="489" data-margin-left="114">
+                        <div class="information">
+                            <p>Munich, Germany</p>
+                        </div>
+                    </li>
+                    <li class="location" data-coordinates-y="201" data-coordinates-x="223" data-margin-left="103">
+                        <div class="information">
+                            <p>Chicago, IL, USA</p>
+                        </div>
+                    </li>
+                    <li class="location" data-coordinates-y="212" data-coordinates-x="246" data-margin-left="121">
+                        <div class="information">
+                            <p>Arlington, VA, USA</p>
+                        </div>
+                    </li>
+                    <li class="location" data-coordinates-y="328" data-coordinates-x="748" data-margin-left="71">
+                        <div class="information">
+                            <p>Singapore</p>
+                        </div>
+                    </li>
+                    <li class="location" data-coordinates-y="421" data-coordinates-x="878" data-margin-left="118">
+                        <div class="information">
+                            <p>Sydney, Australia</p>
+                        </div>
+                    </li>
+                    <li class="location" data-coordinates-y="222" data-coordinates-x="226" data-margin-left="109">
+                        <div class="information">
+                            <p>Atlanta, GA, USA</p>
+                        </div>
+                    </li>
+                    <li class="location" data-coordinates-y="387" data-coordinates-x="331" data-margin-left="47">
+                        <div class="information">
+                            <p>Brazil</p>
+                        </div>
+                    </li>
+                    <li class="location" data-coordinates-y="193" data-coordinates-x="485" data-margin-left="82">
+                        <div class="information">
+                            <p>Milan, Italy</p>
+                        </div>
+                    </li>
+                    <li class="location" data-coordinates-y="208" data-coordinates-x="450" data-margin-left="89">
+                        <div class="information">
+                            <p>Madrid, Spain</p>
+                        </div>
+                    </li>
+                    <li class="location" data-coordinates-y="220" data-coordinates-x="845" data-margin-left="90">
+                        <div class="information">
+                            <p>Tokyo, Japan</p>
                         </div>
                     </li>
                 </ul>
