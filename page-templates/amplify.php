@@ -185,7 +185,7 @@ get_header(); ?>
                     <div class="testimonial first">
                         <div class="quote">"It's less about buying traffic than it is about reaching the right people with relevant headlines to get them to your content."</div>
                         <div class="profile">
-                            <img src="<?php echo get_template_directory_uri();  ?>/images/front/sample-photo.jpg" />
+                            <img src="<?php echo get_template_directory_uri();  ?>/images/page-templates/amplify/sample-photo.jpg" />
                             <div class="name">Dan Horowitz</div>
                             <div class="title">EVP & Senior Partner,<br/>Fleishman-Hillard</div>
                         </div>
@@ -193,7 +193,7 @@ get_header(); ?>
                     <div class="testimonial second active">
                         <div class="quote">"Our goal is always to deliver content that adds value to the conversations being held by the end user. Outbrain allows us to do just that."</div>
                         <div class="profile">
-                            <img src="<?php echo get_template_directory_uri();  ?>/images/front/sample-photo.jpg" />
+                            <img src="<?php echo get_template_directory_uri();  ?>/images/page-templates/amplify/sample-photo.jpg" />
                             <div class="name">Katrina Craigwell</div>
                             <div class="title">Global Manager of Digital Marketing, GE</div>
                         </div>
@@ -201,7 +201,7 @@ get_header(); ?>
                     <div class="testimonial third">
                         <div class="quote">"Outbrain has been one of our best customer acquisition channels."</div>
                         <div class="profile">
-                            <img src="<?php echo get_template_directory_uri();  ?>/images/front/sample-photo.jpg" />
+                            <img src="<?php echo get_template_directory_uri();  ?>/images/page-templates/amplify/sample-photo.jpg" />
                             <div class="name">Dmitri Leonov</div>
                             <div class="title">VP of Growth, Sanebox</div>
                         </div>

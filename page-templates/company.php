@@ -73,23 +73,10 @@ get_header(); ?>
                 <p class="description">
                     Outbrain built and operates the world's largest content discovery platform, helping people to discover interesting, relevant, and trusted content wherever they are. Our technology delivers consumer insight, reaching an audience of more than 550 million people around the globe each month.
                 </p>
-                <div class="columns twelve box">
-                    <div class="columns four">
-                        <h3>555 Million</h3>
-                        <p>Global Reach <span>(Unique visitors)</span></p>
-                    </div>
-                    <div class="columns four">
-                        <h3>190 Billion</h3>
-                        <p>Monthly Recommendations</p>
-                    </div>
-                    <div class="columns four">
-                        <h3>+165%</h3>
-                        <p>Engagement <span>(vs. Social)*</span></p>
-                    </div>
-                </div>
-                <div class="columns twelve footnote">
-                    <p>*2014 Audience Engagement Study: Effectiveness of Discovery vs. Search vs. Social.</p>
-                </div>
+                <?php
+                    // Reference the about page template navigation menu
+                    include_once( TEMPLATEPATH . '/inc/templates/page-templates/global/frontpage-company.php' );
+                ?>
             </div>
         </div>
     </div>
@@ -131,11 +118,6 @@ get_header(); ?>
                             <p>Chicago, IL, USA</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="212" data-coordinates-x="246" data-margin-left="121">
-                        <div class="information">
-                            <p>Arlington, VA, USA</p>
-                        </div>
-                    </li>
                     <li class="location" data-coordinates-y="328" data-coordinates-x="748" data-margin-left="71">
                         <div class="information">
                             <p>Singapore</p>
@@ -151,9 +133,9 @@ get_header(); ?>
                             <p>Atlanta, GA, USA</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="387" data-coordinates-x="331" data-margin-left="47">
+                    <li class="location" data-coordinates-y="387" data-coordinates-x="331" data-margin-left="115">
                         <div class="information">
-                            <p>Brazil</p>
+                            <p>São Paulo, Brazil</p>
                         </div>
                     </li>
                     <li class="location" data-coordinates-y="193" data-coordinates-x="485" data-margin-left="82">

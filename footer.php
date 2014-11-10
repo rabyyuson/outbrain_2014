@@ -11,6 +11,7 @@
 
 ?>
 <footer class="container">
+    <?php /* ?>
     <div class="row interests">
         <div class="inner clearfix">
             <div class="columns twelve">
@@ -38,6 +39,7 @@
             </div>
         </div>
     </div>
+    <?php */ ?>
     <div class="row mega-footer">
         <div class="inner clearfix">
             <div class="columns twelve">

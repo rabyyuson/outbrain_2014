@@ -283,8 +283,9 @@ class Functions {
         if( is_front_page() ) {
             
             wp_enqueue_style( 'frontpage', Functions::replace_public_links( get_template_directory_uri() ) . '/css/front/frontpage.css', array(), FALSE, 'all' );
+            wp_enqueue_script( 'jssor-js', Functions::replace_public_links( get_template_directory_uri() ) . '/inc/libraries/jssor/js/jssor.min.js', array(), null, TRUE );
+            wp_enqueue_script( 'jssor-slider-js', Functions::replace_public_links( get_template_directory_uri() ) . '/inc/libraries/jssor/js/jssor.slider.min.js', array(), null, TRUE );
             wp_enqueue_script( 'frontpage-js', Functions::replace_public_links( get_template_directory_uri() ) . '/js/front/frontpage.js', array(), null, TRUE );
-        
             
         /********************************************
          * Blog -- Post Index

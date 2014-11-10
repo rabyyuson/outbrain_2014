@@ -429,14 +429,14 @@ footer .row.interests .inner .columns.twelve .columns.four .content h2 {
     font-weight:500;
 }
 footer .row.interests .inner .columns.twelve .columns.four.traffic .content h2 {
-    background:url('images/front/other-drivemoretraffic.png') no-repeat left bottom;
+    background:url('images/global/other-drivemoretraffic.png') no-repeat left bottom;
 }
 footer .row.interests .inner .columns.twelve .columns.four.growing .content h2 {
-    background:url('images/front/other-wearegrowing.png') no-repeat left bottom;
+    background:url('images/global/other-wearegrowing.png') no-repeat left bottom;
     padding-left:2.5em;
 }
 footer .row.interests .inner .columns.twelve .columns.four.blog .content h2 {
-    background:url('images/front/other-braniacblog.png') no-repeat left bottom;
+    background:url('images/global/other-braniacblog.png') no-repeat left bottom;
 }
 footer .row.interests .inner .columns.twelve .columns.four .content p {
     float:left;
