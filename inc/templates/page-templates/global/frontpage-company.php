@@ -12,18 +12,18 @@
 ?>
 <div class="columns twelve box">
     <div class="columns four">
-        <h3>555 Million</h3>
-        <p>Global Reach <span>(Unique visitors)</span></p>
+        <h3>561 Million</h3>
+        <p>The global audience reached by Outbrain each month*</p>
     </div>
     <div class="columns four">
         <h3>190 Billion</h3>
-        <p>Monthly Recommendations</p>
+        <p>The total recommendations we serve consumers monthly</p>
     </div>
     <div class="columns four">
-        <h3>+165%</h3>
-        <p>Engagement <span>(vs. Social)*</span></p>
+        <h3>80%</h3>
+        <p>Of the world’s leading brands use Outbrain</p>
     </div>
 </div>
 <div class="columns twelve footnote">
-    <p>*2014 Audience Engagement Study: Effectiveness of Discovery vs. Search vs. Social.</p>
+    <p>Audience reach according to comScore, September 2014. Leading brands via Ad Age DataCenter / Kantar Media, 2014.</p>
 </div>

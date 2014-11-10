@@ -38,7 +38,7 @@ get_header(); ?>
                 </p>
                 <div class="cta">
                     <p>Want to work with us?</p>
-                    <a href="javascript:void(0)">Apply Now!</a>
+                    <a href="http://outbrain.mytribehr.com/careers">Apply Now!</a>
                 </div>
             </div>
         </div>
@@ -51,25 +51,25 @@ get_header(); ?>
                     <div class="icon"></div>
                     <h3>Passionate</h3>
                     <div class="dash"></div>
-                    <p>Loves good content. Lorem ipsum, lipsum lorem.</p>
+                    <p>Loves good content and sharing personal interests.</p>
                 </div>
                 <div class="columns three collaborative">
                     <div class="icon"></div>
                     <h3>Collaborative</h3>
                     <div class="dash"></div>
-                    <p>Loves good content. Lorem ipsum, lipsum lorem.</p>
+                    <p>Thrives in a team and won’t let ego into the workplace.</p>
                 </div>
                 <div class="columns three techy">
                     <div class="icon"></div>
                     <h3>Techy</h3>
                     <div class="dash"></div>
-                    <p>Loves good content. Lorem ipsum, lipsum lorem.</p>
+                    <p>Well-read tech nerd psyched to work on innovative products.</p>
                 </div>
                 <div class="columns three worldly">
                     <div class="icon"></div>
                     <h3>Worldly</h3>
                     <div class="dash"></div>
-                    <p>Loves good content. Lorem ipsum, lipsum lorem.</p>
+                    <p>Sees everything through a global kaleidoscope.</p>
                 </div>
             </div>
         </div>
@@ -122,8 +122,12 @@ get_header(); ?>
             <div class="columns twelve">
                 <h2 class="title">Job listings</h2>
                 <p class="description">
-                    We're developing the world's best platform for the continual discovery of high quality content. You've probably seen us before and didn't know it was Outbrain. In fact, we bet you've clicked on one of our links. 'Cause they're pretty good.
+                    Outbrain offers a competitive salary, benefits, and a great working environment.  If you’re Outbrainy, check out our current openings below.
                 </p>
+                <div class="cta">
+                    <p>Want to work with us?</p>
+                    <a href="http://outbrain.mytribehr.com/careers">Apply Now!</a>
+                </div>
             </div>
         </div>
     </div>

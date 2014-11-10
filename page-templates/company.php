@@ -20,9 +20,6 @@ get_header(); ?>
                         <br/>
                         Content Discovery Platform
                     </h1>
-                    <p>
-                        Delights readers, drives engagement, creates revenue.
-                    </p>
                 </div>
             </div>
         </div>
@@ -36,7 +33,7 @@ get_header(); ?>
             <div class="columns twelve">
                 <h2 class="title">We Are Discovery</h2>
                 <p class="description">
-                    Outbrain built and operates the world's largest content discovery platform, helping people to discover interesting, relevant, and trusted content wherever they are. Our technology delivers consumer insight, reaching an audience of more than 550 million people around the globe each month.
+                    Outbrain captures the value of bringing great audiences and great content together. We delight readers, create revenue, drive engagement and breed consumer insights, bringing together the premium publishers and marketers of all sizes into the world’s largest and most vibrant content marketplace. 
                 </p>
             </div>
         </div>
@@ -69,9 +66,9 @@ get_header(); ?>
     <div class="row section outbrain-numbers">
         <div class="inner clearfix">
             <div class="columns twelve">
-                <h2 class="title">Outbrain Numbers</h2>
+                <h2 class="title">Outbrain by the Numbers</h2>
                 <p class="description">
-                    Outbrain built and operates the world's largest content discovery platform, helping people to discover interesting, relevant, and trusted content wherever they are. Our technology delivers consumer insight, reaching an audience of more than 550 million people around the globe each month.
+                    We were first in creating content discovery and we are first in markets across the world. We reach more than a half billion people globally each month.
                 </p>
                 <?php
                     // Reference the about page template navigation menu
@@ -83,9 +80,9 @@ get_header(); ?>
     <div class="row section global-offices">
         <div class="inner clearfix">
             <div class="columns twelve">
-                <h2 class="title">Global Offices</h2>
+                <h2 class="title">A global footprint of service</h2>
                 <p class="description">
-                    Outbrain built and operates the world's largest content discovery platform, helping people to discover interesting, relevant, and trusted content wherever they are. Our technology delivers consumer insight, reaching an audience of more than 550 million people around the globe each month.
+                    We operate offices in 11 global territories and we partner with publishers and marketers in over 55 countries, including the U.S., UK, France, Brazil, India and Japan.
                 </p>
                 <ul class="map">
                     <li class="location" data-coordinates-y="174" data-coordinates-x="112" data-margin-left="143">
