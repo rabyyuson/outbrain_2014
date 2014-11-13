@@ -2,12 +2,14 @@
 .container .row .inner {
     padding:0 5em !important;
 }
+.container .row .inner {
+    max-width:1210px !important;
+}
 
 /* Header */
 header.container .row.head {
     background-color:#f2f2f2;
     padding:1.25em 0;
-    border-bottom:2px solid #666;
 }
 header.container .row.head .inner.clearfix .columns.eight,
 header.container .row.head .inner.clearfix .columns.eight a img {
@@ -50,12 +52,13 @@ header.container .row.sub-head .inner.clearfix .columns.eight ul li a {
     float:left;
     font-size:14px;
     color:#fff;
-    font-weight:400;
+    font-weight:500;
     padding:0.25em 0.75em 0.45em 0.75em;
     border-right:1px solid #f59d4d;
+    border-top:2px solid transparent;
 }
 header.container .row.sub-head .inner.clearfix .columns.eight ul li a:hover {
-    text-decoration:underline;
+    border-top:2px solid #000;
 }
 header.container .row.sub-head .inner.clearfix .columns.eight ul li:first-child a {
     padding-left:0;
@@ -75,10 +78,10 @@ header.container .row.sub-head .inner.clearfix .columns.four ul li a {
     font-size:14px;
     color:#fff;
     font-weight:400;
-    padding:0.25em 0.5em 0.45em 0.5em;
+    padding:0.25em 0.35em 0.45em 0.35em;
 }
 header.container .row.sub-head .inner.clearfix .columns.four ul li a:hover {
-    text-decoration:underline;
+    font-weight:600;
 }
 header.container .row.sub-head .inner.clearfix .columns.four ul li.active a:hover {
     text-decoration:none;

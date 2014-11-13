@@ -45,6 +45,7 @@ if( $_GET['category_id'] ): ?>
         <?php get_search_form( 1 ); ?>
     </div>
     <div class="categories">
+        <span class="button"></span>
         <?php
             wp_dropdown_categories( array( 
                 'show_count' => 0,

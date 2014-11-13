@@ -46,6 +46,9 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
                                 <div class="count">0 Shares</div>
                             </div>
                         </div>
+                        <div class="category">
+                            <a href="javascript:void(0)"></a>
+                        </div>
                         <div class="information">
                             <h1 class="title">
                                 <a href="#"></a>
@@ -58,7 +61,7 @@ get_template_part( 'inc/templates/blog/header', get_post_format() ); ?>
                             </div>
                             <div class="content">
                                 <div class="excerpt"></div>
-                                <a href="#">Read More &raquo;</a>
+                                <a href="#">Read More &rsaquo;</a>
                             </div>
                         </div>
                     </article>

@@ -21,7 +21,18 @@
                     form : container.find( '.subscription form' ),
                     list : container.find( '.subscription ul li' )
                 },
-                categories = container.find( '.categories' );
+                categories = container.find( '.categories' ),
+                search = {
+                    form : container.find( '.search form' ),
+                    button : container.find( '.search .button' )
+                };
+                
+            // Search button click event handler
+            search.button.on({
+               click : function(){
+                   search.form.submit();
+               } 
+            });
         
             // Add the placeholder text pulled from the label
             // Adjust the color of the selected item on change.

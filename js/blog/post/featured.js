@@ -63,6 +63,7 @@
                             // All other changes and not order specific.
                             // - Insert the returned title.
                             // - Insert the returned href.
+                            // - Insert the category link.
                             // - First Item: Insert the author name and url.
                             // - First Item: Insert the post date.
                             // - First Item: Insert the post content.
@@ -70,9 +71,10 @@
                             // - Add social links to all networks.
                             cloned_article.find( '.information .title a' ).text( data.doc[i].content );
                             cloned_article.find( '.information .title a, .information .content a' ).attr( { 'href' : data.doc[i].url } );
+                            cloned_article.find( '.category a' ).attr( 'href', data.doc[i].author.split('|')[6] ).text( data.doc[i].author.split('|')[4] );
                             cloned_article.find( '.information .meta .author a' ).attr( 'href', data.doc[i].author.split('|')[2] ).text( data.doc[i].author.split('|')[0] );
                             cloned_article.find( '.information .meta time' ).text( months[ date[1] - 1 ] + ' ' + day + ', ' + date[0] );
-                            cloned_article.find( '.information .content .excerpt' ).text( data.doc[i].desc );
+                            cloned_article.find( '.information .content .excerpt' ).text( data.doc[i].desc.substring( 0, 135 ) + '...' );
                             cloned_article.addClass( 'recommendation-' + i );
                             cloned_article.find( '.social .facebook a' ).attr( 'href', social.facebook );
                             cloned_article.find( '.social .twitter a' ).attr( 'href', social.twitter );
