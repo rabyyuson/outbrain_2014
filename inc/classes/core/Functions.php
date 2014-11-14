@@ -1473,6 +1473,49 @@ class Functions {
         return $numbers;
     }
     
+    /**
+     * Find out the gravity form id of the form chosen.
+     * @param string $form_name
+     * @return int
+     */
+    public static function get_gravity_form_by_id( $form_name ) {
+        
+        // Build the gravity form environment mapping.
+        $environment = array(
+            
+            'server_name' => $_SERVER['SERVER_NAME'],
+            'selected' => 0,
+            'staging' => array(
+                'outbrain_2014_blog_form'                   =>      8,
+                'outbrain_2014_download_form'               =>      16,
+                'outbrain_2014_contact_form_marketing'      =>      12,
+                'outbrain_2014_contact_form_other'          =>      14,
+                'outbrain_2014_contact_form_sales'          =>      11,
+                'outbrain_2014_contact_form_support'        =>      13,
+            ),
+            'production' => array(
+                'outbrain_2014_blog_form'                   =>      25,
+                'outbrain_2014_download_form'               =>      0,
+                'outbrain_2014_contact_form_marketing'      =>      28,
+                'outbrain_2014_contact_form_other'          =>      29,
+                'outbrain_2014_contact_form_sales'          =>      30,
+                'outbrain_2014_contact_form_support'        =>      31,
+            )
+            
+        );
+        
+        // Find out which environment the user is on.
+        if( preg_match( '[site-19002-stg-nydc1.nydc1.outbrain.com|site-19001-stg-nydc1.nydc1.outbrain.com|www2.outbrain.com]', $environment[ 'server_name' ] ) ):
+            $environment['selected'] = $environment['staging'][$form_name];
+        elseif ( preg_match('[site-20000-prod-ladc1.ladc1.outbrain.com|site-20001-prod-ladc1.ladc1.outbrain.com|www.outbrain.com]', $environment['server_name'] ) ):
+            $environment['selected'] = $environment['production'][$form_name];
+        endif;
+        
+        // Return the gravity form id.
+        return $environment['selected'];
+        
+    }
+    
 }
 
 // call the after theme setup method

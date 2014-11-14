@@ -313,6 +313,7 @@ header.container .row.head .inner.clearfix .columns.four ul li a img {
     display:none;
 }
 .container.content .row .inner.clearfix .columns.four .gform_fields li.first_name,
+.container.content .row .inner.clearfix .columns.four .gform_fields li.last_name,
 .container.content .row .inner.clearfix .columns.four .gform_fields li.email_address,
 .container.content .row .inner.clearfix .columns.four .gform_fields li.show {
     display:block;
@@ -364,11 +365,26 @@ header.container .row.head .inner.clearfix .columns.four ul li a img {
     width:100%;
     margin:0 0 15px 0;
 }
+.container.content .row .inner.clearfix .columns.four .gform_fields li select {
+    color:#c3c1c1;
+    background: transparent;
+    -webkit-appearance: none;
+    position:relative;
+    z-index:5;
+}
 .container.content .row .inner.clearfix .columns.four .gform_fields li select option {
     color:#000;
 }
-.container.content .row .inner.clearfix .columns.four .gform_fields li select {
-    color:#c3c1c1;
+.container.content .row .inner.clearfix .columns.four .gform_fields li.budget .ginput_container,
+.container.content .row .inner.clearfix .columns.four .gform_fields li.industry .ginput_container {
+    float:left;
+    width:100%;
+    margin:0 0 15px 0;
+    position:relative;
+    border:none;
+    background:#fff url('../images/dropdown-icon.png') no-repeat right top;
+    z-index:1;
+    height:54px;
 }
 .container.content .row .inner.clearfix .columns.four .gform_footer input[type=submit] {
     background-color:#de4f61;

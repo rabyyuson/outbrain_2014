@@ -207,7 +207,20 @@ else: ?>
                             <p class="download_submit_button_text"><?php echo get_field( 'download_submit_button_text', $post->ID ); ?></p>
                         </div>
                     <?php endif; ?>
-                    <?php gravity_form(16, false, false, false, array( 'origin_url' => esc_url( $_POST['origin_url'] ? $_POST['origin_url'] : get_permalink( get_page_by_title( 'Blog' ) ) ) ), true, 1); ?>
+                        
+                    <?php
+                    
+                        // Get the form selected.
+                        $form = get_field( 'download_form_selection', $post->ID );
+                        $origin_url = esc_url( $_POST['origin_url'] ? $_POST['origin_url'] : get_permalink( get_page_by_title( 'Blog' ) ) );
+                        
+                        if( (string)$form === 'blog' ){
+                            gravity_form( \Outbrain\Classes\Core\Functions::get_gravity_form_by_id( 'outbrain_2014_blog_form' ), false, false, false, array( 'origin_url' => $origin_url ), true, 1 );
+                        } elseif( (string)$form === 'download' ) {
+                            gravity_form( \Outbrain\Classes\Core\Functions::get_gravity_form_by_id( 'outbrain_2014_download_form' ), false, false, false, array( 'origin_url' => $origin_url ), true, 1 );
+                        }
+                        
+                    ?>
                     <p class="download_footer_note_label">
                         <?php
                             // Get the download footer note label and populate the form footer note title
