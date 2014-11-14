@@ -1,6 +1,18 @@
+/* Breadcrumbs */
+.single header .row.breadcrumbs {
+    display:none;
+}
+.single .columns.eight .row.breadcrumbs {
+    display:block;
+}
+.single .columns.eight .row.breadcrumbs .inner.clearfix {
+    padding:0 !important;
+}
+
 /* Content */
-.container.content {
+.single .container.content {
     position:relative;
+    padding:50px 0 0 0;
 }
 .container.content .row .inner.clearfix .columns.eight {
     float:left;
@@ -44,6 +56,23 @@
 .container.content .row .inner.clearfix .columns.eight article {
     float:left;
 }
+.container.content .row .inner.clearfix .columns.eight article .category-title {
+    float:left;
+    width:100%;
+}
+.container.content .row .inner.clearfix .columns.eight article .category-title a {
+    color:#8b979c;
+    font-size:14px;
+    text-transform:uppercase;
+    font-weight:600;
+    float:left;
+    border:1px solid #c3c3c3;
+    padding:2.5px 10px;
+    margin:0 0 20px 0;
+}
+.container.content .row .inner.clearfix .columns.eight article .category-title a:hover {
+    text-decoration:underline;
+}
 .container.content .row .inner.clearfix .columns.eight article .title {
     float:left;
     width:100%;
@@ -68,6 +97,8 @@
     margin:0 10px 0 0;
     font-size:14px;
     text-transform:uppercase;
+    font-weight:600;
+    line-height:14px;
 }
 .container.content .row .inner.clearfix .columns.eight article .meta .author {
     float:left;
@@ -77,6 +108,8 @@
     font-size:14px;
     color:#f08229;
     text-transform:uppercase;
+    font-weight:600;
+    line-height:14px;
 }
 .container.content .row .inner.clearfix .columns.eight article .meta .author a:hover {
     text-decoration:underline;
@@ -111,24 +144,23 @@
     margin:0;
     width:30%;
     position:relative;
+    padding:30px 0 0 0;
 }
 .container.content .row .inner.clearfix .columns.eight article .content blockquote.left {
     float:left;
-    margin:1.5em 1em 1.5em 0;
+    margin:1em 1em 1em 0;
+    background:url('../../../images/blog/single/quote.png') no-repeat left top;
+}
+.container.content .row .inner.clearfix .columns.eight article .content blockquote.left p {
+    text-align:left !important;
 }
 .container.content .row .inner.clearfix .columns.eight article .content blockquote.right {
     float:right;
-    margin:1.5em 0 1.5em 1em;
+    margin:1em 0 1em 1em;
+    background:url('../../../images/blog/single/quote.png') no-repeat left top;
 }
-.container.content .row .inner.clearfix .columns.eight article .content blockquote:before {
-    content:'"';
-    float:left;
-    width:100%;
-    font-size:82px;
-    font-weight:500;
-    margin-bottom:-13px;
-    font-family:bebas-neue,sans-serif;
-    text-transform:uppercase;    
+.container.content .row .inner.clearfix .columns.eight article .content blockquote.right p {
+    text-align:right !important;
 }
 .container.content .row .inner.clearfix .columns.eight article .content blockquote p {
     font-size:24px;
@@ -168,7 +200,7 @@
 }
 .container.content .row .inner.clearfix .columns.eight article .content .tip_box {
     border:3px solid #f08229;
-    background-color:#f2f2f2;
+    background-color:#f8f8f8;
     padding:1em;
     text-align:center;
 }
@@ -271,7 +303,9 @@
     margin:0 0 10px 0;
 }
 .container.content .row .inner.clearfix .columns.eight article .author_meta .information .biography a {
-    font-size:18px;
+    font-size:13px;
+    text-transform:uppercase;
+    font-weight:600;
     color:#f08229;
 }
 .container.content .row .inner.clearfix .columns.eight article .author_meta .information .biography a:hover {

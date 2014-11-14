@@ -92,31 +92,31 @@ header.container .row.sub-head .inner.clearfix .columns.four ul li.active a {
 header.container .row.sub-head .inner.clearfix .columns.four ul li.last a {
     padding-right:0;
 }
-header.container .row.breadcrumbs {
+.row.breadcrumbs {
     margin:0.5em 0 1em 0;
 }
-header.container .row.breadcrumbs .inner.clearfix ul,
-header.container .row.breadcrumbs .inner.clearfix ul li {
+.row.breadcrumbs .inner.clearfix ul,
+.row.breadcrumbs .inner.clearfix ul li {
     float:left;
 }
-header.container .row.breadcrumbs .inner.clearfix ul li a,
-header.container .row.breadcrumbs .inner.clearfix ul li span {
+.row.breadcrumbs .inner.clearfix ul li a,
+.row.breadcrumbs .inner.clearfix ul li span {
     float:left;
     color:#959292;
     font-size:12px;
     margin:0 0.5em 0 0;
 }
-header.container .row.breadcrumbs .inner.clearfix ul li a:hover {
+.row.breadcrumbs .inner.clearfix ul li a:hover {
     text-decoration:underline;
 }
-header.container .row.breadcrumbs .inner.clearfix ul li a:after,
-header.container .row.breadcrumbs .inner.clearfix ul li span:after {
+.row.breadcrumbs .inner.clearfix ul li a:after,
+.row.breadcrumbs .inner.clearfix ul li span:after {
     content:'›';
     float:right;
     margin:-1px 0 0 0.5em;
 }
-header.container .row.breadcrumbs .inner.clearfix ul li:last-child a:after,
-header.container .row.breadcrumbs .inner.clearfix ul li:last-child span:after {
+.row.breadcrumbs .inner.clearfix ul li:last-child a:after,
+.row.breadcrumbs .inner.clearfix ul li:last-child span:after {
     display:none;
 }
 

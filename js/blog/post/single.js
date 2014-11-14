@@ -23,6 +23,7 @@
                 respond = $( '#respond' ), comment_reply = $( '.comment-reply-link' ),
                 comment_reply_title = $( '.comment-reply-title' ), social,
                 social_share = $( '.social-share' ),
+                breadcrumbs = $( '.row.breadcrumbs' ),
                 recommendations = {
                     posts : article_container.find( 'article .recommendations .posts' ),
                     post : article_container.find( 'article .recommendations .post' ),
@@ -62,6 +63,9 @@
                         
                     }
                 };
+                
+            // Move the breadcrumbs beneath the skybox
+            article_container.find( '.header-promotion' ).before( breadcrumbs );
                 
             // Call the Outbrain Widget JS API and load the recommendations
             // through the callback function.

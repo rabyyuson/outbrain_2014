@@ -45,7 +45,7 @@
                 ?>
             </div>
             <div class="read-more">
-                <a href="<?php echo get_the_permalink(); ?>">Read More &raquo;</a>
+                <a href="<?php echo get_the_permalink(); ?>">Read More &rsaquo;</a>
             </div>
         </div>
     </div>

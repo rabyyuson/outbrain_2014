@@ -19,7 +19,7 @@ if( $_GET['category_id'] ): ?>
     <div class="subscription">
         <h2>Get Weekly Content Marketing Tips</h2>
         <p>Subscribe to get weekly tips and insights directly to your inbox</p>
-        <?php gravity_form( 15, false, false, false, null, true, 1 ); ?>
+        <?php gravity_form( 8, false, false, false, null, true, 1 ); ?>
         <?php
             // Check to see if we are on single page. If true, get the selected 
             // field options and store them in a javascript variable "post_options" 

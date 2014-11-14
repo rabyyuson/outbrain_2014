@@ -10,12 +10,23 @@
  */
 
 ?>
-<article <?php echo ( ( is_sticky() && is_home() && ! is_paged() ) ? 'class="sticky"' : false ); ?>>
-    <h1 class="title">
+<article <?php echo ( ( is_sticky() && is_home() && ! is_paged() ) ? 'class="sticky"' : false ); ?>> 
+    <div class="category-title">
+        <?php
+            // Get the category list and then extract the first category
+            // from the array.
+            $category = get_the_category();
+            $category = $category[0];
+        ?>
+        <a href="<?php echo get_category_link( $category->term_id ); ?>">
+            <?php echo $category->name; ?>
+        </a>
+    </div>
+    <h2 class="title">
         <a href="<?php echo esc_url( get_permalink() ); ?>">
             <?php echo get_the_title(); ?>
         </a>
-    </h1>
+    </h2>
     <div class="meta">
         <time>
             <?php echo esc_html( get_the_date( 'F j, Y' ) ); ?>
