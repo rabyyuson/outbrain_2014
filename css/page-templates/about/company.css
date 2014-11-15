@@ -2,13 +2,10 @@
 .container.about .row.hero {
     background:#fff url('../../../images/page-templates/about/company/hero.jpg') no-repeat center center;
 }
-.container.about .row.hero .columns.twelve {
-    margin:7em 0 0 0 !important;
-}
 
 /* Sections */
 .container.company .row.section {
-    background-color:#73cde1;
+    background-color:#505558;
     padding:3em 0;
 }
 .container.company .row.section .columns.twelve {
@@ -89,6 +86,9 @@
     cursor:pointer;
     position:relative;
     z-index:3;
+}
+.container.company .row.section.outbrain-numbers {
+    background-color:#20a9b2;
 }
 .container.company .row.section.outbrain-numbers .columns.twelve.box {
     float:left;

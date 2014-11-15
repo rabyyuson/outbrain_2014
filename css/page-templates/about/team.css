@@ -3,11 +3,7 @@
     background:#fff url('../../../images/page-templates/about/team/hero.jpg') no-repeat center center;
 }
 .container.about .row.hero .columns.twelve {
-    margin:9em 0 0 0 !important;
-}
-.container.about .row.hero .columns.twelve h1,
-.container.about .row.hero .columns.twelve p {
-    color:#000 !important;
+    margin:8em 0 0 0 !important;
 }
 .container.about .row.hero .columns.twelve p {
     font-weight:500 !important;
@@ -16,7 +12,7 @@
 /* Sections */
 .container.team .row.our-executives,
 .container.team .row.board-of-directors {
-    background-color:#73cde1;
+    background-color:#505558;
     padding:3em 0;
 }
 .container.team .row.our-executives .columns.twelve h2,

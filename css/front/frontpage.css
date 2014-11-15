@@ -63,7 +63,7 @@
     line-height:1.35em;
 }
 .container.homepage .row.amplify {
-    background:url('../../images/front/amplify-bg.jpg') no-repeat center bottom;
+    background:url('../../images/front/amplify-bg.png') no-repeat center center;
 }
 .container.homepage .row.engage {
     background:url('../../images/front/engage-bg.jpg') no-repeat center center;
@@ -316,7 +316,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); 
 }
 .container.homepage .row.powered-people {
-    background-color:#dd4f61;
+    background-color:#505558;
 }
 .container.homepage .row.powered-people .title,
 .container.homepage .row.powered-people .description {
@@ -333,6 +333,7 @@
 }
 .container.homepage .row.powered-people-collage {
     height:452px;
+    margin:4px 0 0 0;
     background:url('../../images/front/powered-people.jpg') no-repeat center center;
     background-size:cover;
 }

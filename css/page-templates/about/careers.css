@@ -4,9 +4,12 @@
 }
 
 /* Head */
-.container.careers .row.head,
+.container.careers .row.head {
+    background-color:#505558;
+    padding:3em 0;
+}
 .container.careers .row.bottom {
-    background-color:#dd4f61;
+    background-color:#20a9b2;
     padding:3em 0;
 }
 .container.careers .row.head .columns.twelve h2,
@@ -87,16 +90,16 @@
     border-radius:50%;
 }
 .container.careers .row.think-outbrainy .columns.three.passionate .icon {
-    background:#dd4f61 url('../../../images/page-templates/about/careers/fire.png') no-repeat center center;
+    background:#20a9b2 url('../../../images/page-templates/about/careers/fire.png') no-repeat center center;
 }
 .container.careers .row.think-outbrainy .columns.three.collaborative .icon {
-    background:#dd4f61 url('../../../images/page-templates/about/careers/link.png') no-repeat center center;
+    background:#20a9b2 url('../../../images/page-templates/about/careers/link.png') no-repeat center center;
 }
 .container.careers .row.think-outbrainy .columns.three.techy .icon {
-    background:#dd4f61 url('../../../images/page-templates/about/careers/glasses.png') no-repeat center center;
+    background:#20a9b2 url('../../../images/page-templates/about/careers/glasses.png') no-repeat center center;
 }
 .container.careers .row.think-outbrainy .columns.three.worldly .icon {
-    background:#dd4f61 url('../../../images/page-templates/about/careers/globe.png') no-repeat center center;
+    background:#20a9b2 url('../../../images/page-templates/about/careers/globe.png') no-repeat center center;
 }
 .container.careers .row.think-outbrainy .columns.three h3 {
     width:100%;
@@ -111,7 +114,7 @@
     margin:0 auto;
     width:120px;
     height:7px;
-    background-color:#dd4f61;
+    background-color:#20a9b2;
 }
 .container.careers .row.think-outbrainy .columns.three p {
     font-size:21px;

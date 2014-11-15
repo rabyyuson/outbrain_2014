@@ -19,6 +19,10 @@ header.container .row.head .inner.clearfix .columns.eight a .sub-title {
     float:left;
     color:#000;
     text-transform:uppercase;
+    font-size:1.70em;
+    margin:6px 0 0 0.6em;
+}
+html.wf-active header.container .row.head .inner.clearfix .columns.eight a .sub-title {
     font-size:2em;
     margin:4px 0 0 0.5em;
 }
@@ -50,12 +54,16 @@ header.container .row.sub-head .inner.clearfix .columns.eight ul li {
 }
 header.container .row.sub-head .inner.clearfix .columns.eight ul li a {
     float:left;
-    font-size:14px;
     color:#fff;
+    font-size:12px;
     font-weight:500;
-    padding:0.25em 0.75em 0.45em 0.75em;
+    padding:0.35em 0.75em 0.35em 0.75em;
     border-right:1px solid #f59d4d;
     border-top:2px solid transparent;
+}
+html.wf-active header.container .row.sub-head .inner.clearfix .columns.eight ul li a {
+    font-size:14px;
+    padding:0.25em 0.75em 0.45em 0.75em;
 }
 header.container .row.sub-head .inner.clearfix .columns.eight ul li a:hover {
     border-top:2px solid #000;
@@ -75,10 +83,13 @@ header.container .row.sub-head .inner.clearfix .columns.four ul li {
 }
 header.container .row.sub-head .inner.clearfix .columns.four ul li a {
     float:left;
-    font-size:14px;
+    font-size:12px;
     color:#fff;
-    font-weight:400;
-    padding:0.25em 0.35em 0.45em 0.35em;
+    font-weight:500;
+    padding:0.45em 0.35em;
+}
+html.wf-active header.container .row.sub-head .inner.clearfix .columns.four ul li a {
+    font-size:14px;
 }
 header.container .row.sub-head .inner.clearfix .columns.four ul li a:hover {
     font-weight:600;

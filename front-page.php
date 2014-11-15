@@ -119,11 +119,11 @@ get_header(); ?>
                         </div>
                         <div class="item">
                             <div class="image">
-                                <img src="<?php echo get_template_directory_uri();  ?>/images/front/sample-photo.jpg" />
+                                <img src="<?php echo get_template_directory_uri();  ?>/images/front/photos/michael-hess.jpg" />
                             </div>
                             <div class="information">
                                 <div class="copy">
-                                    Outbrain is the worldwide leader in content distribution. It's highly effective for reaching the consumer. Outbrain's targeting and international reach is the most appealing aspect of their solution.
+                                    Outbrain is the worldwide leader in content distribution. Outbrain's targeting and international reach is the most appealing aspect of their solution.
                                 </div>
                                 <div class="name">Michael Hess</div>
                                 <div class="title">Senior Digital Manager</div>
@@ -132,15 +132,41 @@ get_header(); ?>
                         </div>
                         <div class="item">
                             <div class="image">
-                                <img src="<?php echo get_template_directory_uri();  ?>/images/front/sample-photo.jpg" />
+                                <img src="<?php echo get_template_directory_uri();  ?>/images/front/photos/bailey-foote.jpg" />
                             </div>
                             <div class="information">
                                 <div class="copy">
-                                    Outbrain is quite simply the perfect and by far the best product for amplifying our content and building our business.
+                                    The fact that we’re able to drive these kinds of transactions with consumers at scale and with increasing efficiency has made Outbrain paramount to our marketing strategy.
+                                </div>
+                                <div class="name">Bailey Foote</div>
+                                <div class="title">E-commerce Manager</div>
+                                <div class="company">The Line</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image">
+                                <img src="<?php echo get_template_directory_uri();  ?>/images/front/photos/neal-moore.jpg" />
+                            </div>
+                            <div class="information">
+                                <div class="copy">
+                                    You cannot leave it to chance that someone will find and engage with your content. Outbrain can put your content in the midst of the world’s most prestigious publications.
+                                </div>
+                                <div class="name">Neal Moore</div>
+                                <div class="title">CEO</div>
+                                <div class="company">Click2View</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="image">
+                                <img src="<?php echo get_template_directory_uri();  ?>/images/front/photos/zach-zavos.jpg" />
+                            </div>
+                            <div class="information">
+                                <div class="copy">
+                                    Having links to our content appearing directly on premium publisher sites helped us grow our reach, establish our brand, and develop a growing community of active readers
                                 </div>
                                 <div class="name">Zach Zavos</div>
                                 <div class="title">Co-Founder</div>
-                                <div class="company">Conversent Media</div>
+                                <div class="company">Conversant Media</div>
                             </div>
                         </div>
                     </div>

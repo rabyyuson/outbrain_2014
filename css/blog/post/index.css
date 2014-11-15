@@ -195,11 +195,17 @@
     margin:0 0 0.25em 0;
     color:#000;
     text-transform:uppercase;
-    font-size:36px;
-    font-weight:500;
+    font-size:24px;
+    letter-spacing:-1px;
+    font-weight:700;
     line-height:32px;
     font-family:bebas-neue,sans-serif;
     transition:color 0.1s ease-in-out;
+}
+html.wf-active .container.content .row .inner.clearfix article .title a {
+    font-size:36px;
+    letter-spacing:0;
+    font-weight:500;
 }
 .container.content .row .inner.clearfix article .meta {
     float:left;
@@ -314,6 +320,19 @@
 }
 .container.content .row .inner.clearfix .blog-posts .pagination {
     text-indent:-9999px;
+}
+.container.content .row .inner.clearfix .blog-posts .show-more-posts {
+    float:left;
+    width:100%;
+    text-align:center;
+    color:#fff;
+    text-transform:uppercase;
+    padding:0.3em 1em;
+    font-weight:600;
+    margin:0 0 30px 0;
+    background-color:#000;
+    border:2px solid #000;
+    transition:background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 .blog-posts .loading {
     position:fixed;

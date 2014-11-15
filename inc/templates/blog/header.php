@@ -36,7 +36,7 @@
                 <div class="columns eight">
                     <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Blog' ) ) ); ?>">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/global/logo.png" alt="Outbrain Logo" />
-                        <div class="sub-title">Content Marketing Hub</div>
+                        <div class="sub-title"><?php echo ( function_exists( 'get_field' ) ? get_field( 'blog_global_title', 'option' ) : false ); ?></div>
                     </a>
                 </div>
                 <nav class="columns four">
@@ -114,17 +114,17 @@
                     <ul>
                         <li>
                             <a href="<?php echo get_home_url(); ?>">
-                                Outbrain Home
+                                Home
                             </a>
                         </li> 
                         <li>
                             <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Amplify' ) ) ); ?>">
-                                Amplify
+                                Marketers
                             </a>
                         </li> 
                         <li>
                             <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Engage' ) ) ); ?>">
-                                Engage
+                                Publishers
                             </a>
                         </li>
                         <li>

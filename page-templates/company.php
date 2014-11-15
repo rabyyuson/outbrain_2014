@@ -20,6 +20,9 @@ get_header(); ?>
                         <br/>
                         Content Discovery Platform
                     </h1>
+                    <p>
+                        Delights readers, drives engagement, creates revenue.
+                    </p>
                 </div>
             </div>
         </div>
@@ -33,7 +36,7 @@ get_header(); ?>
             <div class="columns twelve">
                 <h2 class="title">We Are Discovery</h2>
                 <p class="description">
-                    Outbrain captures the value of bringing great audiences and great content together. We delight readers, create revenue, drive engagement and breed consumer insights, bringing together the premium publishers and marketers of all sizes into the world’s largest and most vibrant content marketplace. 
+                    Outbrain captures the value of bringing great audiences and great content together. We delight readers, create revenue, drive engagement and breed consumer insights, bringing together the premium publishers and marketers of all sizes into the world’s largest and most vibrant content marketplace.
                 </p>
             </div>
         </div>

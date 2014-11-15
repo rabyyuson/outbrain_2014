@@ -18,11 +18,11 @@
                 article = listing.find( 'article' ),
                 information = article.find( '.information' ),
                 data = {
-                    counter : 1, reach : 1, fetch : true,
+                    counter : 1, reach : 1, fetch : true, infinite : true,
                     entries_height : function(){
                         return listing.height();
                     }
-                }, posts = {},
+                }, posts = {}, showMorePosts,
                 pagination = listing.find( '.pagination' ),
                 loading = listing.find( '.loading' ),
                 footer = $( 'footer.container.home' );
@@ -55,13 +55,28 @@
 
             } );
             
+            // Show More Posts
+            // Enable the inifinite scroll again
+            // Hide the show more posts button and the footer
+            showMorePosts = function(){
+                
+                listing.find( '.show-more-posts' ).text( 'Fetching Posts...' );
+                data.infinite = true;
+                posts.get_data( data );
+                setTimeout( function(){
+                    listing.find( '.show-more-posts' ).remove();
+                    footer.hide();
+                }, 950 );
+                
+            };
+            
             // Posts Get Data function
             // Load the articles through AJAX request
             // Only perform the operation in this function if we have 
             // succcessfully pulled information from the AJAX request.
             posts.get_data = function( data ){
                     
-                if( ( data.reach === data.counter ) && data.fetch ) {
+                if( ( data.reach === data.counter ) && ( data.fetch ) && ( data.reach === 1 || data.infinite ) ) {
                     
                     // Show the loading marker
                     loading.addClass( 'show' );
@@ -84,6 +99,27 @@
                                 data.reach += 1;
                                 ( ( entry.length > 0 ) ? data.fetch = true : data.fetch = false );
                                 
+                                if( data.reach % 5 === 0 ) {
+                                    
+                                    // Restrict the infinite scroll
+                                    // Only enable it if the user clicks on the 
+                                    // Show More Posts button
+                                    data.infinite = false;
+
+                                    // Add a "Show More Posts" button at the end of the
+                                    // blog post listing.
+                                    listing.append( 
+                                        $( '<a/>' )
+                                            .attr({ 'href' : 'javascript:void(0)', 'class' : 'show-more-posts' })
+                                            .text( 'Show More Posts' )
+                                            .on({ click : showMorePosts })
+                                    );
+
+                                    // Display the show more post button and also the footer
+                                    footer.show();
+
+                                }
+                                
                             }, 250 );
                             
                         },
@@ -97,6 +133,7 @@
 
                             }, 250 );
                             
+                            // Show the footer
                             footer.show();
                             
                         }

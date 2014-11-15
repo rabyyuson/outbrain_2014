@@ -16,8 +16,11 @@ get_header(); ?>
             <div class="columns twelve">
                 <div class="details">
                     <h1>
-                        Leadership
+                        Meet Our Leaders
                     </h1>
+                    <p>
+                        The people behind the scenes.
+                    </p>
                 </div>
             </div>
         </div>
