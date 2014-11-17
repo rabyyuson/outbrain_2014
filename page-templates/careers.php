@@ -21,6 +21,9 @@ get_header(); ?>
                     <p>
                         One of Crain's 2014 Best Places to Work!
                     </p>
+                    <a class="crain" href="http://www.outbrain.com/blog/2014/10/why-were-a-best-place-to-work-people-over-perks.html">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/page-templates/about/careers/crain.png" />
+                    </a>
                 </div>
             </div>
         </div>

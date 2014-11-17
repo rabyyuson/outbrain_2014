@@ -96,6 +96,9 @@
 }
 .container.press .row.listing .list .entries .entry .copy .body a {
     color:#f28520;
+    text-transform:uppercase;
+    font-weight:600;
+    font-size:14px;
 }
 .container.press .row.listing .list .entries .entry .copy .body a:hover {
     text-decoration:underline;

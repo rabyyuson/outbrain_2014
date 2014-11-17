@@ -1,6 +1,24 @@
 /* Hero */
 .container.about .row.hero {
-    background:#fff url('../../../images/page-templates/about/careers/hero.jpg') no-repeat center center;
+    background:#fff url('../../../images/page-templates/about/careers/hero1.jpg') no-repeat center center;
+}
+.container.about .row.hero .inner.clearfix .columns.twelve {
+    position:relative;
+}
+.container.about .row.hero .crain {
+    background-color:transparent !important;
+    border:4px solid #f27c49 !important;
+    font-weight:normal !important;
+    line-height:0 !important;
+    padding:0 !important;
+    transition:none !important;
+    position:absolute;
+    top:-96px;
+    left:0;
+    box-shadow:0 4px 9px rgba(0,0,0,0.25);
+}
+.container.about .row.hero .crain:hover {
+    border:4px solid #fff !important;
 }
 
 /* Head */
@@ -64,7 +82,7 @@
 .container.careers .row.head .columns.twelve .cta a:hover,
 .container.careers .row.bottom .columns.twelve .cta a:hover {
     background-color:#fff;
-    color:#dd4f61;    
+    color:#000;    
 }
 .container.careers .row.think-outbrainy {
     background:#fff url('../../../images/page-templates/about/careers/think-outbrainy-bg.jpg') no-repeat center center;

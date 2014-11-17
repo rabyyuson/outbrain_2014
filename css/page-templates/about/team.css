@@ -111,10 +111,12 @@
 }
 .container.team .row.people .columns.twelve .section ul li .information .read-more-container .read-more {
     color:#f08431;
-    text-decoration:underline;
+    text-transform:uppercase;
+    font-weight:600;
+    font-size:14px;
 }
 .container.team .row.people .columns.twelve .section ul li .information .read-more-container .read-more:hover {
-    color:#000;
+    text-decoration:underline;
 }
 .container.team .row.people .columns.twelve .section ul li .information .social {
     float:left;

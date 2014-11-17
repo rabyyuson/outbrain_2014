@@ -15,10 +15,14 @@
                        
             var 
                 container = $( '.container.about' ),
+                hero = {
+                    image : container.find( '.row.hero' ),
+                    load_first : false,
+                    load_second : true
+                },
                 video_wrapper = container.find( '.meet-team .wrapper' );
             
-            // Declare event handlers..
-            
+            // Video on click event handler..
             video_wrapper.on({
                 click : function(){
                     var
@@ -31,6 +35,45 @@
                     
                 }
             });
+            
+            // Window scroll event for the sub-navigation menu
+            $( window ).scroll( function() {
+
+                var 
+                    win = {
+                        scroll_top : $( window ).scrollTop()
+                    };
+                    
+                clearTimeout( $.data( this, 'scrollTimerCareers' ) );
+                
+                $.data( this, 'scrollTimerCareers', setTimeout(function() {
+
+                    console.log(win.scroll_top)
+
+                    // Toggle the hero background image.
+                    if ( win.scroll_top > 485 ) {
+                      
+                        if( hero.load_first ){
+                            hero.image.css( 'background-image', hero.image.css('background-image').replace( 'hero2.jpg', 'hero1.jpg' ) );
+                        } else if( hero.load_second ) {
+                            hero.image.css( 'background-image', hero.image.css('background-image').replace( 'hero1.jpg', 'hero2.jpg' ) );
+                        }
+                        
+                    } else if( win.scroll_top === 0 ) {
+                        
+                        if( hero.load_first ){
+                            hero.load_first = false;
+                            hero.load_second = true;
+                        } else {
+                            hero.load_second = false;
+                            hero.load_first = true;
+                        }
+                        
+                    } 
+
+                }, 10 ) );
+                
+            } );
             
         }
        

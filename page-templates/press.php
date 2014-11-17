@@ -34,7 +34,7 @@ get_header(); ?>
             <div class="columns twelve">
                 <h2 class="title">Press Coverage</h2>
                 <p class="description">
-                    The joy of discovery is a global. We operate offices around the world and we aim to make each of them For press inquiries, here's the best way to <a href="javascript:void(0)">contact us</a>.
+                    The joy of discovery is a global. We operate offices around the world and we aim to make each of them For press inquiries, here's the best way to <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact' ) ) ); ?>">contact us</a>.
                 </p>
             </div>
         </div>
@@ -69,7 +69,7 @@ get_header(); ?>
                                                 <?php echo $v->post_title; ?>
                                             </div>
                                             <div class="body">
-                                                <?php echo strip_tags( $content['content'] ); ?>...<a href="<?php echo $content['link']; ?>" target="_blank">Read More</a>
+                                                <?php echo strip_tags( $content['content'] ); ?>...<a href="<?php echo $content['link']; ?>" target="_blank">Read More &rsaquo;</a>
                                             </div>
                                         </div>
                                 </li>

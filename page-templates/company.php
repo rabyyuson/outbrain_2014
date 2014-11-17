@@ -93,62 +93,62 @@ get_header(); ?>
                             <p>San Francisco, CA, USA</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="232" data-coordinates-x="557" data-margin-left="103">
+                    <li class="location" data-coordinates-y="232" data-coordinates-x="557" data-margin-left="109">
                         <div class="information">
                             <p>Netanya, Israel</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="166" data-coordinates-x="457" data-margin-left="78">
+                    <li class="location" data-coordinates-y="166" data-coordinates-x="457" data-margin-left="87">
                         <div class="information">
                             <p>London, UK</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="182" data-coordinates-x="469" data-margin-left="88">
+                    <li class="location" data-coordinates-y="182" data-coordinates-x="469" data-margin-left="97">
                         <div class="information">
                             <p>Paris, France</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="175" data-coordinates-x="489" data-margin-left="114">
+                    <li class="location" data-coordinates-y="175" data-coordinates-x="489" data-margin-left="123">
                         <div class="information">
                             <p>Munich, Germany</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="201" data-coordinates-x="223" data-margin-left="103">
+                    <li class="location" data-coordinates-y="201" data-coordinates-x="223" data-margin-left="112">
                         <div class="information">
                             <p>Chicago, IL, USA</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="328" data-coordinates-x="748" data-margin-left="71">
+                    <li class="location" data-coordinates-y="328" data-coordinates-x="748" data-margin-left="80">
                         <div class="information">
                             <p>Singapore</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="421" data-coordinates-x="878" data-margin-left="118">
+                    <li class="location" data-coordinates-y="421" data-coordinates-x="878" data-margin-left="127">
                         <div class="information">
                             <p>Sydney, Australia</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="222" data-coordinates-x="226" data-margin-left="109">
+                    <li class="location" data-coordinates-y="222" data-coordinates-x="226" data-margin-left="118">
                         <div class="information">
                             <p>Atlanta, GA, USA</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="387" data-coordinates-x="331" data-margin-left="115">
+                    <li class="location" data-coordinates-y="387" data-coordinates-x="331" data-margin-left="124">
                         <div class="information">
                             <p>São Paulo, Brazil</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="193" data-coordinates-x="485" data-margin-left="82">
+                    <li class="location" data-coordinates-y="193" data-coordinates-x="485" data-margin-left="91">
                         <div class="information">
                             <p>Milan, Italy</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="208" data-coordinates-x="450" data-margin-left="89">
+                    <li class="location" data-coordinates-y="208" data-coordinates-x="450" data-margin-left="98">
                         <div class="information">
                             <p>Madrid, Spain</p>
                         </div>
                     </li>
-                    <li class="location" data-coordinates-y="220" data-coordinates-x="845" data-margin-left="90">
+                    <li class="location" data-coordinates-y="220" data-coordinates-x="845" data-margin-left="9*">
                         <div class="information">
                             <p>Tokyo, Japan</p>
                         </div>

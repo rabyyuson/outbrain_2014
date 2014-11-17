@@ -48,7 +48,7 @@
                                 
                                 ellipsis : $( '<span/>', { class : 'ellipsis', text : ' ... ' } ),
                                 read_more_container : $( '<div/>', { class : 'read-more-container' } ),
-                                read_more : $( '<a/>', { href : 'javascript:void(0)', class : 'read-more', text : 'Read More' } )
+                                read_more : $( '<a/>', { href : 'javascript:void(0)', class : 'read-more', text : 'Read More ›' } )
                                 
                             };
                         

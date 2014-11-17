@@ -26,7 +26,7 @@
          \___/ \__,_|\__|_.__/|_|  \__,_|_|_| |_|
 
     
-        If you read it, you might be the right guy for us.
+        If you read it, you might be the right person for us.
         We're hiring great engineers! Join us: visit http://jobs.outbrain.com
     
     --------------------------------------------------------------------------->
